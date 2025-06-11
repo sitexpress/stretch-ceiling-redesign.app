@@ -1,0 +1,32 @@
+.my_link {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-dark-1));
+    text-decoration: none;
+    /*border: rem(1px) solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));*/
+    /*border-radius: 10px;*/
+    height: auto;
+    cursor: default;
+}
+
+.card {
+    padding: 0;
+    transition:
+        transform 150ms ease,
+        box-shadow 150ms ease;
+    /*border: rem(1px) solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));*/
+    /*border-radius: 10px;*/
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.01);
+        box-shadow: var(--mantine-shadow-md);
+    }
+}
+
+.title {
+    font-family: "Greycliff CF", var(--mantine-font-family);
+    font-weight: bold;
+}

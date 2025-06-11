@@ -1,0 +1,35 @@
+.card {
+    transition:
+            transform 150ms ease,
+            box-shadow 150ms ease;
+
+&:hover {
+     transform: scale(1.01);
+     box-shadow: var(--mantine-shadow-md);
+ }
+}
+
+.title {
+    font-family: 'Greycliff CF', var(--mantine-font-family);
+    font-weight: bold;
+
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.description {
+    &::after {
+        content: "";
+        display: block;
+        background-color: var(--mantine-color-blue-filled);
+        width: rem(45px);
+        height: rem(2px);
+        margin-top: var(--mantine-spacing-sm);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

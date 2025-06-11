@@ -1,0 +1,57 @@
+.container {
+    /* padding-top: 100px; */
+    margin-bottom: 100px;
+    @media (max-width: $mantine-breakpoint-md) {
+        padding-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+
+.my_title {
+    font-size: rem(34px);
+    font-weight: 900;
+    @media (max-width: $mantine-breakpoint-md) {
+        font-size: rem(24px);
+    }
+}
+
+.description {
+    &::after {
+        content: "";
+        display: block;
+        background-color: var(--mantine-color-blue-filled);
+        width: rem(45px);
+        height: rem(2px);
+        margin-top: var(--mantine-spacing-sm);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.controls {
+    margin-top: calc(var(--mantine-spacing-xl) * 1.5);
+    display: flex;
+    justify-content: center;
+    padding-left: var(--mantine-spacing-md);
+    padding-right: var(--mantine-spacing-md);
+
+    @media (max-width: $mantine-breakpoint-xs) {
+        flex-direction: column;
+    }
+}
+
+.control {
+    height: rem(42px);
+    font-size: var(--mantine-font-size-md);
+
+    &:not(:first-of-type) {
+        margin-left: var(--mantine-spacing-md);
+    }
+
+    @media (max-width: $mantine-breakpoint-xs) {
+        &:not(:first-of-type) {
+            margin-top: var(--mantine-spacing-md);
+            margin-left: 0;
+        }
+    }
+}

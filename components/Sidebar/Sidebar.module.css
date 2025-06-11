@@ -1,0 +1,32 @@
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    80% { transform: rotate(0deg); }
+    85% { transform: rotate(10deg); }
+    95% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+    }
+}
+
+
+.wiggle {
+    display: inline-block;
+    animation: wiggle 2.5s infinite;
+    }
+
+.wiggle:hover {
+    animation: none;
+}
+
+.pulse {
+    display: inline-block;
+    animation: pulse-animation 2s infinite;
+
+}

@@ -1,0 +1,11 @@
+.my_carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* zIndex: 1; */
+    pointer-events: auto;
+}
+
+.my_img {
+    height: 100vh;
+}

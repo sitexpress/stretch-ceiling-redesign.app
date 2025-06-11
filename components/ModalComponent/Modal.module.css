@@ -1,0 +1,28 @@
+.tel_wrapper_opened {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    background-color: rgba(0,0,0,0.4); 
+
+}
+.tel_wrapper_closed {
+ display: none;
+
+}
+
+.tel_modal_opened{
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1500;
+}
+.tel_modal_closed{
+    display: none;
+}

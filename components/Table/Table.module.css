@@ -1,0 +1,15 @@
+.rowSelected {
+    background-color: var(--mantine-color-blue-light);
+}
+.container {
+    paddingTop: 100px;
+    paddingBottom: 10px;
+    paddingLeft: 100px;
+    paddingRight: 100p;
+    flexWrap: wrap;
+@media (max-width: $mantine-breakpoint-sm) {
+    paddingLeft: 0px;
+    paddingRight: 0px;
+}
+
+}

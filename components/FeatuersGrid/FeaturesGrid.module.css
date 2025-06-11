@@ -1,0 +1,34 @@
+.container {
+    margin-bottom: 100px;
+@media (max-width: $mantine-breakpoint-md) {
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+}
+
+.title {
+    font-size: rem(34px);
+    font-weight: 900;
+@media (max-width: $mantine-breakpoint-md) {
+    font-size: rem(24px);
+}
+}
+
+
+.description {
+    text-align: center;
+&::after {
+     content: '';
+     display: block;
+     background-color: var(--mantine-color-blue-filled);
+     width: rem(45px);
+     height: rem(2px);
+     margin-top: var(--mantine-spacing-sm);
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+@media (max-width: $mantine-breakpoint-sm) {
+    text-align: center;
+}
+}

@@ -1,0 +1,40 @@
+.desktop {
+@media (max-width: $mantine-breakpoint-md) {
+    position: absolute;
+    top: 17px;
+    left: 200px;
+}
+
+}
+
+.my_group {
+    position: absolute;
+    top: 40px;
+    left: 230px;
+}
+.icon {
+    width: rem(22px);
+    height: rem(22px);
+}
+
+.dark {
+@mixin dark {
+    display: none;
+}
+
+@mixin light {
+    display: block;
+}
+}
+
+.light {
+@mixin light {
+    display: none;
+}
+
+@mixin dark {
+    display: block;
+}
+}
+
+

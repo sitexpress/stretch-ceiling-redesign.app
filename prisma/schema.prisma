@@ -1,0 +1,766 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model AllCatalog {
+  id    Int    @id @default(autoincrement())
+  title String
+  link  String
+  src   String
+}
+
+model KomplektuyshieCatalog {
+  id       Int    @id @default(autoincrement())
+  title    String
+  link     String
+  src      String
+  dataType String
+}
+
+model TorcevieZaglushki {
+  id       Int    @id @default(autoincrement())
+  title    String
+  link     String
+  src      String
+  dataType String
+}
+
+model DlyaSvetovoyLinii {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model DlyaKarnizov {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model DlyaAdapterov {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model Platformy {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model ObvodDlyaTrub {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model Zakladnie {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model MagnitnieReshetki {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model BlokiPitanya {
+  id       Int    @id @default(autoincrement())
+  title    String
+  link     String
+  src      String
+  dataType String
+}
+
+model BlokiPitanyaSwg {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model VstavkiPvh {
+  id       Int    @id @default(autoincrement())
+  title    String
+  link     String
+  src      String
+  dataType String
+}
+
+model VstavkiPvhTl {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model LentaSvetodiodnaya {
+  id       Int    @id @default(autoincrement())
+  title    String
+  link     String
+  src      String
+  dataType String
+}
+
+model LentaSvetodiodnayaSwg {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model LentaSvetodiodnayaLumFer {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model pvhPolotnaCatalog {
+  id       Int    @id @default(autoincrement())
+  title    String
+  link     String
+  src      String
+  dataType String
+}
+
+model PolotnaBauf {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model PolotnaMsd {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model PolotnaTeqtum {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model TkaneviePolotna {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model PolotnaLumfer {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model PolotnaHalead {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model profiliCatalog {
+  id       Int    @id @default(autoincrement())
+  title    String
+  link     String
+  src      String
+  dataType String
+}
+
+model ProfiliLumpfer {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model ProfiliKraab {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model ProfiliFlexy {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model ProfiliAlform {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model ProfiliBizon {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model ProfiliIoshka {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model ProfiliPoTipu {
+  id       Int    @id @default(autoincrement())
+  title    String
+  link     String
+  src      String
+  dataType String
+}
+
+model montazhnieRabotiCatalog {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model profilRaundCatalog {
+  id       Int    @id @default(autoincrement())
+  title    String
+  link     String
+  src      String
+  dataType String
+}
+
+model raundTenevoiRadiusny {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model raundBlikPariashy {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model raundDelitRazdelitelny {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model raundLineUniversalny {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model trekovieSystemyCatalog {
+  id       Int    @id @default(autoincrement())
+  title    String
+  link     String
+  src      String
+  dataType String
+}
+
+model LumferTrack_23_48v {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model LumferTrack_25_220v {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model Denkirs_220v {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model ST_Luce_220v {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model svetilnikiCatalog {
+  id       Int    @id @default(autoincrement())
+  title    String
+  link     String
+  src      String
+  dataType String
+}
+
+model SvetilnikiSTLuce {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model SvetilnikiMaytoni {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model SvetilnikiTruEnergy {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model SvetilnikiGx {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model LampaSimple {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model DiodnayaLenta {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}
+
+model BlockiPitaniya {
+  id          Int     @id @default(autoincrement())
+  title       String
+  subtitle    String
+  link        String
+  src         String
+  src_1       String
+  src_2       String
+  dataType    String
+  basePrice   Int
+  workPrice   Int
+  measurement String
+  amount      String
+  element     Boolean
+  byType      String
+}

@@ -1,0 +1,29 @@
+/*.my_container {*/
+/*    display: grid;*/
+/*    height: auto;*/
+/*    grid-template-columns: 1fr 5fr;*/
+/*    @media (max-width: $mantine-breakpoint-md) {*/
+/*        grid-template-columns: 0fr 6fr;*/
+/*    }*/
+/*}*/
+
+/*.my_workarea_wrapper {*/
+/*    grid-column-start: 2;*/
+/*    grid-column-end: 5;*/
+/*    grid-row-start: 1;*/
+/*    grid-row-end: 3;*/
+/*    z-index: 2;*/
+/*    left: rem(300px);*/
+/*    width: 100%;*/
+/*    display: block;*/
+/*    padding: 10px 20px;*/
+/*}*/
+
+.table_scroller {
+    padding-left: 50px;
+    padding-right: 50px;
+    @media (max-width: $mantine-breakpoint-md) {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}

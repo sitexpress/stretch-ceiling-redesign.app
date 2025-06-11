@@ -1,0 +1,15 @@
+.breadwrapper {
+    border-radius: 40px;
+}
+.link {
+    text-decoration: none;
+    color: #adb5bd;
+
+    /* color: light-dark(var(--mantine-color-black), var(--mantine-color-white)); */
+}
+
+.link:hover {
+    text-decoration: underline;
+    color: #adb5bd;
+    /* color: light-dark(var(--mantine-color-black), var(--mantine-color-white)); */
+}
