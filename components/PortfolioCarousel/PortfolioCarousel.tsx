@@ -543,7 +543,7 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
             <Carousel
                 height={"auto"}
                 slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
-                slideGap={{ base: 0, sm: "md" }}
+                // slideGap={{ base: 0, sm: "md" }}
                 loop
                 align="start"
                 plugins={[autoplay.current]}
@@ -552,7 +552,7 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
                 withControls
                 controlsOffset={10}
                 slideGap="lg"
-                emblaOptions={{ dragFree: true }}
+                // emblaptions={{ dragFree: true }}
                 getEmblaApi={setEmbla}
                 initialSlide={0}
             >
@@ -608,7 +608,7 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
             <Carousel
                 height={"auto"}
                 slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
-                slideGap={{ base: 0, sm: "md" }}
+                // slideGap={{ base: 0, sm: "md" }}
                 loop
                 align="start"
                 // plugins={[autoplay.current]}
