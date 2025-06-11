@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { MantineProvider, ColorSchemeScript, Container } from "@mantine/core";
 import { theme } from "../theme";
 // import { HeaderMegaMenu } from "@/components/HeaderMegaMenu/HeaderMegaMenu";
-import { FooterLinks } from "@/components/FooterLinks/FooterLinks";
 import "@mantine/notifications/styles.css";
 
 import "@mantine/core/styles.css";
@@ -41,11 +40,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                             <ColorSchemeScript nonce="8IBTHwOdqNKAWeKl7plt8g==" defaultColorScheme="light" />
                             {/* <ModalsProvider> */}
 
-                            <Script
+                            {/* <Script
                             id="chatway"
                             src="https://cdn.chatway.app/widget.js?id=w5xbJehAiX4o"
                             strategy="lazyOnload"
-                        />
+                        /> */}
                             <Notifications />
                             <Sidebar />
                             <DoubleHeader />

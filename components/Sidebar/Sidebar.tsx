@@ -38,10 +38,19 @@ export default function Sidebar() {
                 flexDirection: "column",
                 position: "fixed",
                 right: "22px",
-                bottom: "88px",
+                bottom: "22px",
                 transition: "right 0.5s linear",
                 zIndex: 1000,
             }}
+            // style={{
+            //     display: "flex",
+            //     flexDirection: "column",
+            //     position: "fixed",
+            //     right: "22px",
+            //     bottom: "88px",
+            //     transition: "right 0.5s linear",
+            //     zIndex: 1000,
+            // }}
         >
             {/* <Anchor href="https://t.me/+nKdXzCW6qmE3NjUy" id="sidebar-telegram">
                 <ActionIcon size="xl" color="#24A1DE" variant={"filled"} radius="xl">
