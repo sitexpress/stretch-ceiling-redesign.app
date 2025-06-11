@@ -142,7 +142,6 @@ export const VimeoPlayerLeftBottom = () => {
         const handleResize = async () => {
             if (playerInstanceRefLeftBottom.current && isPlayerReady) {
                 try {
-                    if (matchXs || matchSm || matchMd || matchLg || matchXl) {
                         await playerInstanceRefLeftBottom.current.setCurrentTime(playerStateRef.current.currentTime);
                         await playerInstanceRefLeftBottom.current.setMuted(playerStateRef.current.isMuted);
                         
@@ -151,7 +150,6 @@ export const VimeoPlayerLeftBottom = () => {
                         } else {
                             await playerInstanceRefLeftBottom.current.pause();
                         }
-                    }
                 } catch (error) {
                     console.error("Error resizing player:", error);
                 }
