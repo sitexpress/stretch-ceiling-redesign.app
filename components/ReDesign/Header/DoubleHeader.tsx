@@ -94,7 +94,7 @@ export function DoubleHeader() {
     return (
         
         <header className={classes.header}>
-            <Container className={classes.inner} size="xxl">
+            <Container className={classes.inner} size="xxl" mt={16} >
                 <Link href="/" style={{ textDecoration: "none" }}>
                     <Flex direction="row" gap={5} align="center">
                         <Text fw={500} c="dark.6" style={{ fontFamily: "Nautilus", fontSize: "32px" }}>
@@ -130,7 +130,7 @@ export function DoubleHeader() {
                             </Anchor>
 
                             <Anchor href="tel:+79881896530">
-                                <Badge size="xl" fw="700" variant="filled" style={{ cursor: "pointer" }}>
+                                <Badge size="xl" fw="700" variant="filled" style={{ cursor: "pointer" }} bg="dark.6">
                                     <Flex justify="center" align="center" visibleFrom="sm" gap="sm">
                                         <IconPhone
                                             style={{
@@ -166,6 +166,7 @@ export function DoubleHeader() {
                             style={{
                                 fontFamily: "Nautilus",
                                 fontSize: "27px",
+                                marginLeft: "16px"
                             }}
                         >
                             Строй Family
@@ -224,7 +225,7 @@ export function DoubleHeader() {
                             href="/calculations"
                             // onClick={closeDrawer}
                         >
-                            <Button style={{ width: "200px" }} size="sm" variant="light" radius={40}>
+                            <Button style={{ width: "200px" }} size="sm" variant="default" radius={40}>
                                 <IconCalculator size={25} style={{ paddingRight: "5px" }} />
                                 Кальк.Компл
                             </Button>
@@ -237,7 +238,7 @@ export function DoubleHeader() {
                             // }}
                             style={{ width: "200px" }}
                             size="sm"
-                            variant="light"
+                            variant="default"
                             radius={40}
                         >
                             {/* <IconHeadset size={25} style={{ paddingRight: "5px" }} /> */}
@@ -250,7 +251,7 @@ export function DoubleHeader() {
                             // }}
                             style={{ width: "200px" }}
                             size="sm"
-                            variant="filled"
+                            variant="default"
                             radius={40}
                         >
                             <IconRulerMeasure size={25} style={{ paddingRight: "5px" }} />
@@ -262,7 +263,7 @@ export function DoubleHeader() {
                                 style={{ width: "200px" }}
                                 size="sm"
                                 variant="filled"
-                                color="green.6"
+                                color="dark.6"
                                 radius={40}
                             >
                                 <IconPhonePlus size={25} style={{ paddingRight: "5px" }} />

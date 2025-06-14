@@ -1,10 +1,9 @@
 "use client";
 import React from "react";
-import { ActionIcon, Anchor, Container, Flex, Group, rem, Text } from "@mantine/core";
+import { ActionIcon, Anchor, Container, Flex,  rem, Text } from "@mantine/core";
 import { IconBrandTelegram, IconBrandWhatsapp } from "@tabler/icons-react";
 import Image from "next/image";
 import classes from "./Footer.module.css";
-import { Dots } from "@/components/HeroText/Dots";
 
 const data = [
     {
@@ -110,69 +109,78 @@ export function Footer() {
     });
 
     return (
-        <div className={classes.footer_container}>
-            <Flex className={classes.footer} gap="xl" justify="center" align="center" direction="column" wrap="wrap">
-                <Container className={classes.inner}>
-                    <div className={classes.logo}>
-                        <Image
-                            src="/images/logo/logo.svg"
-                            width={150}
-                            height={150}
-                            alt="Stroy Family logo"
-                            style={{ zIndex: 2, opacity: 0.8 }}
-                        />
-                    </div>
-                    <Flex
-                        pl="100px"
-                        gap="xs"
-                        justify="flex-start"
-                        align="flex-start"
-                        direction="row"
-                        wrap="wrap"
-                        visibleFrom="md"
-                    >
-                        {groups}
-                    </Flex>
-                </Container>
+        <div style={{background: "#f1f3f5"}}>
+            <div className={classes.footer_container}>
+                <Flex
+                    className={classes.footer}
+                    gap="xl"
+                    justify="center"
+                    align="center"
+                    direction="column"
+                    wrap="wrap"
+                >
+                    <Container className={classes.inner}>
+                        <div className={classes.logo}>
+                            <Image
+                                src="/images/logo/logo.svg"
+                                width={150}
+                                height={150}
+                                alt="Stroy Family logo"
+                                style={{ zIndex: 2, opacity: 0.8 }}
+                            />
+                        </div>
+                        <Flex
+                            pl="100px"
+                            gap="xs"
+                            justify="flex-start"
+                            align="flex-start"
+                            direction="row"
+                            wrap="wrap"
+                            visibleFrom="md"
+                        >
+                            {groups}
+                        </Flex>
+                    </Container>
 
-                <Container className={classes.afterFooter}>
-                    <Text c="dimmed" size="sm">
-                        Внимание! Данный сайт носит информационный характер и ни при каких условиях не является
-                        публичной офертой, которая определяется положениями Статьи 437 (2) Гражданского кодекса РФ. Для
-                        получения подробной информации о наличии и стоимости указанных товаров и (или) услуг,
-                        пожалуйста, обращайтесь к нашим менеджерам. Или мы сами свяжемся с Вами.
-                    </Text>
-                    <Text c="dimmed" size="sm" mt="40" fw={700} ta="center">
-                        © 2020 <span style={{ fontFamily: "Nautilus" }}>Строй Family.</span> Все права защищены.
-                    </Text>
+                    <Container className={classes.afterFooter}>
+                        <Text c="dimmed" size="sm">
+                            Внимание! Данный сайт носит информационный характер и ни при каких условиях не является
+                            публичной офертой, которая определяется положениями Статьи 437 (2) Гражданского кодекса РФ.
+                            Для получения подробной информации о наличии и стоимости указанных товаров и (или) услуг,
+                            пожалуйста, обращайтесь к нашим менеджерам. Или мы сами свяжемся с Вами.
+                        </Text>
+                        <Text c="dimmed" size="sm" mt="40" fw={700} ta="center">
+                            © 2020 <span style={{ fontFamily: "Nautilus" }}>Строй Family.</span> Все права защищены.
+                        </Text>
 
-                    <Flex className={classes.social} wrap="nowrap" gap={10} mt="md"> 
-                        <Anchor href="https://t.me/+79881896530" target="_blank">
-                            <ActionIcon size={40} color="blue.4" variant={"filled"} radius="xl">
-                                <IconBrandTelegram
-                                    style={{
-                                        width: rem(20),
-                                        height: rem(20),
-                                    }}
-                                    stroke={1.5}
-                                />
-                            </ActionIcon>
-                        </Anchor>
+                        <Flex className={classes.social} wrap="nowrap" gap={10} mt="md">
+                            <Anchor href="https://t.me/+79881896530" target="_blank">
+                                <ActionIcon size={40} color="blue.4" variant={"filled"} radius="xl">
+                                    <IconBrandTelegram
+                                        style={{
+                                            width: rem(20),
+                                            height: rem(20),
+                                        }}
+                                        stroke={1.5}
+                                    />
+                                </ActionIcon>
+                            </Anchor>
 
-                        <Anchor href="https://wa.me/79881896530" id="sidebar-whatsapp">
-                            <ActionIcon size={40} color="green.4" variant={"filled"} radius="xl">
-                                <IconBrandWhatsapp
-                                    style={{
-                                        width: rem(20),
-                                        height: rem(20),
-                                    }}
-                                    stroke={1.5}
-                                />
-                            </ActionIcon>
-                        </Anchor>
-                    </Flex>
-                </Container>
-            </Flex>
+                            <Anchor href="https://wa.me/79881896530" id="sidebar-whatsapp">
+                                <ActionIcon size={40} color="green.4" variant={"filled"} radius="xl">
+                                    <IconBrandWhatsapp
+                                        style={{
+                                            width: rem(20),
+                                            height: rem(20),
+                                        }}
+                                        stroke={1.5}
+                                    />
+                                </ActionIcon>
+                            </Anchor>
+                        </Flex>
+                    </Container>
+                </Flex>
+            </div>
         </div>
     );
 }

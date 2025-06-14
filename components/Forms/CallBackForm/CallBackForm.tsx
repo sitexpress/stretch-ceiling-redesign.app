@@ -340,7 +340,7 @@ export default function CallBackForm({ modalMode, setIsOpen, project }: CallBack
                             // style={{ width: "40%" }}
                         />
                     </Group>
-                    <Button loading={isLoading} type="submit" mt="xl" style={{ width: "100%" }}>
+                    <Button loading={isLoading} type="submit" mt="xl" style={{ width: "100%" }} variant="default">
                         Отправить расчёт менеджеру
                     </Button>
                 </>
@@ -374,7 +374,7 @@ export default function CallBackForm({ modalMode, setIsOpen, project }: CallBack
                         />
                     )}
 
-                    <Button loading={isLoading} type="submit" mt="xl" style={{ width: "100%" }}>
+                    <Button loading={isLoading} type="submit" mt="xl" style={{ width: "100%" }}  variant="default">
                         Хочу также
                     </Button>
                 </>
@@ -401,7 +401,7 @@ export default function CallBackForm({ modalMode, setIsOpen, project }: CallBack
                         key={form.key("message")}
                         {...form.getInputProps("message")}
                     />
-                    <Button loading={isLoading} type="submit" mt="xl" style={{ width: "100%" }}>
+                    <Button loading={isLoading} type="submit" mt="xl" style={{ width: "100%" }}  variant="filled" radius={40} bg="dark.6">
                         {modalMode === "callBack"
                             ? "Заказать обратный звонок"
                             : modalMode === "measurer"

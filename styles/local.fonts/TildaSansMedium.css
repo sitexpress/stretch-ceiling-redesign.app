@@ -1,16 +1,7 @@
 @font-face {
-    font-family: "Nautilus";
+    font-family: "TildaSansMedium";
     /* src: url("../local.fonts/NautilusPompilius/NautilusPompilius.woff2") format("woff2"); */
-    src: url("Nautilus.woff2") format("woff2");
+    src: url("TildaSansMedium.woff2") format("woff2");
     font-weight: 700;
-    font-style: normal;
+    font-style: normal;   
 }
-
-
-
-
-
-
-
-
-

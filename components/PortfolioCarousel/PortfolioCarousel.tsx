@@ -1,7 +1,19 @@
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
 import { Carousel } from "@mantine/carousel";
-import { Badge, Button, Container, Flex, Group, Image, Paper, Progress, Text, Title, useMantineTheme } from "@mantine/core";
+import {
+    Badge,
+    Button,
+    Container,
+    Flex,
+    Group,
+    Image,
+    Paper,
+    Progress,
+    Text,
+    Title,
+    useMantineTheme,
+} from "@mantine/core";
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
 import { useRef } from "react";
@@ -452,19 +464,6 @@ function CardComponent() {
                         </Text>
                     </Flex>
                 </Flex>
-                {/* <Text mt="sm" mb="md" c="dimmed" fz="10px">
-                    *уточняйте стоймость Вашего потолка у менеджера
-                </Text> */}
-                {/* <Card.Section className={classes.footer}>
-                    <div key={item.title}>
-                        <Text size="xs" color="dimmed">
-                            {item.title}
-                        </Text>
-                        <Text fw={500} size="sm">
-                            {}000
-                        </Text>
-                    </div>
-                </Card.Section> */}
             </Card>
         </Carousel.Slide>
     ));
@@ -473,20 +472,20 @@ function CardComponent() {
 }
 
 const cardMapped = cardData.map((item, i) => <BadgeCard key={i} {...item} />);
-const reviewMapped = reviewData.map((item, i) =>      (
-        <Paper key={i} radius="xl" shadow="sm" p="lg" m="lg" className={classes.paper}>
-            {/* <Avatar src={item.src} size={80} radius={120} mx="auto" /> */}
-            <Text ta="center" fz="lg" fw={500} mt="md" c="dark.4">
-                {item.name}
-            </Text>
-            <Text ta="center" fz="sm" c="dimmed">
-                {item.date}
-            </Text>
-            <Text ta="center" c="dark.3" fz="sm" mt="md">
-                {item.review}
-            </Text>
-        </Paper>
-    ))
+const reviewMapped = reviewData.map((item, i) => (
+    <Paper key={i} radius="xl" shadow="sm" p="lg" m="lg" className={classes.paper}>
+        {/* <Avatar src={item.src} size={80} radius={120} mx="auto" /> */}
+        <Text ta="center" fz="lg" fw={500} mt="md" c="dark.4">
+            {item.name}
+        </Text>
+        <Text ta="center" fz="sm" c="dimmed">
+            {item.date}
+        </Text>
+        <Text ta="center" c="dark.3" fz="sm" mt="md">
+            {item.review}
+        </Text>
+    </Paper>
+));
 
 export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => {
     const [scrollProgressFolio, setScrollProgressFolio] = useState(0);
@@ -527,14 +526,13 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
 
     const autoplay = useRef(Autoplay({ delay: 2000 }));
     return mode === "photo" ? (
-        <Container size="118rem" className={classes.container}>
+        <div className={classes.container}>
             <Title
                 order={2}
-                mt="sm"
+                // mt="sm"
                 mb="xl"
                 ta="center"
                 className={classes.description}
-                style={{ fontFamily: "Nautilus" }}
                 c="dark.5"
             >
                 Портфолио
@@ -558,27 +556,29 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
             >
                 {Item}
             </Carousel>
-            <Progress value={scrollProgressFolio} maw={320} size="sm" mt="xl" mx="auto" />
+            <Progress.Root maw={300} size="lg" mt="xl" mx="auto" bg="dark.1" radius="40px">
+                <Progress.Section value={scrollProgressFolio} bg="dark.6" color="dark.6">
+                    <Progress.Label style={{ fontFamily: "Nautilus", fontSize: "10px" }} color="dark.6">
+                        Строй Family
+                    </Progress.Label>
+                </Progress.Section>
+            </Progress.Root>
             <div className={classes.controls}>
                 <Link href="/portfolio" style={{ margin: "0 auto" }}>
-                    <Button className={classes.control} variant="blue" size="lg" radius="xl">
+                    <Button className={classes.control} variant="default" size="lg" radius="xl">
                         Подробнее
                     </Button>
                 </Link>
             </div>
-        </Container>
+        </div>
     ) : mode === "review" ? (
-        <Container size="118rem" >
-            <Title
-                order={2}
-                mt="sm"
-                mb="xl"
-                ta="center"
-                className={classes.description}
-                style={{ fontFamily: "Nautilus" }}
-                c="dark.5"
-            >
-                Отзывы наших клиентов
+        <div className={classes.container}>
+            <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
+                Отзывы{" "}
+                <Text component="span" inherit c="red.6">
+                    наших
+                </Text>{" "}
+                клиентов
             </Title>
             <Carousel
                 // height={"auto"}
@@ -591,19 +591,15 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
             >
                 {reviewMapped}
             </Carousel>
-        </Container>
+        </div>
     ) : mode === "ceiling" ? (
-        <Container size="118rem" className={classes.container}>
-            <Title
-                order={2}
-                mt="sm"
-                mb="xl"
-                ta="center"
-                className={classes.description}
-                style={{ fontFamily: "Nautilus" }}
-                c="dark.5"
-            >
-                Примерная стоймость выполненых работ
+        <div className={classes.container}>
+            <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
+                Примерная{" "}
+                <Text component="span" inherit c="red.6">
+                    стоймость
+                </Text>{" "}
+                выполненых работ
             </Title>
             <Carousel
                 height={"auto"}
@@ -620,7 +616,13 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
             >
                 <CardComponent />
             </Carousel>
-            <Progress value={scrollProgressCeiling} maw={320} size="sm" mt="xl" mx="auto" />
+            <Progress.Root maw={300} size="lg" mt="xl" mx="auto" bg="dark.1" radius="40px">
+                <Progress.Section value={scrollProgressCeiling} bg="dark.6" color="dark.6">
+                    <Progress.Label style={{ fontFamily: "Nautilus", fontSize: "10px" }} color="dark.6">
+                        Строй Family
+                    </Progress.Label>
+                </Progress.Section>
+            </Progress.Root>
 
             {/* <div className={classes.controls}>
                 <Link href="/portfolio" style={{ margin: "0 auto" }}>
@@ -629,9 +631,9 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
                     </Button>
                 </Link>
             </div> */}
-        </Container>
+        </div>
     ) : (
-        <Container size="100rem" className={classes.container}>
+        <div className={classes.container}>
             <Group justify="center">
                 <Badge variant="filled" size="lg">
                     Портфолио
@@ -674,6 +676,6 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
                     </Button>
                 </Link>
             </div> */}
-        </Container>
+        </div>
     );
 };

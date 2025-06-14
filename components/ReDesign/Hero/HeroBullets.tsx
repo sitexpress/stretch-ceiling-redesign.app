@@ -1,30 +1,16 @@
 "use client";
-import { IconCheck, IconRulerMeasure } from "@tabler/icons-react";
-import { Button, Container, Flex, Group, List, Overlay, Text, ThemeIcon, Title, useMantineTheme } from "@mantine/core";
+import { Button, Flex, Group, List, Overlay, Text, Title, useMantineTheme } from "@mantine/core";
 import classes from "./HeroBullets.module.css";
-import { useMediaQuery } from "@mantine/hooks";
 import { VimeoPlayer } from "../ReelVideo/VimeoPlayer";
-import { Dots } from "@/components/HeroText/Dots";
 import { VimeoPlayerLeftBottom } from "../ReelVideo/VimeoPlayerLeftBottom";
 import { VimeoPlayerLeft } from "../ReelVideo/VimeoPlayerLeft";
 import { useState } from "react";
 import ModalComponent from "@/components/ModalComponent/ModalComponent";
+import { useMediaQuery } from "@mantine/hooks";
 
 export function HeroBullets() {
     const [modalMode, setModalMode] = useState<"callBack" | "measurer" | "">("");
     const [isOpen, setIsOpen] = useState(false);
-    const theme = useMantineTheme();
-    const xs = theme.breakpoints.xs;
-    const sm = theme.breakpoints.sm;
-    const md = theme.breakpoints.md;
-    const lg = theme.breakpoints.lg;
-    const xl = theme.breakpoints.xl;
-
-    const matchXs = useMediaQuery(`(min-width: ${xs})`);
-    const matchSm = useMediaQuery(`(min-width: ${sm})`);
-    const matchMd = useMediaQuery(`(min-width: ${md})`);
-    const matchLg = useMediaQuery(`(min-width: ${lg})`);
-    const matchXl = useMediaQuery(`(min-width: ${xl})`);
 
     const measurerHandler = () => {
         setModalMode("measurer");
@@ -38,527 +24,285 @@ export function HeroBullets() {
         setIsOpen(true);
     };
 
-    const DotFunc = () => {
-        return (
-            <>
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 5,
-                        top: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 205,
-                        top: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 405,
-                        top: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 605,
-                        top: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 805,
-                        top: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 1005,
-                        top: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 1205,
-                        top: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 1405,
-                        top: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 1605,
-                        top: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 1805,
-                        top: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
+    const theme = useMantineTheme();
+    const xs = theme.breakpoints.xs;
+    const sm = theme.breakpoints.sm;
+    const md = theme.breakpoints.md;
+    const lg = theme.breakpoints.lg;
+    const xl = theme.breakpoints.xl;
 
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 5,
-                        bottom: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 205,
-                        bottom: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 405,
-                        bottom: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 605,
-                        bottom: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 805,
-                        bottom: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 1005,
-                        bottom: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 1205,
-                        bottom: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 1405,
-                        bottom: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 1605,
-                        bottom: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-                <Dots
-                    style={{
-                        color: "#74c0fc",
-                        position: "absolute",
-                        right: 1805,
-                        bottom: 10,
-                        opacity: 0.3,
-                        zIndex: 10,
-                    }}
-                />
-            </>
-        );
-    };
+    const matchXs = useMediaQuery(`(min-width: ${xs})`);
+    const matchSm = useMediaQuery(`(min-width: ${sm})`);
+    const matchMd = useMediaQuery(`(min-width: ${md})`);
+    const matchLg = useMediaQuery(`(min-width: ${lg})`);
+    const matchXl = useMediaQuery(`(min-width: ${xl})`);
 
     return (
-        <Container
-            size="xxl"
-            style={
-                matchMd ? { paddingLeft: "30px", paddingRight: "30px" } : { paddingLeft: "18px", paddingRight: "18px" }
-            }
-        >
+        <Flex className={classes.inner} bg="gray.1" gap={16} pt={116} pb={16}>
             {isOpen && <ModalComponent isOpen={isOpen} modalMode={modalMode} setIsOpen={setIsOpen} />}
-            <div className={classes.inner}>
-                <div className={classes.content}>
-                    <DotFunc />
-                    <Title className={classes.title} order={1}>
-                        <span className={classes.highlight} style={{ fontFamily: "Nautilus" }}>
+
+            <Group className={classes.content} bg="white" ml={16}>
+                <div>
+                    <Title className={classes.title}>
+                        <Text
+                            component="span"
+                            c="red.6"
+                            fw={700}
+                            style={{ fontFamily: "TildaSansSemibold" }}
+                            className={classes.title}
+                        >
                             Натяжные потолки в Сочи
-                        </span>
-                        <span className={classes.highlight_off} style={{ fontFamily: "Nautilus" }}>
+                        </Text>
+                        <Text
+                            component="span"
+                            c="dark.6"
+                            fw={700}
+                            style={{ fontFamily: "TildaSansSemibold" }}
+                            className={classes.title}
+                        >
                             {" "}
                             премиум-класса!{" "}
-                        </span>
-                        <br />
+                        </Text>
                     </Title>
 
-                    <Text mt="md" c="blue" className={classes.subtitle}>
-                        Монтаж за 1–2 дня со скидкой 50% на полотно!
+                    <Text mt="xs" c="red.6" className={classes.subtitle}>
+                        Монтаж за 1-2 дня со скидкой 50% на полотно!
                     </Text>
+                </div>
 
-                    <Flex direction="row" justify="space-between">
-                        <div>
-                            <List
-                                mt={30}
-                                spacing="sm"
-                                icon={
-                                    <ThemeIcon size={20} radius="xl">
-                                        <IconCheck size={12} stroke={1.5} />
-                                    </ThemeIcon>
-                                }
-                            >
-                                <List.Item>
-                                    <Text
-                                        component="span"
-                                        c="blue"
-                                        fw={700}
-                                        style={{ fontFamily: "Nautilus" }}
-                                        className={classes.list}
-                                    >
-                                        Работа под ключ
+                <Flex direction="row" justify="space-between">
+                    <Group mt={10}>
+                        <List spacing="sm">
+                            <List.Item>
+                                <Text component="span" fw={700} className={classes.list}>
+                                    Работа под ключ
+                                </Text>
+                                <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
+                                    {" "}
+                                    чистый ремонт, без повреждений.
+                                </Text>
+                            </List.Item>
+                            <List.Item>
+                                <Text component="span" fw={700} className={classes.list}>
+                                    Сдаём в срок!
+                                </Text>
+                                <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
+                                    {" "}
+                                    быстро, качественно, без задержек.
+                                </Text>
+                            </List.Item>
+                            <List.Item>
+                                <Text component="span" fw={700} className={classes.list}>
+                                    При заказе у нас{" "}
+                                </Text>
+                                <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
+                                    {" "}
+                                    полный рассчет по вашему проекту, с подбором освещения.
+                                </Text>
+                            </List.Item>
+                            <List.Item>
+                                <Text component="span" fw={700} className={classes.list}>
+                                    Бесплатный выезд замерщика
+                                </Text>
+                                <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
+                                    {" "}
+                                    для точных расчетов и удобства клиента.
+                                </Text>
+                            </List.Item>
+                            <List.Item>
+                                <Text component="span" fw={700} className={classes.list}>
+                                    Трековое магнитное освещение
+                                </Text>
+                                <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
+                                    {" "}
+                                    все новинки магнитного трекового освещения.
+                                </Text>
+                            </List.Item>
+                        </List>
+                        <List spacing="sm" className={classes.list_left} visibleFrom={sm}>
+                            <Text size="18px" c="dark.5" fw={700} mb="md" ta="left">
+                                При заказе:
+                            </Text>{" "}
+                            <List.Item>
+                                <Flex c="dark.5" fw={700} direction="column">
+                                    <Text component="span" size="lg" c="red.6" fw={700}>
+                                        от 100 тыс.{" "}
                                     </Text>
-                                    <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
+                                    <Text component="span" size="lg" fw={700}>
                                         {" "}
-                                        чистый ремонт, без повреждений.
+                                        люстра в подарок!
                                     </Text>
-                                </List.Item>
-                                <List.Item>
-                                    <Text
-                                        component="span"
-                                        c="blue"
-                                        fw={700}
-                                        style={{ fontFamily: "Nautilus" }}
-                                        className={classes.list}
-                                    >
-                                        Сдаём в срок!
+                                </Flex>
+                            </List.Item>
+                            <List.Item>
+                                <Flex c="dark.5" fw={700} direction="column">
+                                    <Text component="span" size="lg" c="red.6" fw={700}>
+                                        от 500 тыс.{" "}
                                     </Text>
-                                    <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
+                                    <Text component="span" fw={700}>
                                         {" "}
-                                        быстро, качественно, без задержек.
+                                        магнитный трек в подарок!
                                     </Text>
-                                </List.Item>
-                                <List.Item>
-                                    <Text
-                                        component="span"
-                                        c="blue"
-                                        fw={700}
-                                        style={{ fontFamily: "Nautilus" }}
-                                        className={classes.list}
-                                    >
-                                        При заказе у нас{" "}
+                                </Flex>
+                            </List.Item>
+                            <List.Item>
+                                <Flex c="dark.5" fw={700} direction="column">
+                                    <Text component="span" size="lg" c="red.6" fw={700}>
+                                        от 800 тыс.{" "}
                                     </Text>
-                                    <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
+                                    <Text component="span" fw={700}>
                                         {" "}
-                                        полный рассчет по вашему проекту, с подбором освещения.
+                                        магнитные светильники в подарок!
                                     </Text>
-                                </List.Item>
-                                <List.Item>
-                                    <Text
-                                        component="span"
-                                        c="blue"
-                                        fw={700}
-                                        style={{ fontFamily: "Nautilus" }}
-                                        className={classes.list}
-                                    >
-                                        Бесплатный выезд замерщика
-                                    </Text>
-                                    <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
-                                        {" "}
-                                        для точных расчетов и удобства клиента.
-                                    </Text>
-                                </List.Item>
-                                <List.Item>
-                                    <Text
-                                        component="span"
-                                        c="blue"
-                                        fw={700}
-                                        style={{ fontFamily: "Nautilus" }}
-                                        className={classes.list}
-                                    >
-                                        Трековое магнитное освещение
-                                    </Text>
-                                    <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
-                                        {" "}
-                                        все новинки магнитного трекового освещения.
-                                    </Text>
-                                </List.Item>
-                            </List>
-                            <List
-                                spacing="sm"
-                                className={classes.list_left}
-                                icon={
-                                    <ThemeIcon size={20} radius="xl">
-                                        <IconCheck size={12} stroke={1.5} />
-                                    </ThemeIcon>
-                                }
-                            >
-                                <Text
-                                    size="18px"
-                                    c="dark.5"
-                                    fw={700}
-                                    style={{ fontFamily: "Nautilus" }}
-                                    mb="md"
-                                    ta="left"
-                                >
-                                    При заказе:
-                                </Text>{" "}
-                                <List.Item>
-                                    <Text size="lg" c="dark.5" fw={700}>
-                                        <Text component="span" style={{ fontFamily: "Nautilus" }}>
-                                            от{" "}
-                                        </Text>
-                                        <Text
-                                            component="span"
-                                            c="blue"
-                                            fw={700}
-                                            size="21px"
-                                            style={{ fontFamily: "Nautilus" }}
-                                        >
-                                            100
-                                        </Text>{" "}
-                                        <Text component="span" style={{ fontFamily: "Nautilus" }}>
-                                            тыс.
-                                        </Text>
-                                        <Text component="span" fw="600" style={{ fontFamily: "Nautilus" }}>
-                                            {" "}
-                                            люстра в подарок!
-                                        </Text>
-                                    </Text>
-                                </List.Item>
-                                <List.Item>
-                                    <Text size="lg" c="dark.5" fw={700}>
-                                        <Text component="span" style={{ fontFamily: "Nautilus" }}>
-                                            от{" "}
-                                        </Text>
-                                        <Text
-                                            component="span"
-                                            c="blue"
-                                            fw={700}
-                                            size="21px"
-                                            style={{ fontFamily: "Nautilus" }}
-                                        >
-                                            500
-                                        </Text>{" "}
-                                        <Text component="span" style={{ fontFamily: "Nautilus" }}>
-                                            тыс.
-                                        </Text>
-                                        <Text component="span" fw="600" style={{ fontFamily: "Nautilus" }}>
-                                            {" "}
-                                            магнитный трек в подарок!
-                                        </Text>
-                                    </Text>
-                                </List.Item>
-                                <List.Item>
-                                    <Text size="lg" c="dark.5" fw={700}>
-                                        <Text component="span" style={{ fontFamily: "Nautilus" }}>
-                                            от{" "}
-                                        </Text>
-                                        <Text
-                                            component="span"
-                                            c="blue"
-                                            fw={700}
-                                            size="21px"
-                                            style={{ fontFamily: "Nautilus" }}
-                                        >
-                                            800
-                                        </Text>{" "}
-                                        <Text component="span" style={{ fontFamily: "Nautilus" }}>
-                                            тыс.
-                                        </Text>
-                                        <Text component="span" fw="600" style={{ fontFamily: "Nautilus" }}>
-                                            {" "}
-                                            магнитные светильники в подарок!
-                                        </Text>
-                                    </Text>
-                                </List.Item>
-                            </List>
-                        </div>
+                                </Flex>
+                               
+                            </List.Item>
+                        </List>
+                    </Group>
 
-                        <div className={classes.video_left}>
-                            <VimeoPlayerLeft />
-                        </div>
-                    </Flex>
+                    <div className={classes.video_left}>
+                        <VimeoPlayerLeft />
+                    </div>
+                </Flex>
 
-                    <Group justify="right" className={classes.control_wrapper}>
+                {/* <Group justify="right" className={classes.control_wrapper}> */}
+                <Flex gap={20} w="100%">
+                    {matchXs && (
                         <Button
-                            onClick={measurerHandler}
-                            variant="outline"
-                            radius="xl"
-                            size="md"
-                            className={classes.control}
-                        >
-                            Запись на замер
-                        </Button>
-                        <Button
+                            // visibleFrom="sm"
                             onClick={callBackHandler}
-                            variant="filled"
+                            variant="default"
                             radius="xl"
-                            size="md"
-                            className={classes.control}
+                            size="lg"
+                            bg="dark.0"
+                            c="dark.6"
+                            w="100%"
+                            // className={classes.control}
                         >
                             Обратный звонок
                         </Button>
-                    </Group>
+                    )}
 
-                    <div className={classes.video_left_bottom}>
-                        <VimeoPlayerLeftBottom />
-                    </div>
-                </div>
-
-                <div className={classes.image_video_content_container}>
-                    <Overlay
-                        gradient="linear-gradient(90deg, rgba(0, 0, 0, 100%) 0%, rgba(0, 0, 0, 0) 100%)"
-                        opacity={0.85}
-                        className={classes.video_overlay}
-                    />
-
-                    {/* <Image src={image.src} className={classes.image} /> */}
-                    <div className={classes.video}>
-                        <VimeoPlayer />
-                    </div>
-                    <List
-                        mt={30}
-                        spacing="sm"
-                        className={classes.list_right}
-                        icon={
-                            <ThemeIcon size={20} radius="xl">
-                                <IconCheck size={12} stroke={1.5} />
-                            </ThemeIcon>
-                        }
+                    <Button
+                        onClick={measurerHandler}
+                        variant="filled"
+                        radius="xl"
+                        size="lg"
+                        bg="dark.6"
+                        w="100%"
+                        // className={classes.control}
                     >
-                        <Text size="28px" c="white" fw={700} style={{ fontFamily: "Nautilus" }} mb="md" ta="left">
-                            При заказе:
-                        </Text>{" "}
-                        <List.Item>
-                            <Text size="lg" c="white" fw={700}>
-                                <Text component="span" style={{ fontFamily: "Nautilus" }}>
-                                    от{" "}
-                                </Text>
-                                <Text component="span" c="blue" fw={700} size="21px" style={{ fontFamily: "Nautilus" }}>
-                                    100
-                                </Text>{" "}
-                                <Text component="span" style={{ fontFamily: "Nautilus" }}>
-                                    тыс.
-                                </Text>
-                                <Text component="span" fw="600" c="white">
-                                    {" "}
-                                    люстра в подарок!
-                                </Text>
-                            </Text>
-                        </List.Item>
-                        <List.Item>
-                            <Text size="lg" c="white" fw={700}>
-                                <Text component="span" style={{ fontFamily: "Nautilus" }}>
-                                    от{" "}
-                                </Text>
-                                <Text component="span" c="blue" fw={700} size="21px" style={{ fontFamily: "Nautilus" }}>
-                                    500
-                                </Text>{" "}
-                                <Text component="span" style={{ fontFamily: "Nautilus" }}>
-                                    тыс.
-                                </Text>
-                                <Text component="span" fw="600" c="white">
-                                    {" "}
-                                    магнитный трек в подарок!
-                                </Text>
-                            </Text>
-                        </List.Item>
-                        <List.Item>
-                            <Text size="lg" c="white" fw={700}>
-                                <Text component="span" style={{ fontFamily: "Nautilus" }}>
-                                    от{" "}
-                                </Text>
-                                <Text component="span" c="blue" fw={700} size="21px" style={{ fontFamily: "Nautilus" }}>
-                                    800
-                                </Text>{" "}
-                                <Text component="span" style={{ fontFamily: "Nautilus" }}>
-                                    тыс.
-                                </Text>
-                                <Text component="span" fw="600" c="white">
-                                    {" "}
-                                    магнитные светильники в подарок!
-                                </Text>
-                            </Text>
-                        </List.Item>
-                    </List>
+                        Запись на замер
+                    </Button>
+                </Flex>
+
+                {/* </Group> */}
+
+                <div className={classes.video_left_bottom}>
+                    <Flex>
+                        <VimeoPlayerLeftBottom />
+                        <List spacing="sm" className={classes.list_left_bottom} withPadding>
+                            <Text size="18px" c="dark.5" fw={700} mb="md" ta="left">
+                                При заказе:
+                            </Text>{" "}
+                            <List.Item>
+                                <Flex c="dark.5" fw={700} direction="column">
+                                    <Text component="span" size="lg" c="red.6" fw={700}>
+                                        от 100 тыс.{" "}
+                                    </Text>
+                                    <Text component="span" size="lg" fw={700}>
+                                        {" "}
+                                        люстра в подарок!
+                                    </Text>
+                                </Flex>
+                            </List.Item>
+                            <List.Item>
+                                <Flex c="dark.5" fw={700} direction="column">
+                                    <Text component="span" size="lg" c="red.6" fw={700}>
+                                        от 500 тыс.{" "}
+                                    </Text>
+                                    <Text component="span" fw={700}>
+                                        {" "}
+                                        магнитный трек в подарок!
+                                    </Text>
+                                </Flex>
+                            </List.Item>
+                            <List.Item>
+                                <Flex c="dark.5" fw={700} direction="column">
+                                    <Text component="span" size="lg" c="red.6" fw={700}>
+                                        от 800 тыс.{" "}
+                                    </Text>
+                                    <Text component="span" fw={700}>
+                                        {" "}
+                                        магнитные светильники в подарок!
+                                    </Text>
+                                </Flex>
+                               
+                            </List.Item>
+                        </List>
+                    </Flex>
                 </div>
-            </div>
-        </Container>
+            </Group>
+
+            <Group className={classes.image_video_content_container} mr={16}>
+                <Overlay
+                    gradient="linear-gradient(60deg, rgba(0, 0, 0, 100%) 0%, rgba(0, 0, 0, 0) 100%)"
+                    opacity={0.85}
+                    className={classes.video_overlay}
+                />
+                {/* <Overlay className={classes.video_overlay_border} opacity={0.2} /> */}
+
+                <div className={classes.video}>
+                    <VimeoPlayer />
+                </div>
+                <List mt={30} spacing="sm" className={classes.list_right}>
+                    <Text size="28px" mb="md" ta="left" c="white">
+                        При{" "}
+                        <Text component="span" c="red.6" fw={700}>
+                            заказе:
+                        </Text>
+                    </Text>{" "}
+                    <List.Item>
+                        <Text size="lg" c="white" fw={700}>
+                            <Text component="span">от </Text>
+                            <Text component="span" c="red.6" fw={700} size="21px">
+                                100
+                            </Text>{" "}
+                            <Text component="span">тыс.</Text>
+                            <Text component="span" fw="600" c="white">
+                                {" "}
+                                люстра в подарок!
+                            </Text>
+                        </Text>
+                    </List.Item>
+                    <List.Item>
+                        <Text size="lg" c="white" fw={700}>
+                            <Text component="span">от </Text>
+                            <Text component="span" c="red.6" fw={700} size="21px">
+                                500
+                            </Text>{" "}
+                            <Text component="span">тыс.</Text>
+                            <Text component="span" fw="600" c="white">
+                                {" "}
+                                магнитный трек в подарок!
+                            </Text>
+                        </Text>
+                    </List.Item>
+                    <List.Item>
+                        <Text size="lg" c="white" fw={700}>
+                            <Text component="span">от </Text>
+                            <Text component="span" c="red.6" fw={700} size="21px">
+                                800
+                            </Text>{" "}
+                            <Text component="span">тыс.</Text>
+                            <Text component="span" fw="600" c="white">
+                                {" "}
+                                магнитные светильники в подарок!
+                            </Text>
+                        </Text>
+                    </List.Item>
+                </List>
+            </Group>
+        </Flex>
     );
 }

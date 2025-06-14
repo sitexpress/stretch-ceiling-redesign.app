@@ -3,15 +3,13 @@ import { FeaturesGrid } from "@/components/FeatuersGrid/FeaturesGrid";
 import { FeaturesCards } from "@/components/FeaturesCards/FeaturesCards";
 import { FeaturesCardsOurTeam } from "@/components/FeaturesCardsOurTeam/FeaturesCardsOurTeam";
 import { GetInTouch } from "@/components/GetInTouch/GetInTouch";
-// import { HeroMainPage } from "@/components/HeroMainPage/HeroMainPage";
 import MapComponent from "@/components/MapComponent/MapComponent";
-import "../styles/local.fonts/NautilusPompilius.css";
-import "../styles/scroll.css";
 import React, { useState } from "react";
 import ModalComponent from "@/components/ModalComponent/ModalComponent";
 import { PortfolioCarousel } from "@/components/PortfolioCarousel/PortfolioCarousel";
 import { HeroBullets } from "@/components/ReDesign/Hero/HeroBullets";
 import DividerComponent from "@/components/ReDesign/DividerComponent/DividerComponent";
+import "../styles/scroll.css";
 
 export default function HomePage() {
     const [isOpen, setIsOpen] = useState(false);
@@ -34,21 +32,18 @@ export default function HomePage() {
             <DividerComponent />
             <PortfolioCarousel mode="photo" />
             <DividerComponent />
-            {/* <CarouselComponent/> */}
             <PortfolioCarousel mode="ceiling" />
             <DividerComponent />
             <FeaturesCards />
             <DividerComponent />
             <PortfolioCarousel mode="review" />
             <DividerComponent />
-            {/* <VideoComponent mode={"main-page"} /> */}
-            {/* <DividerComponent /> */}
+
             <FeaturesGrid />
             <DividerComponent />
             <FeaturesCardsOurTeam mode={"main-page"} />
             <DividerComponent/>
             <MapComponent mode={"main-page"} />
-            {/* <DividerComponent /> */}
             <GetInTouch />
         </>
     );

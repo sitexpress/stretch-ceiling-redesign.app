@@ -116,14 +116,11 @@ export function ActionToggle({ scrollY, mode }: ActionToggle) {
             className={classes.desktop}
         >
             <ActionIcon
-                // color={scrollY === 0 ? "white" : computedColorScheme === "light" ? "dark" : "light"}    
                 onClick={() => setColorScheme(computedColorScheme === "light" ? "dark" : "light")}
-                // variant={scrollY === 0 ? "outline" : "default"}
                 variant="default"
                 size="lg"
                 aria-label="Toggle color scheme"
                 w="50"
-                // style={{ width: 50 }}
                 style={computedColorScheme === "dark" && scrollY === 0 ?  { color:"white"} : 
                                             computedColorScheme === "dark" && scrollY !== 0 ? {color:"white"} : 
                                             computedColorScheme === "light" && scrollY === 0 ? {color:theme.colors.dark[6]} : {color:theme.colors.dark[6]}
@@ -155,7 +152,7 @@ export function ActionToggle({ scrollY, mode }: ActionToggle) {
             justify="start"
             style={{
                        position: "absolute",
-                          top: "25px",
+                          top: "40px",
                           left: "220px",
                           transition: "top, 0.5s linear",
             }
@@ -163,10 +160,11 @@ export function ActionToggle({ scrollY, mode }: ActionToggle) {
             onClick={() => dispatch(openCalculationsDrawer(!calculationsDrawerIsOpen))}
         >
             <ActionIcon
-                variant={amountSum && +amountSum > 0 ? "filled" :  "light"}
+                variant={amountSum && +amountSum > 0 ? "filled" :  "default"}
                 size="lg"
                 style={{ width: 50 }}
-                color={"green.6"}
+                color={amountSum && +amountSum > 0 ? "green.8" :  "dark.0"}
+                radius="xl"
             >
                 <IconShoppingCart />
                 <span>{amountSum}</span>

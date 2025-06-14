@@ -16,11 +16,11 @@ type ModalType = {
 
 const heading = (modalMode: string) => {
     return modalMode === "callBack" ? (
-        <Badge ml="md" p="sm">
+        <Badge mt="md" ml="md" p="sm" bg="dark.6">
             <Text fw={500}>Обратный звонок</Text>
         </Badge>
     ) : modalMode === "measurer" ? (
-        <Badge ml="md" p="sm">
+        <Badge mt="md" ml="md" p="sm" bg="dark.6">
             <Text fw={500}>Запись на замер</Text>
         </Badge>
     ) : modalMode === "want" ? (
@@ -34,7 +34,7 @@ const heading = (modalMode: string) => {
             Хочу также
         </span>
     ) : (
-        <Text fw={700} ta="center" c="dark.4">
+        <Text fw={700} ta="center" c="dark.4" >
             Менеджер проверит калькуляцию и Вам перезвонит в ближайшее время.
         </Text>
     );

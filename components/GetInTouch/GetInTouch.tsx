@@ -3,6 +3,7 @@ import {
     Badge,
     Button,
     Container,
+    Divider,
     Group,
     Paper,
     SimpleGrid,
@@ -100,64 +101,63 @@ export function GetInTouch() {
     };
 
     return (
-        <Container size="xl" className={classes.container}>
-            <Title
-                order={2}
-                mt="sm"
-                mb="xl"
-                ta="center"
-                className={classes.description}
-                style={{ fontFamily: "Nautilus" }}
-                c="dark.5"
-            >
-                Оставьте заявку на{" "}
-                <Text component="span" inherit c="blue">
-                    бесплатный
-                </Text>{" "}
-                замер
-            </Title>
+        <div className={classes.container}>
+            <Container size="xl">
+                <Title
+                    order={2}
+                    mb="xl"
+                    ta="center"
+                    className={classes.description}
+                    c="dark.5"
+                >
+                    Оставьте заявку на{" "}
+                    <Text component="span" inherit c="red.6">
+                        бесплатный
+                    </Text>{" "}
+                    замер
+                </Title>
 
-            <Paper shadow="md" radius={30}>
-                <div className={classes.wrapper}>
-                    <div
-                        className={classes.contacts}
-                        // style={{ backgroundImage: `url(${"images/hero-carousel/1.jpg"})` }}
-                        style={{ background: "#228be6" }}
-                    >
-                        <Text fz="lg" fw={700} className={classes.title} c="gray.0" ta="center">
-                            Контактная информация
-                        </Text>
+                <Paper shadow="md" radius={30} mt="xxl">
+                    <div className={classes.wrapper}>
+                        <div
+                            className={classes.contacts}
+                            // style={{ backgroundImage: `url(${"images/hero-carousel/1.jpg"})` }}
+                            style={{ background: "#2e2e2e" }}
+                        >
+                            <Text fz="lg" fw={700} className={classes.title} c="gray.0" ta="center">
+                                Контактная информация
+                            </Text>
 
-                        <ContactIconsList mode="get-in-touch" />
-                    </div>
+                            <ContactIconsList mode="get-in-touch" />
+                        </div>
 
-                    <form className={classes.form} onSubmit={form.onSubmit(handleSubmit)}>
-                        <Text fz="lg" fw={700} className={classes.title}>
-                            Заполните все поля:
-                        </Text>
+                        <form className={classes.form} onSubmit={form.onSubmit(handleSubmit)}>
+                            <Text fz="lg" fw={700} className={classes.title}>
+                                Заполните все поля:
+                            </Text>
 
-                        <div className={classes.fields}>
-                            <SimpleGrid cols={{ base: 1, sm: 2 }}>
-                                <TextInput
-                                    label="Ваше имя"
-                                    placeholder="Ваше имя"
-                                    key={form.key("name")}
-                                    {...form.getInputProps("name")}
-                                />
-                                <TextInput
-                                    label="Контактный телефон"
-                                    placeholder="89876543221"
-                                    key={form.key("tel")}
-                                    {...form.getInputProps("tel")}
-                                />
-                                {/* <TextInput
+                            <div className={classes.fields}>
+                                <SimpleGrid cols={{ base: 1, sm: 2 }}>
+                                    <TextInput
+                                        label="Ваше имя"
+                                        placeholder="Ваше имя"
+                                        key={form.key("name")}
+                                        {...form.getInputProps("name")}
+                                    />
+                                    <TextInput
+                                        label="Контактный телефон"
+                                        placeholder="89876543221"
+                                        key={form.key("tel")}
+                                        {...form.getInputProps("tel")}
+                                    />
+                                    {/* <TextInput
                                     label="Ваш email"
                                     placeholder="Ваш email@mail.ru"
                                     key={form.key("email")}
                                     {...form.getInputProps("email")}
                                 /> */}
-                            </SimpleGrid>
-                            {/* 
+                                </SimpleGrid>
+                                {/* 
                             <TextInput
                                 mt="md"
                                 label="Тема письма"
@@ -166,29 +166,31 @@ export function GetInTouch() {
                                 {...form.getInputProps("heading")}
                             /> */}
 
-                            <Textarea
-                                mt="md"
-                                label="Ваше сообщение"
-                                placeholder="Опишите подробнее что Вы хотели бы узнать..."
-                                minRows={3}
-                                key={form.key("message")}
-                                {...form.getInputProps("message")}
-                            />
+                                <Textarea
+                                    mt="md"
+                                    label="Ваше сообщение"
+                                    placeholder="Опишите подробнее что Вы хотели бы узнать..."
+                                    minRows={3}
+                                    key={form.key("message")}
+                                    {...form.getInputProps("message")}
+                                />
 
-                            <Group justify="flex-end" mt="md">
-                                <Button
-                                    id="get-in-touch"
-                                    loading={isLoading}
-                                    type="submit"
-                                    className={classes.control}
-                                >
-                                    Отправить
-                                </Button>
-                            </Group>
-                        </div>
-                    </form>
-                </div>
-            </Paper>
-        </Container>
+                                <Group justify="flex-end" mt="md">
+                                    <Button
+                                        id="get-in-touch"
+                                        loading={isLoading}
+                                        type="submit"
+                                        className={classes.control}
+                                        variant="default"
+                                    >
+                                        Отправить
+                                    </Button>
+                                </Group>
+                            </div>
+                        </form>
+                    </div>
+                </Paper>
+            </Container>
+        </div>
     );
 }

@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "FiraSansExtraCondensedMedium";
+    /* src: url("../local.fonts/NautilusPompilius/NautilusPompilius.woff2") format("woff2"); */
+    src: url("FiraSansExtraCondensedMedium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+}
+

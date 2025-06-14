@@ -85,37 +85,40 @@ export function FeaturesCardsOurTeam({ mode }: FeaturesCardsOurTeamType) {
                     <Text ta="center" c="dimmed" fz="sm">
                         {employee.position}
                     </Text>
-                    {/*</Paper>*/}
                 </Card>
             </Carousel.Slide>
         );
     });
-    // const autoplay = useRef(Autoplay({ delay: 2000 }));
+
     return (
-        <Container size="80rem" className={classes.container}>
-            <Title
-                order={2}
-                mb="xl"
-                ta="center"
-                className={classes.description}
-                style={{ fontFamily: "Nautilus" }}
-                c="dark.5"
-            >
-                Мы рады работать <Text component="span" inherit c="blue">вместе</Text> с Вами
-            </Title>
+        <div className={classes.container}>
+            <Container size="xl">
+                <Title order={2} mb="xl" ta="center" className={classes.description} c="dark.5">
+                    Мы рады работать{" "}
+                    <Text component="span" inherit c="red.6">
+                        вместе
+                    </Text>{" "}
+                    с Вами
+                </Title>
 
-            <Image radius="xl" mt={50} src="images/team/group.webp" alt="komanda_img" className={classes.img} />
+                <Image radius="xl" mt={50} src="images/team/group.webp" alt="komanda_img" className={classes.img} />
 
+                {/* {mode === "main-page" && (
+                <div className={classes.controls}>
+                    <Link href="/about" style={{ margin: "0 auto" }}>
+                        <Button className={classes.control} variant="default" size="lg">
+                            Подробнее
+                        </Button>
+                    </Link>
+                </div>
+            )} */}
+            </Container>
             <SimpleGrid
                 cols={{
                     base: 1,
-                    // xs: 2,
-                    // sm: 3,
-                    // md: 3,
                 }}
                 spacing="xl"
                 mt={50}
-                mb={50}
             >
                 <Carousel
                     withIndicators
@@ -130,15 +133,6 @@ export function FeaturesCardsOurTeam({ mode }: FeaturesCardsOurTeamType) {
                     {features}
                 </Carousel>
             </SimpleGrid>
-            {/* {mode === "main-page" && (
-                <div className={classes.controls}>
-                    <Link href="/about" style={{ margin: "0 auto" }}>
-                        <Button className={classes.control} variant="default" size="lg">
-                            Подробнее
-                        </Button>
-                    </Link>
-                </div>
-            )} */}
-        </Container>
+        </div>
     );
 }

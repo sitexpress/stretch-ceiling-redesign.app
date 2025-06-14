@@ -43,7 +43,7 @@ interface FeatureProps {
 export function Feature({ icon: Icon, title, description }: FeatureProps) {
     return (
         <div>
-            <ThemeIcon variant="light" size={40} radius={40}>
+            <ThemeIcon variant="default" size={40} radius={40}>
                 <Icon
                     style={{
                         width: rem(18),
@@ -66,36 +66,35 @@ export function FeaturesGrid() {
     const features = mockData.map((feature, index) => <Feature {...feature} key={index} />);
 
     return (
-        <Container className={classes.container}>
-            <Title
-                order={2}
-                mt="sm"
-                mb="xl"
-                ta="center"
-                className={classes.description}
-                style={{ fontFamily: "Nautilus" }}
-                c="dark.5"
-            >
-                Качество в каждый дом
-            </Title>
-            <SimpleGrid
-                mt={60}
-                cols={{
-                    base: 1,
-                    sm: 2,
-                    md: 3,
-                }}
-                spacing={{
-                    base: "xl",
-                    md: 50,
-                }}
-                verticalSpacing={{
-                    base: "xl",
-                    md: 50,
-                }}
-            >
-                {features}
-            </SimpleGrid>
-        </Container>
+        <div className={classes.container}>
+            <Container>
+                <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
+                    Качество в{" "}
+                    <Text component="span" inherit c="red.6">
+                        каждый
+                    </Text>{" "}
+                    дом
+                </Title>
+                <SimpleGrid
+                    mt={60}
+                    
+                    cols={{
+                        base: 1,
+                        sm: 2,
+                        md: 3,
+                    }}
+                    spacing={{
+                        base: "xl",
+                        md: 50,
+                    }}
+                    verticalSpacing={{
+                        base: "xl",
+                        md: 50,
+                    }}
+                >
+                    {features}
+                </SimpleGrid>
+            </Container>
+        </div>
     );
 }

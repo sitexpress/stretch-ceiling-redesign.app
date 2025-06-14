@@ -1,16 +1,7 @@
 @font-face {
-    font-family: "Nautilus";
+    font-family: "AdventProRegular";
     /* src: url("../local.fonts/NautilusPompilius/NautilusPompilius.woff2") format("woff2"); */
-    src: url("Nautilus.woff2") format("woff2");
-    font-weight: 700;
+    src: url("AdventProRegular.woff2") format("woff2");
+    font-weight: 300;
     font-style: normal;
 }
-
-
-
-
-
-
-
-
-

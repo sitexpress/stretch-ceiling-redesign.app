@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 // import { catalogRTK } from "@/lib/data/catalogData";
-import { Card, Container,  Image, SimpleGrid, Text, Title } from "@mantine/core";
+import { Card, Container, Image, SimpleGrid, Text, Title } from "@mantine/core";
 import classes from "./FeaturesCards.module.css";
 import { allCatalogData } from "@/lib/data/localDataList";
 
@@ -25,22 +25,18 @@ export function FeaturesCards() {
     ));
 
     return (
-        <Container size="118rem" className={classes.container}>
-            <Title
-                order={2}
-                mt="sm"
-                mb="xl"
-                ta="center"
-                className={classes.description}
-                style={{ fontFamily: "Nautilus" }}
-                c="dark.5"
-            >
-                Комплектующие для дизайнеров и партнеров.
+        <div className={classes.container}>
+            <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
+                Комплектующие для{" "}
+                <Text component="span" inherit c="red.6">
+                    дизайнеров
+                </Text>{" "}
+                и партнеров.
             </Title>
 
-            <SimpleGrid cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5, xl: 5 }} spacing="xl" mt={50}>
+            <SimpleGrid cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5, xl: 5 }} spacing="xl">
                 {features}
             </SimpleGrid>
-        </Container>
+        </div>
     );
 }
