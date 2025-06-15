@@ -10,7 +10,7 @@ export default function Loading() {
                 zIndex: 1001,
                 height: "100%",
                 width: "100%",
-                background: "white",
+            background: "#f1f3f5",
             }}
         >
             <LoadingOverlay

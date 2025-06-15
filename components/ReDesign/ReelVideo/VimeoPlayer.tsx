@@ -7,6 +7,11 @@ import classes from "./VimeoPalyerComponent.module.css";
 import { useMantineTheme } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 
+
+// type VimeoPlayerType = {
+//     mode: "video" | "video_left" | "video_left_bottom"
+// }
+
 export const VimeoPlayer = () => {
     const theme = useMantineTheme();
     const xs = theme.breakpoints.xs;
@@ -30,7 +35,7 @@ export const VimeoPlayer = () => {
     const restartButtonRef = useRef<HTMLButtonElement>(null);
     
     const videoId = 1039409107;
-    const width = 281;
+    const width = 281 ;
     const height = 500;
     const autoplay = true;
     const loop = true;

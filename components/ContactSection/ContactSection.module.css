@@ -6,7 +6,7 @@
 .header {
     height: rem(700px);
     padding-top: var(--mantine-spacing-md);
-    background-image: linear-gradient(135deg, var(--mantine-color-blue-4) 0%, var(--mantine-color-blue-6) 100%);
+    background-image: linear-gradient(135deg, var(--mantine-color-dark-4) 0%, var(--mantine-color-dark-6) 100%);
     background-size: cover;
     display: flex;
     align-items: flex-end;

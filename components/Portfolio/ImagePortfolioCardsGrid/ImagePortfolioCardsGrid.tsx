@@ -181,124 +181,130 @@ export function ImagePortfolioCardsGrid() {
     const autoplay = useRef(Autoplay({ delay: 10000 }));
 
     const cards1 = projectData1.map((article, i) => (
-        <Card key={article.title} p="xs" radius="md" component="a" href="#" className={classes.card}>
-            {isCard1Open && article.id === imgId1 + 1 ? (
+        <>
+            {isCard1Open && article.id === imgId1 + 1 && (
                 <Modal
+                    key={i} 
                     opened={isCard1Open}
                     onClose={() => setIsCard1Open(false)}
-                    title={`${article.title}`}
+                    // title={`${article.title}`}
                     centered={true}
-                    size={"100%"}
+                    radius={40}
                 >
-                    <AspectRatio ratio={1920 / 1080}>
-                        <Image radius="xl" src={article.image} style={{ width: "100%", height: "auto" }} alt={`img`}  />
-                    </AspectRatio>
-                    <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md">
+                    <Image radius="xl" src={article.image} style={{ width: "100%", height: "auto" }} alt={`img`} />
+                    <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md" ta="center">
                         {article.date}
                     </Text>
-                    <Text className={classes.title} mt={5}>
+                    <Text className={classes.title} mt={5} ta="center">
                         {article.title}
                     </Text>
                 </Modal>
-            ) : (
+            )}
+            <Card key={article.title} p="xs" radius={40} component="a" href="#" className={classes.card}>
                 <div
-                    onClick={() => {
+                    onClick={(e) => {
+                        e.preventDefault();
                         setIsCard1Open(true);
                         setImgId1(i);
                     }}
                 >
                     <AspectRatio ratio={1920 / 1080}>
-                        <Image src={article.image} alt={`img`}  radius="xl"/>
+                        <Image src={article.image} alt={`img`} radius="xl" />
                     </AspectRatio>
-                    <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md">
+                    <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md" ta="center">
                         {article.date}
                     </Text>
-                    <Text className={classes.title} mt={5}>
+                    <Text className={classes.title} mt={5} ta="center">
                         {article.title}
                     </Text>
                 </div>
-            )}
-        </Card>
+            </Card>
+        </>
     ));
 
     const cards2 = projectData2.map((article, i) => (
-        <Card key={article.title} p="xs" radius="md" component="a" href="#" className={classes.card}>
-            {isCard2Open && article.id === imgId2 + 1 ? (
+        <>
+            {isCard2Open && article.id === imgId2 + 1 && (
                 <Modal
+                    key={i} 
                     opened={isCard2Open}
                     onClose={() => setIsCard2Open(false)}
-                    title="Full size"
+                    // title={`${article.title}`}
                     centered={true}
-                    size={"100%"}
+                    radius={40}
                 >
-                    <AspectRatio ratio={1920 / 1080}>
-                        <Image radius="xl" src={article.image} style={{ width: "100%", height: "auto" }} alt={`img`} />
-                    </AspectRatio>
-                    <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md">
+                    <Image radius="xl" src={article.image} style={{ width: "100%", height: "auto" }} alt={`img`} />
+                    <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md" ta="center">
                         {article.date}
                     </Text>
-                    <Text className={classes.title} mt={5}>
+                    <Text className={classes.title} mt={5} ta="center">
                         {article.title}
                     </Text>
                 </Modal>
-            ) : (
+            )}
+            <Card key={article.title} p="xs" radius={40} component="a" href="#" className={classes.card}>
                 <div
-                    onClick={() => {
+                    onClick={(e) => {
+                        e.preventDefault();
                         setIsCard2Open(true);
                         setImgId2(i);
                     }}
                 >
                     <AspectRatio ratio={1920 / 1080}>
-                        <Image  radius="xl" src={article.image} alt={`img`} />
+                        <Image radius="xl" src={article.image} alt={`img`} />
                     </AspectRatio>
-                    <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md">
+                    <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md" ta="center">
                         {article.date}
                     </Text>
-                    <Text className={classes.title} mt={5}>
+                    <Text className={classes.title} mt={5} ta="center">
                         {article.title}
                     </Text>
                 </div>
-            )}
-        </Card>
+            </Card>
+        </>
     ));
 
     const cards3 = projectData3.map((article, i) => (
-        <Card key={article.title} p="xs" radius="md" component="a" href="#" className={classes.card}>
+        <Card key={article.image} p="xs" radius={40} component="a" href="#" className={classes.card}>
             {isCard3Open && article.id === imgId3 + 1 ? (
                 <Modal
+                    key={i} 
                     opened={isCard3Open}
                     onClose={() => setIsCard3Open(false)}
                     title="Full size"
                     centered={true}
-                    size={"100%"}
+                    radius={40}
                 >
                     <AspectRatio ratio={1920 / 1080}>
-                        <Image  radius="xl" src={article.image} style={{ width: "100%", height: "auto" }} alt={`img`} />
+                        <Image radius="xl" src={article.image} style={{ width: "100%", height: "auto" }} alt={`img`} />
                     </AspectRatio>
-                    <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md">
+                    <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md" ta="center">
                         {article.date}
                     </Text>
-                    <Text className={classes.title} mt={5}>
+                    <Text className={classes.title} mt={5} ta="center">
                         {article.title}
                     </Text>
                 </Modal>
             ) : (
+                 <Card key={article.title} p="xs" radius={40} component="a" href="#" className={classes.card}>
                 <div
-                    onClick={() => {
+                    onClick={(e) => {
+                        e.preventDefault();
                         setIsCard3Open(true);
                         setImgId3(i);
                     }}
                 >
                     <AspectRatio ratio={1920 / 1080}>
-                        <Image  radius="xl" src={article.image} alt={`img`} />
+                        <Image radius="xl" src={article.image} alt={`img`} />
                     </AspectRatio>
-                    <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md">
+                    <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md" ta="center">
                         {article.date}
                     </Text>
-                    <Text className={classes.title} mt={5}>
+                    <Text className={classes.title} mt={5} ta="center">
                         {article.title}
                     </Text>
                 </div>
+                </Card>
             )}
         </Card>
     ));
@@ -331,59 +337,18 @@ export function ImagePortfolioCardsGrid() {
     });
 
     return (
-        <Container py="xl" mt="xl" mb="xl" fluid>
-            {/* <Group justify="center">
-                <Badge variant="filled" size="lg">
-                    Портфолио
-                </Badge>
-            </Group>
-            <Title order={3} mt="sm" ta="center">
-                Примеры выполненных проектов
-            </Title>
-
-            <Container size={560} p={0}>
-                <Text c="dimmed" ta="center" mt="md">
-                    Больше виде в нашем{" "}
-                    <Anchor href="https://t.me/+nKdXzCW6qmE3NjUy" target="_blank">
-                        телеграм канале
-                    </Anchor>
-                </Text>
-            </Container>
-            <Divider my="xs" size="xs" mt={100} labelPosition="center"></Divider>
-            <Container size={560} pt="xl" pb="xl">
-            <Text ta="center" mt="xl" size="xl" fw="bold" className={classes.description}>
-                    Видео
-                </Text>
-            </Container>
-            
-            <Carousel
-                withIndicators
-                height={"auto"}
-                slideSize={{ base: "100%", xs: "100%", sm: "50%", md: "33.33%" }}
-                slideGap={{ base: 0, sm: "md" }}
-                loop={true}
-                align="start"
-                // plugins={[autoplay.current]}
-                draggable
-                controlSize={42}
-            >
-                {videoCarouselMapped}
-            </Carousel> */}
-
-            {/* </SimpleGrid> */}
-            {/* <Divider my="xs" size="xs" mt={100} labelPosition="center"></Divider> */}
-            <Container size={560} >
+        <Container py="xl" fluid bg="gray.1">
+            {/* <Container size={560} >
                 <Title
                     order={2}
                     ta="center"
                     className={classes.description}
-                    style={{ fontFamily: "Nautilus" }}
                     c="dark.5"
                 >
                     Фото
                 </Title>
-            </Container>
-            <Container size={560} pt="sm" pb="xl">
+            </Container> */}
+            <Container size={560} pb="xl">
                 <Text c="dimmed" fs="italic" ta="center" mt="xl" td="underline">
                     Пример проекта №1
                 </Text>

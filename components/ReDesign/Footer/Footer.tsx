@@ -90,6 +90,7 @@ export function Footer() {
                             ? "_blank"
                             : "_self"
                     }
+                     style={{textDecoration: "none"}} c="white"
                 >
                     <Text className={classes.link} c="dimmed">
                         {link.label}

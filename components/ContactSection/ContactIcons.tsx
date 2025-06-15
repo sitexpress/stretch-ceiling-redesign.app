@@ -19,7 +19,7 @@ interface ContactIconProps extends Omit<React.ComponentPropsWithoutRef<"div">, "
 function ContactIcon({ icon: Icon, title, description, ...others }: ContactIconProps) {
     return (
         <div className={classes.wrapper} {...others}>
-            <ThemeIcon size={40} radius="md" className={classes.icon}>
+            <ThemeIcon size={40} radius="md" className={classes.icon} bg="dark.6">
                 <Icon style={{ width: rem(24), height: rem(24) }} />
             </ThemeIcon>
 
@@ -45,6 +45,6 @@ const MOCKDATA = [
 ];
 
 export function ContactIconsList() {
-    const items = MOCKDATA.map((item, index) => <ContactIcon key={index} {...item} />);
-    return <Stack>{items}</Stack>;
+    const items = MOCKDATA.map((item, index) => <ContactIcon  key={index} {...item} />);
+    return <Stack >{items}</Stack>;
 }

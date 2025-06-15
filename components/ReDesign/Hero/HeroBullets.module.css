@@ -86,7 +86,7 @@
 }
 
 .control {
-            /* width: 100%; */
+    /* width: 100%; */
     /* z-index: 1000;
     border: 1px solid grey; */
     /* @media (max-width: $mantine-breakpoint-lg) {
@@ -109,7 +109,7 @@
     position: relative;
     width: 2000px;
     display: flex;
-    justify-content:;
+    /* justify-content: space-between; */
     align-items: end;
     gap: 10px;
     background-image: url("../../../public/images/portfolio-page/interior-6.webp"); /* Путь к изображению */
@@ -124,6 +124,8 @@
     @media (max-width: $mantine-breakpoint-xl) {
         width: 1000px;
         flex-direction: column;
+        align-items: start;
+        gap: 5px;
     }
     @media (max-width: $mantine-breakpoint-md) {
         display: none;
@@ -222,8 +224,7 @@
         font-size: 18px;
     }
     @media (max-width: $mantine-breakpoint-xs) {
-           display: none;
-
+        display: none;
     }
 }
 

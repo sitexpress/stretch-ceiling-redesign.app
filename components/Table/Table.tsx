@@ -98,16 +98,12 @@ export default function UsersTable() {
 
     return (
         <div>
-            {/* <Title order={2} className={classes.title} ta="center" pt="sm" mb="sm">
-                Команда:
-            </Title> */}
-            <Group justify="center" pl="20px" pt="sm" mb="sm">
-                {/* <Title order={2} className={classes.title} ta="center" pt="sm" mb="sm"> */}
+            <Group justify="center" pl="20px" pt="sm"  bg="gray.1">
                 <Title order={3} mt="sm" ta="center">
-                    Команда:
+                    Коллектив:
                 </Title>
             </Group>
-            <Table.ScrollContainer minWidth={800} pl="xl" pr="xl">
+            <Table.ScrollContainer minWidth={800} pl="xl" pr="xl"  bg="gray.1"> 
                 <Table verticalSpacing="md" horizontalSpacing="xl">
                     <Table.Thead>
                         <Table.Tr>

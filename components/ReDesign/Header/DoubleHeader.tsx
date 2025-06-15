@@ -47,6 +47,11 @@ export function DoubleHeader() {
     const [opened, { toggle }] = useDisclosure(false);
     const [active, setActive] = useState("");
     const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
+    useEffect(() => {
+        const active = localStorage.getItem("_ym101251572_il")
+        if (active !== null)  setActive(JSON.parse(active));
+        
+    })
 
     const mainItems = mainLinks.map((item, index) => (
         <Link

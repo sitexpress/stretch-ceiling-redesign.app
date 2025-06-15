@@ -12,7 +12,6 @@ export default function Contacts() {
             <ContactSection />
             <DividerComponent />
             <MapComponent mode={"contact-page"} />
-            <DividerComponent />
             <GetInTouch />
         </>
     );

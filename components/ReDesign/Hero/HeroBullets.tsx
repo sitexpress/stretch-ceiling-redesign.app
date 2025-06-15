@@ -70,8 +70,8 @@ export function HeroBullets() {
                     </Text>
                 </div>
 
-                <Flex direction="row" justify="space-between">
-                    <Group mt={10}>
+                <Flex direction="row" justify="space-between" gap={10}>
+                    <Flex mt={10} direction="column" gap={50}>
                         <List spacing="sm">
                             <List.Item>
                                 <Text component="span" fw={700} className={classes.list}>
@@ -128,9 +128,9 @@ export function HeroBullets() {
                                     <Text component="span" size="lg" c="red.6" fw={700}>
                                         от 100 тыс.{" "}
                                     </Text>
-                                    <Text component="span" size="lg" fw={700}>
+                                    <Text component="span"  fw={700}>
                                         {" "}
-                                        люстра в подарок!
+                                        скидка на освещение 15%!
                                     </Text>
                                 </Flex>
                             </List.Item>
@@ -141,7 +141,7 @@ export function HeroBullets() {
                                     </Text>
                                     <Text component="span" fw={700}>
                                         {" "}
-                                        магнитный трек в подарок!
+                                        скидка на освещение 20%!
                                     </Text>
                                 </Flex>
                             </List.Item>
@@ -152,16 +152,16 @@ export function HeroBullets() {
                                     </Text>
                                     <Text component="span" fw={700}>
                                         {" "}
-                                        магнитные светильники в подарок!
+                                        скидка на освещение 25%!
                                     </Text>
                                 </Flex>
-                               
                             </List.Item>
                         </List>
-                    </Group>
+                    </Flex>
 
                     <div className={classes.video_left}>
                         <VimeoPlayerLeft />
+                        {/* <VimeoPlayer  mode="video_left"  /> */}
                     </div>
                 </Flex>
 
@@ -196,10 +196,9 @@ export function HeroBullets() {
                     </Button>
                 </Flex>
 
-                {/* </Group> */}
-
                 <div className={classes.video_left_bottom}>
                     <Flex>
+                        {/* <VimeoPlayer mode="video_left_bottom" /> */}
                         <VimeoPlayerLeftBottom />
                         <List spacing="sm" className={classes.list_left_bottom} withPadding>
                             <Text size="18px" c="dark.5" fw={700} mb="md" ta="left">
@@ -210,9 +209,9 @@ export function HeroBullets() {
                                     <Text component="span" size="lg" c="red.6" fw={700}>
                                         от 100 тыс.{" "}
                                     </Text>
-                                    <Text component="span" size="lg" fw={700}>
+                                    <Text component="span" fw={700}>
                                         {" "}
-                                        люстра в подарок!
+                                        скидка на освещение 15%!
                                     </Text>
                                 </Flex>
                             </List.Item>
@@ -223,7 +222,7 @@ export function HeroBullets() {
                                     </Text>
                                     <Text component="span" fw={700}>
                                         {" "}
-                                        магнитный трек в подарок!
+                                        скидка на освещение 20%!
                                     </Text>
                                 </Flex>
                             </List.Item>
@@ -234,10 +233,9 @@ export function HeroBullets() {
                                     </Text>
                                     <Text component="span" fw={700}>
                                         {" "}
-                                        магнитные светильники в подарок!
+                                        скидка на освещение 25%!
                                     </Text>
                                 </Flex>
-                               
                             </List.Item>
                         </List>
                     </Flex>
@@ -254,6 +252,7 @@ export function HeroBullets() {
 
                 <div className={classes.video}>
                     <VimeoPlayer />
+                    {/* <VimeoPlayer mode="video" /> */}
                 </div>
                 <List mt={30} spacing="sm" className={classes.list_right}>
                     <Text size="28px" mb="md" ta="left" c="white">

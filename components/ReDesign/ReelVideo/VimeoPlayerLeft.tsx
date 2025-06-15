@@ -29,7 +29,7 @@ export const VimeoPlayerLeft = () => {
     const muteButtonRef = useRef<HTMLButtonElement>(null);
     const restartButtonRef = useRef<HTMLButtonElement>(null);
     
-    const videoId = 1039409107;
+    const videoId = 1039409107;    
     const width = 281;
     const height = 500;
     const autoplay = true;

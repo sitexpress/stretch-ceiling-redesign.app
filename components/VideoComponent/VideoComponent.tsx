@@ -73,20 +73,16 @@ export default function VideoComponent({ mode }: VideoComponentType) {
             ></iframe>
         </>
     ) : (
-        <Container className={classes.container}>
-            <Title
-                order={2}
-                mt="sm"
-                mb="xl"
-                ta="center"
-                className={classes.description}
-                style={{ fontFamily: "Nautilus" }}
-                c="dark.5"
-            >
-                О нашем подходе
+        <Container size="xxl" bg="gray.1">
+            <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
+                О{" "}
+                <Text component="span" inherit c="red.6">
+                    нашем
+                </Text>{" "}
+                подходе
             </Title>
 
-            <AspectRatio ratio={1080 / 720} maw={1200} mx="auto" style={{ borderRadius: "40px" }}>
+            <AspectRatio ratio={1080 / 720} maw={1200} mx="auto" >
                 <iframe
                     src="https://player.vimeo.com/video/1011573790?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
                     title="Строй Family"
@@ -94,7 +90,6 @@ export default function VideoComponent({ mode }: VideoComponentType) {
                     height="auto"
                     frameBorder="0"
                     allow="autoplay; fullscreen"
-                    style={{ borderRadius: "40px" }}
                 />
             </AspectRatio>
             {mode === "main-page" && (

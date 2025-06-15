@@ -8,6 +8,7 @@ export default function Loading() {
                 zIndex: 1001,
                 height: "100%",
                 width: "100%",
+                       background: "#f1f3f5",
             }}
         >
             <LoadingOverlay visible={true} zIndex={1000} overlayProps={{ radius: "sm", blur: 100 }} />

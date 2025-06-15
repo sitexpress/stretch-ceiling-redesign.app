@@ -23,6 +23,7 @@ export default function FaqWithHeader() {
             style={{ backgroundImage: `url(${category.image})` }}
             className={classes.categoryCard}
             key={category.label}
+          
         >
             <Overlay color="#000" opacity={0.6} zIndex={1} />
             <Text size="xl" ta="center" fw={700} className={classes.categoryLabel}>
@@ -32,9 +33,9 @@ export default function FaqWithHeader() {
     ));
 
     return (
-        <Container className={classes.wrapper} size="lg" pt="80px">
+        <Container className={classes.wrapper} size="lg"  bg="gray.1">
             <Group justify="center">
-                <Badge variant="filled" size="lg" mb="50px">
+                <Badge variant="filled" size="lg" mb="50px" bg="dark.6">
                     Всегда на связи
                 </Badge>
             </Group>
@@ -49,7 +50,7 @@ export default function FaqWithHeader() {
 
                 <div className={classes.contact}>
                     <Text size="xl" fw={500} className={classes.contactTitle}>
-                        Contact us
+                        Контакты:
                     </Text>
 
                     <ContactIconsList />

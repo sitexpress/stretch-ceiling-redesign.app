@@ -20,20 +20,15 @@ export function HeroImageBackground({ mode }: HeroImageBackgroundType) {
         setIsOpen(true);
     };
 
-
     return mode === "portfolio" ? (
-        <Container size="xxl" pt={116}>
+        <Container size="xxl" pt={116} bg="gray.1">
             <div className={classes.portfolio_content_container}>
                 <div className={classes.wrapper_portfolio}>
                     {isOpen && <ModalComponent isOpen={isOpen} modalMode={"measurer"} setIsOpen={setIsOpen} />}
                     {/* <Overlay color="#000" opacity={0.65} zIndex={1} /> */}
 
                     <div className={classes.inner}>
-                        <Title
-                            order={2}
-                            className={classes.title}
-                      
-                        >
+                        <Title order={2} className={classes.title}>
                             Портфолио
                         </Title>
 
@@ -88,9 +83,9 @@ export function HeroImageBackground({ mode }: HeroImageBackgroundType) {
             </div>
         </Container>
     ) : mode === "about" ? (
-        <Container size="xxl" pt={100}>
+        <Container size="xxl" pt={116} bg="gray.1">
             <div className={classes.about_content_container}>
-                <Overlay color="#000" opacity={0.65} zIndex={1} radius={30}/>
+                <Overlay color="#000" opacity={0.65} zIndex={1} radius={30} />
                 {/* {opened && <ModalComponent opened={opened} modalMode={modalMode} close={close} />} */}
                 {isOpen && <ModalComponent isOpen={isOpen} modalMode={"measurer"} setIsOpen={setIsOpen} />}
                 <div className={classes.inner}>
@@ -98,7 +93,6 @@ export function HeroImageBackground({ mode }: HeroImageBackgroundType) {
                         order={2}
                         className={classes.title}
                         style={{
-                            fontFamily: "Nautilus",
                             zIndex: 2,
                         }}
                     >
@@ -109,7 +103,6 @@ export function HeroImageBackground({ mode }: HeroImageBackgroundType) {
                         <Title
                             order={2}
                             style={{
-                                fontFamily: "Nautilus",
                                 zIndex: 2,
                             }}
                             className={classes.description}
@@ -124,12 +117,19 @@ export function HeroImageBackground({ mode }: HeroImageBackgroundType) {
                             style={{ textDecoration: "none", borderRadius: "40px" }}
                             href="/portfolio"
                         >
-                            <Button className={classes.control} size="lg" variant="transparent" >
+                            <Button className={classes.control} size="lg" variant="transparent">
                                 Посмотреть портфолио
                             </Button>
                         </Link>
-                        <Button className={classes.control} size="lg" onClick={measurerHandler} variant="filled" radius="xl">
-                            <IconRulerMeasure size={22} style={{ paddingRight: "5px",borderRadius: "40px" }} />
+                        <Button
+                            className={classes.control}
+                            size="lg"
+                            onClick={measurerHandler}
+                            variant="filled"
+                            radius="xl"
+                            bg="dark.6"
+                        >
+                            <IconRulerMeasure size={22} style={{ paddingRight: "5px", borderRadius: "40px" }} />
                             Записаться на замер
                         </Button>
                     </div>
@@ -150,9 +150,9 @@ export function HeroImageBackground({ mode }: HeroImageBackgroundType) {
             </div>
         </Container>
     ) : mode === "contacts" ? (
-                <Container size="xxl" pt={100}>
+        <Container size="xxl" pt={116} bg="gray.1">
             <div className={classes.contact_content_container}>
-                <Overlay color="#000" opacity={0.65} zIndex={1} radius={30}/>
+                <Overlay color="#000" opacity={0.65} zIndex={1} radius={30} />
                 {/* {opened && <ModalComponent opened={opened} modalMode={modalMode} close={close} />} */}
                 {isOpen && <ModalComponent isOpen={isOpen} modalMode={"measurer"} setIsOpen={setIsOpen} />}
                 <div className={classes.inner}>
@@ -160,18 +160,16 @@ export function HeroImageBackground({ mode }: HeroImageBackgroundType) {
                         order={2}
                         className={classes.title}
                         style={{
-                            fontFamily: "Nautilus",
                             zIndex: 2,
                         }}
                     >
                         Контакты
                     </Title>
 
-                    <Container size={640}>
+                    {/* <Container size={640}>
                         <Title
                             order={2}
                             style={{
-                                fontFamily: "Nautilus",
                                 zIndex: 2,
                             }}
                             className={classes.description}
@@ -179,19 +177,27 @@ export function HeroImageBackground({ mode }: HeroImageBackgroundType) {
                         >
                             Как нас найти и как с нами связаться:
                         </Title>
-                    </Container>
+                    </Container> */}
                     <div className={classes.controls}>
                         <Link
                             className={cx(classes.my_control, classes.my_secondaryControl)}
                             style={{ textDecoration: "none", borderRadius: "40px" }}
                             href="/portfolio"
                         >
-                            <Button className={classes.control} size="lg" variant="transparent" >
+                            <Button className={classes.control} size="lg" variant="transparent">
                                 Посмотреть портфолио
                             </Button>
                         </Link>
-                        <Button className={classes.control} size="lg" onClick={measurerHandler} variant="filled" radius="xl">
-                            <IconRulerMeasure size={22} style={{ paddingRight: "5px",borderRadius: "40px" }} />
+                        <Button
+                            className={classes.control}
+                            size="lg"
+                            onClick={measurerHandler}
+                            variant="filled"
+                            radius="xl"
+                            bg="dark.8"
+                            
+                        >
+                            <IconRulerMeasure size={22} style={{ paddingRight: "5px", borderRadius: "40px" }} />
                             Записаться на замер
                         </Button>
                     </div>

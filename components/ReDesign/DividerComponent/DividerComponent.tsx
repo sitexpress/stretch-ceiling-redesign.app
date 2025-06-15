@@ -7,7 +7,7 @@ export default function DividerComponent() {
                 position: "relative",
                 height: "60px",
                 marginTop: 0,
-                marginBottom: 60,
+                marginBottom: "60px",
             }}
         >
             <div
@@ -39,7 +39,7 @@ export default function DividerComponent() {
                     top: 60,
                     borderRadius: "30px 30px 0px 0px",
                     height: "60px",
-                    // marginBottom: "50px",
+                    marginBottom: "50px",
                     background: "#f1f3f5",
                     zIndex: 15,
                     width: "100%",

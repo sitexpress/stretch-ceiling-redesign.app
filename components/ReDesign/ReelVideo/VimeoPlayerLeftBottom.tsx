@@ -178,7 +178,7 @@ export const VimeoPlayerLeftBottom = () => {
         } catch (error) {
             console.error("Play/pause error:", error);
         }
-    };
+    };     
 
     const handleSeek = async (seconds: number) => {
         if (!playerInstanceRefLeftBottom.current) return;
