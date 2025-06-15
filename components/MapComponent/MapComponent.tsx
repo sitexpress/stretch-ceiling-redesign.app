@@ -8,7 +8,7 @@ type MapComponentType = {
 
 export default function MapComponent({ mode }: MapComponentType) {
     return mode === "contact-page" ? (
-        <Container size="xl" className={classes.container}>
+        <Container size="100%" className={classes.container} bg="gray.1">
             <Title
                 order={2}
                 mb="xl"
@@ -23,7 +23,7 @@ export default function MapComponent({ mode }: MapComponentType) {
                 <iframe
                     src="https://yandex.ru/map-widget/v1/?um=constructor%3Abb2d24f17613f855089c98d6f62d05f8dc80528a84c93f87634db02d7e61282a&amp;source=constructor"
                     title="Яндекс карты"
-                    style={{ border: 0, maxWidth: "100%", height: "auto", borderRadius: "40px" }}
+                    style={{ border: 0, maxWidth: "90%", height: "auto", borderRadius: "40px" }}
                 />
             </AspectRatio>
         </Container>

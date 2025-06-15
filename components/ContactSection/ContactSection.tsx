@@ -33,7 +33,7 @@ export default function FaqWithHeader() {
     ));
 
     return (
-        <Container className={classes.wrapper} size="lg"  bg="gray.1">
+        <Container className={classes.wrapper} size="100%" bg="gray.1">
             <Group justify="center">
                 <Badge variant="filled" size="lg" mb="50px" bg="dark.6">
                     Всегда на связи

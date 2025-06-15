@@ -65,7 +65,7 @@ export function GetInTouch() {
             // const line8 = `Тема письма": ${values.heading}`;
             const line7 = `Контактный номер телефона": ${values.tel}`;
             const line8 = `Сообщение: ${values.message}`;
-
+            console.log("222")
             await sendMessagePismo(line1, line2, line3, line4, line5, line6, line7, line8);
 
             notifications.show({
