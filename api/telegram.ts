@@ -50,7 +50,7 @@ export const sendMessagePismo = async (
     line5: string,
     line6: string,
     line7: string,
-    line8: string,
+    line8: string
 ): Promise<void> => {
     const url = `${baseUrl}sendMessage?chat_id=${process.env.NEXT_PUBLIC_CHANEL_PISMO}&text=%0A${line1}%0A${line2}%0A${line3}%0A${line4}%0A${line5}%0A${line6}%0A${line7}%0A${line8}`;
     const response = await fetch(url);
@@ -128,6 +128,30 @@ export const sendMessageCalculations = async (
     // }
 };
 
+export const sendMessageOffer = async (
+    line1: string,
+    line2: string,
+    line3: string,
+    line4: string,
+    line5: string,
+    line6: string,
+    line7: string,
+    line8: string,
+    line9: string,
+    line10: string | number,
+    line11: string | number,
+    line12: string,
+    line13: string
+): Promise<void> => {
+   const url = `${baseUrl}sendMessage?chat_id=${process.env.NEXT_PUBLIC_CHANEL_CALCULATIONS}&text=%0A${line1}%0A${line2}%0A${line3}%0A${line4}%0A${line5}%0A${line6}%0A${line7}%0A${line8}%0A${line9}%0A${line10}%0A${line11}%0A${line12}%0A${line13}`;
+    const response = await fetch(url);
+
+    if (!response.ok) {
+        const error = await response.json();
+
+        await Promise.reject(error.description || "Что-то пошло не так ...");
+    }
+};
 
 export const sendMessageWant = async (
     line1: string,

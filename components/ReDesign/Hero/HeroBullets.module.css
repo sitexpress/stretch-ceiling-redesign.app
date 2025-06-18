@@ -56,16 +56,16 @@
 }
 
 .title {
-    font-size: 32px;
+    font-size: 52px;
     line-height: 0.8;
 
     @media (max-width: $mantine-breakpoint-md) {
-        font-size: 32px;
+        font-size: 42px;
         text-align: left;
     }
 
     @media (max-width: $mantine-breakpoint-xs) {
-        font-size: 32px;
+        font-size: 42px;
     }
 }
 
@@ -129,6 +129,7 @@
     }
     @media (max-width: $mantine-breakpoint-md) {
         display: none;
+
     }
 }
 

@@ -1,18 +1,5 @@
 "use client";
-import {
-    Badge,
-    Button,
-    Container,
-    Divider,
-    Group,
-    Paper,
-    SimpleGrid,
-    Text,
-    TextInput,
-    Textarea,
-    Title,
-    rem,
-} from "@mantine/core";
+import { Button, Container, Group, Paper, SimpleGrid, Text, TextInput, Textarea, Title, rem } from "@mantine/core";
 import { ContactIconsList } from "./ContactIcons";
 import classes from "./GetInTouch.module.css";
 import { useState } from "react";
@@ -65,34 +52,52 @@ export function GetInTouch() {
             // const line8 = `Тема письма": ${values.heading}`;
             const line7 = `Контактный номер телефона": ${values.tel}`;
             const line8 = `Сообщение: ${values.message}`;
-            console.log("222")
             await sendMessagePismo(line1, line2, line3, line4, line5, line6, line7, line8);
 
             notifications.show({
                 position: "top-center",
-                title: "Письмо отправлено",
-                message: `Менеджер ответит Вам в течении дня ! 🌟`,
+                title: (
+                    <Text component="span" c="gray.0" size="xl">
+                        Письмо отправлено 🌟
+                    </Text>
+                ),
+                message: (
+                    <Text component="span" c="gray.0">
+                        Менеджер ответит Вам в течении дня !{" "}
+                    </Text>
+                ),
                 withCloseButton: true,
                 autoClose: 5000,
-                color: "green",
+                color: "green.6",
+                bg: "dark.6",
                 icon: checkIcon,
                 loading: isLoading,
-                radius: "lg",
-                withBorder: true,
+                radius: "xl",
+                style: { zIndex: "1500", border: "none", boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)" },
+                mt: 100,
             });
         } catch (error) {
             // form.setFieldError("email", error as string);
             notifications.show({
                 position: "top-center",
-                title: "Что-то пошло не так.",
-                message: `Попробуйте проверить Ваше интернет соединение и отправить писмо снова через 1-2 минуты! 🌟`,
+                title: (
+                    <Text component="span" c="gray.0" size="xl">
+                        Что-то пошло не так
+                    </Text>
+                ),
+                message: (
+                    <Text component="span" c="gray.0">
+                        Попробуйте проверить Ваше интернет соединение и отправить писмо снова через 1-2 минуты!
+                    </Text>
+                ),
                 withCloseButton: true,
                 autoClose: 5000,
-                color: "red",
+                color: "red.6",
+                bg: "dark.6",
                 icon: xIcon,
                 loading: isLoading,
-                radius: "lg",
-                withBorder: true,
+                radius: "xl",
+                style: { zIndex: "1500", border: "none", boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)" },
             });
         } finally {
             setIsLoading(false);
@@ -103,13 +108,7 @@ export function GetInTouch() {
     return (
         <div className={classes.container}>
             <Container size="xl">
-                <Title
-                    order={2}
-                    mb="xl"
-                    ta="center"
-                    className={classes.description}
-                    c="dark.5"
-                >
+                <Title order={2} mb="xl" ta="center" className={classes.description} c="dark.5">
                     Оставьте заявку на{" "}
                     <Text component="span" inherit c="red.6">
                         бесплатный

@@ -7,8 +7,10 @@ import { VimeoPlayerLeft } from "../ReelVideo/VimeoPlayerLeft";
 import { useState } from "react";
 import ModalComponent from "@/components/ModalComponent/ModalComponent";
 import { useMediaQuery } from "@mantine/hooks";
-
-export function HeroBullets() {
+type ScrollToSectionType = {
+    scrollToSection: () => void;
+};
+export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
     const [modalMode, setModalMode] = useState<"callBack" | "measurer" | "">("");
     const [isOpen, setIsOpen] = useState(false);
 
@@ -18,11 +20,11 @@ export function HeroBullets() {
         setIsOpen(true);
     };
 
-    const callBackHandler = () => {
-        setModalMode("callBack");
-        // open();
-        setIsOpen(true);
-    };
+    // const callBackHandler = () => {
+    //     setModalMode("callBack");
+    //     // open();
+    //     setIsOpen(true);
+    // };
 
     const theme = useMantineTheme();
     const xs = theme.breakpoints.xs;
@@ -35,6 +37,7 @@ export function HeroBullets() {
     const matchSm = useMediaQuery(`(min-width: ${sm})`);
     const matchMd = useMediaQuery(`(min-width: ${md})`);
     const matchLg = useMediaQuery(`(min-width: ${lg})`);
+
     const matchXl = useMediaQuery(`(min-width: ${xl})`);
 
     return (
@@ -71,7 +74,7 @@ export function HeroBullets() {
                 </div>
 
                 <Flex direction="row" justify="space-between" gap={10}>
-                    <Flex mt={10} direction="column" gap={50}>
+                    <Flex direction="column" gap={50}>
                         <List spacing="sm">
                             <List.Item>
                                 <Text component="span" fw={700} className={classes.list}>
@@ -128,7 +131,7 @@ export function HeroBullets() {
                                     <Text component="span" size="lg" c="red.6" fw={700}>
                                         от 100 тыс.{" "}
                                     </Text>
-                                    <Text component="span"  fw={700}>
+                                    <Text component="span" fw={700}>
                                         {" "}
                                         скидка на освещение 15%!
                                     </Text>
@@ -169,17 +172,19 @@ export function HeroBullets() {
                 <Flex gap={20} w="100%">
                     {matchXs && (
                         <Button
+                            // id="review"
                             // visibleFrom="sm"
-                            onClick={callBackHandler}
+                            onClick={scrollToSection}
+                            // onClick={callBackHandler}
                             variant="default"
                             radius="xl"
                             size="lg"
-                            bg="dark.0"
-                            c="dark.6"
+                            bg="red.6"
+                            c="gray.0"
                             w="100%"
                             // className={classes.control}
                         >
-                            Обратный звонок
+                            Рассчитать стоймость
                         </Button>
                     )}
 

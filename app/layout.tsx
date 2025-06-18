@@ -26,6 +26,7 @@ import "../styles/local.fonts/AdventProBold.css";
 import "../styles/local.fonts/TildaSansRegular.css";
 import "../styles/local.fonts/TildaSansMedium.css";
 import "../styles/local.fonts/TildaSansSemibold.css";
+import ReviewsWidget from "./portfolio/ReviewWidget";
 
 export const metadata: Metadata = {
     title: "Натяжные Потолки по всему Сочи от 290 р/м2 c гарантией на полотно до 10 лет",
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                             {children}
                             <Footer/>
                             {/* </ModalsProvider> */}
+                            
                     </MantineProvider>
                 </StoreProvider>
             </body>
