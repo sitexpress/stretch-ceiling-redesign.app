@@ -96,15 +96,15 @@ export function Offer() {
                             mr={10}
                             ta="center"
                         >
-                            <Combobox.Option value="First" style={{ borderRadius: "20px" }} p="0">
+                            <Combobox.Option value="Гостинная" style={{ borderRadius: "20px" }} p="0">
                                 <Container
                                     p="0"
                                     m="0"
-                                    bg={value0 === "First" ? "dark.9" : "dark.6"}
+                                    bg={value0 === "Гостинная" ? "dark.9" : "dark.6"}
                                     style={{ borderRadius: "20px" }}
                                 >
                                     <SimpleGrid cols={{ base: 1 }} p="0">
-                                        {value0 === "First" && <IconCircleCheck className={classes.icon} />}
+                                        {value0 === "Гостинная" && <IconCircleCheck className={classes.icon} />}
                                         <Image
                                             radius="md"
                                             src="/images/offer/step-0/gostinaya.jpg"
@@ -137,15 +137,15 @@ export function Offer() {
                             mr={10}
                             ta="center"
                         >
-                            <Combobox.Option value="Second" style={{ borderRadius: "20px" }} p="0">
+                            <Combobox.Option value="Кухня" style={{ borderRadius: "20px" }} p="0">
                                 <Container
                                     p="0"
                                     m="0"
-                                    bg={value0 === "Second" ? "dark.9" : "dark.6"}
+                                    bg={value0 === "Кухня" ? "dark.9" : "dark.6"}
                                     style={{ borderRadius: "20px" }}
                                 >
                                     <SimpleGrid cols={{ base: 1 }} p="0">
-                                        {value0 === "Second" && <IconCircleCheck className={classes.icon} />}
+                                        {value0 === "Кухня" && <IconCircleCheck className={classes.icon} />}
                                         <Image
                                             radius="md"
                                             src="/images/offer/step-0/kuhnya.jpg"
@@ -179,15 +179,15 @@ export function Offer() {
                             mr={10}
                             ta="center"
                         >
-                            <Combobox.Option value="Third" style={{ borderRadius: "20px" }} p="0">
+                            <Combobox.Option value="Ванная" style={{ borderRadius: "20px" }} p="0">
                                 <Container
                                     p="0"
                                     m="0"
-                                    bg={value0 === "Third" ? "dark.9" : "dark.6"}
+                                    bg={value0 === "Ванная" ? "dark.9" : "dark.6"}
                                     style={{ borderRadius: "20px" }}
                                 >
                                     <SimpleGrid cols={{ base: 1 }} p="0" m="0">
-                                        {value0 === "Third" && <IconCircleCheck className={classes.icon} />}
+                                        {value0 === "Ванная" && <IconCircleCheck className={classes.icon} />}
                                         <Image
                                             radius="md"
                                             src="/images/offer/step-0/vannaya.jpg"
@@ -221,15 +221,15 @@ export function Offer() {
                             mr={10}
                             ta="center"
                         >
-                            <Combobox.Option value="Fourth" style={{ borderRadius: "20px" }} p="0">
+                            <Combobox.Option value="Вся квартира" style={{ borderRadius: "20px" }} p="0">
                                 <Container
                                     p="0"
                                     m="0"
-                                    bg={value0 === "Fourth" ? "dark.9" : "dark.6"}
+                                    bg={value0 === "Вся квартира" ? "dark.9" : "dark.6"}
                                     style={{ borderRadius: "20px" }}
                                 >
                                     <SimpleGrid cols={{ base: 1 }}>
-                                        {value0 === "Fourth" && <IconCircleCheck className={classes.icon} />}
+                                        {value0 === "Вся квартира" && <IconCircleCheck className={classes.icon} />}
                                         <Image
                                             radius="md"
                                             src="/images/offer/step-0/kvartira.jpg"
