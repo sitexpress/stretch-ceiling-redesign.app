@@ -302,7 +302,7 @@ export default function CallBackForm({ modalMode, setIsOpen, project, data }: Ca
             const line5 = `------------------------------`;
             const line6 = `Имя: ${values.name}`;
             const line7 = `Контактный номер телефона: ${values.tel}`;
-            const line8 = `Какая площадь потолков: ${data?.["Какая площадь потолков?"]}`;
+            const line8 = `Куда нужен натяжной потолок: ${data?.["Куда нужен натяжной потолок?"]}`;
             const line9 = `Какой тип потолков вы хотите: ${data?.["Какой тип потолков вы хотите?"]}`;
             const line10 = `Какая площадь потолков: ${data?.["Какая площадь потолков?"]}`;
             const line11 = `Какое количество углов: ${data?.["Какое количество углов?"]}`;
