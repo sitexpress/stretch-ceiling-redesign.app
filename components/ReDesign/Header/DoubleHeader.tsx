@@ -41,6 +41,7 @@ const mainLinks = [
     { link: "/portfolio", label: "Портфолио" },
     { link: "/about", label: "О нас" },
     { link: "/contacts", label: "Контакты" },
+    { link: "/electro-curtains", label: "Onviz" },
 ];
 
 export function DoubleHeader() {
@@ -61,7 +62,7 @@ export function DoubleHeader() {
             onClick={() => {
                 setActive(item.label);
             }}
-            data-active={item.label === active || undefined}
+            // data-active={item.label === active || undefined}
             style={{ cursor: "pointer" }}
         >
             {item.label}
