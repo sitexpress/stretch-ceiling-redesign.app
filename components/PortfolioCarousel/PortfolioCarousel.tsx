@@ -575,14 +575,17 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
     ) : mode === "review" ? (
         <div className={classes.container}>
             <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
+                Отзывы
+            </Title>
+            {/* <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
                 Отзывы на{" "}
                 <Text component="span" inherit c="red.6">
                      Авито
                 </Text>{" "}
                 
-            </Title>
-            <ReviewsWidget/>
-            {/* <Carousel
+            </Title> */}
+            {/* <ReviewsWidget/> */}
+            <Carousel
                 // height={"auto"}
                 slideSize={{ base: "100%", xs: "100%", sm: "50%", md: "33.33%" }}
                 slideGap="xs"
@@ -592,7 +595,7 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
                 controlSize={30}
             >
                 {reviewMapped}
-            </Carousel> */}
+            </Carousel>
         </div>
     ) : mode === "ceiling" ? (
         <div className={classes.container}>
