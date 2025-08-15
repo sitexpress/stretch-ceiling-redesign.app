@@ -121,6 +121,15 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
                                     все новинки магнитного трекового освещения.
                                 </Text>
                             </List.Item>
+                            <List.Item>
+                                <Text component="span" fw={700} className={classes.list}>
+                                    Профессиональный клининг
+                                </Text>
+                                <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
+                                    {" "}
+                                    профессиональный клининг после завершения монтажа.
+                                </Text>
+                            </List.Item>
                         </List>
                         <List spacing="sm" className={classes.list_left} visibleFrom={sm}>
                             <Text size="18px" c="dark.5" fw={700} mb="md" ta="left">
