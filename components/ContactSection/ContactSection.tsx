@@ -1,6 +1,7 @@
 import { Title, Container, Text, UnstyledButton, Overlay, SimpleGrid, Group, Badge } from "@mantine/core";
 import { ContactIconsList } from "./ContactIcons";
 import classes from "./ContactSection.module.css";
+import AnimateEnhanced from "../Animate/Animate";
 
 const categories = [
     {
@@ -23,7 +24,6 @@ export default function FaqWithHeader() {
             style={{ backgroundImage: `url(${category.image})` }}
             className={classes.categoryCard}
             key={category.label}
-          
         >
             <Overlay color="#000" opacity={0.6} zIndex={1} />
             <Text size="xl" ta="center" fw={700} className={classes.categoryLabel}>
@@ -34,11 +34,13 @@ export default function FaqWithHeader() {
 
     return (
         <Container className={classes.wrapper} size="100%" bg="gray.1">
-            <Group justify="center">
-                <Badge variant="filled" size="lg" mb="50px" bg="dark.6">
-                    Всегда на связи
-                </Badge>
-            </Group>
+            <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                <Group justify="center">
+                    <Badge variant="filled" size="lg" mb="50px" bg="dark.6">
+                        Всегда на связи
+                    </Badge>
+                </Group>
+            </AnimateEnhanced>
 
             <div className={classes.header}>
                 <div>

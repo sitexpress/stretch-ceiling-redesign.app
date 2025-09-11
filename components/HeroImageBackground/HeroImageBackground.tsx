@@ -7,16 +7,15 @@ import Link from "next/link";
 import React, { useState } from "react";
 import ModalComponent from "../ModalComponent/ModalComponent";
 import "../../styles/local.fonts/NautilusPompilius.css";
+import AnimateEnhanced from "../Animate/Animate";
 
 type HeroImageBackgroundType = {
     mode: "portfolio" | "about" | "catalog" | "calculations" | "contacts" | "onviz";
 };
 export function HeroImageBackground({ mode }: HeroImageBackgroundType) {
-    // const [modalMode, setModalMode] = useState<"callBack" | "measurer" | "">("");
     const [isOpen, setIsOpen] = useState(false);
 
     const measurerHandler = () => {
-        // setModalMode("measurer");
         setIsOpen(true);
     };
 
@@ -25,12 +24,13 @@ export function HeroImageBackground({ mode }: HeroImageBackgroundType) {
             <div className={classes.portfolio_content_container}>
                 <div className={classes.wrapper_portfolio}>
                     {isOpen && <ModalComponent isOpen={isOpen} modalMode={"measurer"} setIsOpen={setIsOpen} />}
-                    {/* <Overlay color="#000" opacity={0.65} zIndex={1} /> */}
 
                     <div className={classes.inner}>
-                        <Title order={2} className={classes.title}>
-                            Портфолио
-                        </Title>
+                        <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                            <Title order={2} className={classes.title}>
+                                Портфолио
+                            </Title>
+                        </AnimateEnhanced>
 
                         {/* <Container size={640}>
                             <Title
@@ -89,28 +89,31 @@ export function HeroImageBackground({ mode }: HeroImageBackgroundType) {
                 {/* {opened && <ModalComponent opened={opened} modalMode={modalMode} close={close} />} */}
                 {isOpen && <ModalComponent isOpen={isOpen} modalMode={"measurer"} setIsOpen={setIsOpen} />}
                 <div className={classes.inner}>
-                    <Title
-                        order={2}
-                        className={classes.title}
-                        style={{
-                            zIndex: 2,
-                        }}
-                    >
-                        О нас
-                    </Title>
-
-                    <Container size={640}>
+                    <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
                         <Title
                             order={2}
+                            className={classes.title}
                             style={{
                                 zIndex: 2,
                             }}
-                            className={classes.description}
-                            size="25px"
                         >
-                            Здесь мы немного расскажем о себе
+                            О нас
                         </Title>
-                    </Container>
+
+                        <Container size={640}>
+                            <Title
+                                order={2}
+                                style={{
+                                    zIndex: 2,
+                                }}
+                                className={classes.description}
+                                size="25px"
+                            >
+                                Здесь мы немного расскажем о себе
+                            </Title>
+                        </Container>
+                    </AnimateEnhanced>
+
                     <div className={classes.controls}>
                         <Link
                             className={cx(classes.my_control, classes.my_secondaryControl)}
@@ -156,15 +159,17 @@ export function HeroImageBackground({ mode }: HeroImageBackgroundType) {
                 {/* {opened && <ModalComponent opened={opened} modalMode={modalMode} close={close} />} */}
                 {isOpen && <ModalComponent isOpen={isOpen} modalMode={"measurer"} setIsOpen={setIsOpen} />}
                 <div className={classes.inner}>
-                    <Title
-                        order={2}
-                        className={classes.title}
-                        style={{
-                            zIndex: 2,
-                        }}
-                    >
-                        Контакты
-                    </Title>
+                    <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                        <Title
+                            order={2}
+                            className={classes.title}
+                            style={{
+                                zIndex: 2,
+                            }}
+                        >
+                            Контакты
+                        </Title>
+                    </AnimateEnhanced>
 
                     {/* <Container size={640}>
                         <Title
@@ -232,17 +237,19 @@ export function HeroImageBackground({ mode }: HeroImageBackgroundType) {
                 <div className={classes.carniz_content_container}>
                     {isOpen && <ModalComponent isOpen={isOpen} modalMode={"measurer"} setIsOpen={setIsOpen} />}
                     <div className={classes.inner}>
-                        <Image ta="center" w={250} src="/images/onviz-logo.webp" />
-                        <Title
-                            ta="center"
-                            order={2}
-                            className={classes.title_onviz}
-                            style={{
-                                zIndex: 2,
-                            }}
-                        >
-                            Электрокарнизы
-                        </Title>
+                        <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                            <Image ta="center" w={250} src="/images/onviz-logo.webp" />
+                            <Title
+                                ta="center"
+                                order={2}
+                                className={classes.title_onviz}
+                                style={{
+                                    zIndex: 2,
+                                }}
+                            >
+                                Электрокарнизы
+                            </Title>
+                        </AnimateEnhanced>
 
                         {/* <Container size={640}>
                         <Title

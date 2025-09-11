@@ -8,6 +8,9 @@ import "./styles/local.fonts/TildaSansRegular.css";
 import "./styles/local.fonts/TildaSansMedium.css";
 import "./styles/local.fonts/TildaSansSemibold.css";
 
+import 'animate.css';
+import 'animate.css/animate.css';
+
 export const theme = createTheme({
     fontFamily: "TildaSansRegular, sans-serif",
     fontFamilyMonospace: "Monaco, Courier, monospace",

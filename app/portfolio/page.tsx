@@ -5,6 +5,7 @@ import { GetInTouch } from "@/components/GetInTouch/GetInTouch";
 import DividerComponent from "@/components/ReDesign/DividerComponent/DividerComponent";
 
 export default function Portfolio() {
+     
     return (
         <>
             {/*<Sidebar/>*/}

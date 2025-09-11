@@ -22,6 +22,7 @@ import "../../../styles/local.fonts/NautilusPompilius.css";
 import VideoComponent from "@/components/VideoComponent/VideoComponent";
 import { Carousel } from "@mantine/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import AnimateEnhanced from "@/components/Animate/Animate";
 
 const projectData1 = [
     {
@@ -184,7 +185,7 @@ export function ImagePortfolioCardsGrid() {
         <>
             {isCard1Open && article.id === imgId1 + 1 && (
                 <Modal
-                    key={i} 
+                    key={i}
                     opened={isCard1Open}
                     onClose={() => setIsCard1Open(false)}
                     // title={`${article.title}`}
@@ -226,7 +227,7 @@ export function ImagePortfolioCardsGrid() {
         <>
             {isCard2Open && article.id === imgId2 + 1 && (
                 <Modal
-                    key={i} 
+                    key={i}
                     opened={isCard2Open}
                     onClose={() => setIsCard2Open(false)}
                     // title={`${article.title}`}
@@ -268,7 +269,7 @@ export function ImagePortfolioCardsGrid() {
         <Card key={article.image} p="xs" radius={40} component="a" href="#" className={classes.card}>
             {isCard3Open && article.id === imgId3 + 1 ? (
                 <Modal
-                    key={i} 
+                    key={i}
                     opened={isCard3Open}
                     onClose={() => setIsCard3Open(false)}
                     title="Full size"
@@ -286,24 +287,24 @@ export function ImagePortfolioCardsGrid() {
                     </Text>
                 </Modal>
             ) : (
-                 <Card key={article.title} p="xs" radius={40} component="a" href="#" className={classes.card}>
-                <div
-                    onClick={(e) => {
-                        e.preventDefault();
-                        setIsCard3Open(true);
-                        setImgId3(i);
-                    }}
-                >
-                    <AspectRatio ratio={1920 / 1080}>
-                        <Image radius="xl" src={article.image} alt={`img`} />
-                    </AspectRatio>
-                    <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md" ta="center">
-                        {article.date}
-                    </Text>
-                    <Text className={classes.title} mt={5} ta="center">
-                        {article.title}
-                    </Text>
-                </div>
+                <Card key={article.title} p="xs" radius={40} component="a" href="#" className={classes.card}>
+                    <div
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setIsCard3Open(true);
+                            setImgId3(i);
+                        }}
+                    >
+                        <AspectRatio ratio={1920 / 1080}>
+                            <Image radius="xl" src={article.image} alt={`img`} />
+                        </AspectRatio>
+                        <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md" ta="center">
+                            {article.date}
+                        </Text>
+                        <Text className={classes.title} mt={5} ta="center">
+                            {article.title}
+                        </Text>
+                    </div>
                 </Card>
             )}
         </Card>
@@ -338,32 +339,28 @@ export function ImagePortfolioCardsGrid() {
 
     return (
         <Container py="xl" fluid bg="gray.1">
-            {/* <Container size={560} >
-                <Title
-                    order={2}
-                    ta="center"
-                    className={classes.description}
-                    c="dark.5"
-                >
-                    Фото
-                </Title>
-            </Container> */}
             <Container size={560} pb="xl">
-                <Text c="dimmed" fs="italic" ta="center" mt="xl" td="underline">
-                    Пример проекта №1
-                </Text>
+                <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                    <Text c="dimmed" fs="italic" ta="center" mt="xl" td="underline">
+                        Пример проекта №1
+                    </Text>
+                </AnimateEnhanced>
             </Container>
             <SimpleGrid cols={{ base: 1, sm: 2, md: 3, lg: 4 }}>{cards1}</SimpleGrid>
             <Container size={560} pt="xl" pb="xl">
-                <Text c="dimmed" fs="italic" ta="center" mt="xl" td="underline">
-                    Пример проекта №2
-                </Text>
+                <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                    <Text c="dimmed" fs="italic" ta="center" mt="xl" td="underline">
+                        Пример проекта №2
+                    </Text>
+                </AnimateEnhanced>
             </Container>
             <SimpleGrid cols={{ base: 1, sm: 2, md: 3, lg: 4 }}>{cards2}</SimpleGrid>
             <Container size={560} pt="xl" pb="xl">
-                <Text c="dimmed" fs="italic" ta="center" mt="xl" td="underline">
-                    Пример проекта №3
-                </Text>
+                <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                    <Text c="dimmed" fs="italic" ta="center" mt="xl" td="underline">
+                        Пример проекта №3
+                    </Text>
+                </AnimateEnhanced>
             </Container>
             <SimpleGrid cols={{ base: 1, sm: 2, md: 3, lg: 4 }}>{cards3}</SimpleGrid>
         </Container>

@@ -2,6 +2,7 @@
 import React from "react";
 import classes from "@/components/Portfolio/ImagePortfolioCardsGrid/ImagePortfolioCardsGrid.module.css";
 import { Anchor, Avatar, Badge, Group, Table, Text, Title } from "@mantine/core";
+import AnimateEnhanced from "../Animate/Animate";
 
 const data = [
     {
@@ -93,15 +94,19 @@ export default function UsersTable() {
             <Table.Td>
                 <Text fz="sm">{item.phone}</Text>
             </Table.Td>
-        </Table.Tr>
+        </Table.Tr>    
     ));
 
     return (
         <div>
             <Group justify="center" pl="20px" pt="sm"  bg="gray.1">
+                <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
                 <Title order={3} mt="sm" ta="center">
                     Коллектив:
                 </Title>
+
+                </AnimateEnhanced>
+
             </Group>
             <Table.ScrollContainer minWidth={800} pl="xl" pr="xl"  bg="gray.1"> 
                 <Table verticalSpacing="md" horizontalSpacing="xl">

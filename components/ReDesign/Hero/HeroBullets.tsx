@@ -7,6 +7,8 @@ import { VimeoPlayerLeft } from "../ReelVideo/VimeoPlayerLeft";
 import { useState } from "react";
 import ModalComponent from "@/components/ModalComponent/ModalComponent";
 import { useMediaQuery } from "@mantine/hooks";
+import AnimateEnhanced from "@/components/Animate/Animate";
+
 type ScrollToSectionType = {
     scrollToSection: () => void;
 };
@@ -46,136 +48,140 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
 
             <Group className={classes.content} bg="white" ml={16}>
                 <div>
-                    <Title className={classes.title}>
-                        <Text
-                            component="span"
-                            c="red.6"
-                            fw={700}
-                            style={{ fontFamily: "TildaSansSemibold" }}
-                            className={classes.title}
-                        >
-                            Натяжные потолки в Сочи
-                        </Text>
-                        <Text
-                            component="span"
-                            c="dark.6"
-                            fw={700}
-                            style={{ fontFamily: "TildaSansSemibold" }}
-                            className={classes.title}
-                        >
-                            {" "}
-                            премиум-класса!{" "}
-                        </Text>
-                    </Title>
+                    <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                        <Title className={classes.title}>
+                            <Text
+                                component="span"
+                                c="red.6"
+                                fw={700}
+                                style={{ fontFamily: "TildaSansSemibold" }}
+                                className={classes.title}
+                            >
+                                Натяжные потолки в Сочи
+                            </Text>
+                            <Text
+                                component="span"
+                                c="dark.6"
+                                fw={700}
+                                style={{ fontFamily: "TildaSansSemibold" }}
+                                className={classes.title}
+                            >
+                                {" "}
+                                премиум-класса!{" "}
+                            </Text>
+                        </Title>
 
-                    <Text mt="xs" c="red.6" className={classes.subtitle}>
-                        Монтаж за 1-2 дня со скидкой 50% на полотно!
-                    </Text>
+                        <Text mt="xs" c="red.6" className={classes.subtitle}>
+                            Монтаж за 1-2 дня со скидкой 50% на полотно!
+                        </Text>
+                    </AnimateEnhanced>
                 </div>
 
-                <Flex direction="row" justify="space-between" gap={10}>
-                    <Flex direction="column" gap={50}>
-                        <List spacing="sm">
-                            <List.Item>
-                                <Text component="span" fw={700} className={classes.list}>
-                                    Работа под ключ
-                                </Text>
-                                <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
-                                    {" "}
-                                    чистый ремонт, без повреждений.
-                                </Text>
-                            </List.Item>
-                            <List.Item>
-                                <Text component="span" fw={700} className={classes.list}>
-                                    Сдаём в срок!
-                                </Text>
-                                <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
-                                    {" "}
-                                    быстро, качественно, без задержек.
-                                </Text>
-                            </List.Item>
-                            <List.Item>
-                                <Text component="span" fw={700} className={classes.list}>
-                                    При заказе у нас{" "}
-                                </Text>
-                                <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
-                                    {" "}
-                                    полный рассчет по вашему проекту, с подбором освещения.
-                                </Text>
-                            </List.Item>
-                            <List.Item>
-                                <Text component="span" fw={700} className={classes.list}>
-                                    Бесплатный выезд замерщика
-                                </Text>
-                                <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
-                                    {" "}
-                                    для точных расчетов и удобства клиента.
-                                </Text>
-                            </List.Item>
-                            <List.Item>
-                                <Text component="span" fw={700} className={classes.list}>
-                                    Трековое магнитное освещение
-                                </Text>
-                                <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
-                                    {" "}
-                                    все новинки магнитного трекового освещения.
-                                </Text>
-                            </List.Item>
-                            <List.Item>
-                                <Text component="span" fw={700} className={classes.list}>
-                                    Профессиональный клининг
-                                </Text>
-                                <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
-                                    {" "}
-                                    профессиональный клининг после завершения монтажа.
-                                </Text>
-                            </List.Item>
-                        </List>
-                        <List spacing="sm" className={classes.list_left} visibleFrom={sm}>
-                            <Text size="18px" c="dark.5" fw={700} mb="md" ta="left">
-                                При заказе:
-                            </Text>{" "}
-                            <List.Item>
-                                <Flex c="dark.5" fw={700} direction="column">
-                                    <Text component="span" size="lg" c="red.6" fw={700}>
-                                        от 100 тыс.{" "}
+                <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                    <Flex direction="row" justify="space-between" gap={10}>
+                        <Flex direction="column" gap={50}>
+                            <List spacing="sm">
+                                <List.Item>
+                                    <Text component="span" fw={700} className={classes.list}>
+                                        Работа под ключ
                                     </Text>
-                                    <Text component="span" fw={700}>
+                                    <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
                                         {" "}
-                                        скидка на освещение 15%!
+                                        чистый ремонт, без повреждений.
                                     </Text>
-                                </Flex>
-                            </List.Item>
-                            <List.Item>
-                                <Flex c="dark.5" fw={700} direction="column">
-                                    <Text component="span" size="lg" c="red.6" fw={700}>
-                                        от 500 тыс.{" "}
+                                </List.Item>
+                                <List.Item>
+                                    <Text component="span" fw={700} className={classes.list}>
+                                        Сдаём в срок!
                                     </Text>
-                                    <Text component="span" fw={700}>
+                                    <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
                                         {" "}
-                                        скидка на освещение 20%!
+                                        быстро, качественно, без задержек.
                                     </Text>
-                                </Flex>
-                            </List.Item>
-                            <List.Item>
-                                <Flex c="dark.5" fw={700} direction="column">
-                                    <Text component="span" size="lg" c="red.6" fw={700}>
-                                        от 800 тыс.{" "}
+                                </List.Item>
+                                <List.Item>
+                                    <Text component="span" fw={700} className={classes.list}>
+                                        При заказе у нас{" "}
                                     </Text>
-                                    <Text component="span" fw={700}>
+                                    <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
                                         {" "}
-                                        скидка на освещение 25%!
+                                        полный рассчет по вашему проекту, с подбором освещения.
                                     </Text>
-                                </Flex>
-                            </List.Item>
-                        </List>
-                    </Flex>
+                                </List.Item>
+                                <List.Item>
+                                    <Text component="span" fw={700} className={classes.list}>
+                                        Бесплатный выезд замерщика
+                                    </Text>
+                                    <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
+                                        {" "}
+                                        для точных расчетов и удобства клиента.
+                                    </Text>
+                                </List.Item>
+                                <List.Item>
+                                    <Text component="span" fw={700} className={classes.list}>
+                                        Трековое магнитное освещение
+                                    </Text>
+                                    <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
+                                        {" "}
+                                        все новинки магнитного трекового освещения.
+                                    </Text>
+                                </List.Item>
+                                <List.Item>
+                                    <Text component="span" fw={700} className={classes.list}>
+                                        Профессиональный клининг
+                                    </Text>
+                                    <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
+                                        {" "}
+                                        профессиональный клининг после завершения монтажа.
+                                    </Text>
+                                </List.Item>
+                            </List>
+                            <List spacing="sm" className={classes.list_left} visibleFrom={sm}>
+                                <Text size="18px" c="dark.5" fw={700} mb="md" ta="left">
+                                    При заказе:
+                                </Text>{" "}
+                                <List.Item>
+                                    <Flex c="dark.5" fw={700} direction="column">
+                                        <Text component="span" size="lg" c="red.6" fw={700}>
+                                            от 100 тыс.{" "}
+                                        </Text>
+                                        <Text component="span" fw={700}>
+                                            {" "}
+                                            скидка на освещение 15%!
+                                        </Text>
+                                    </Flex>
+                                </List.Item>
+                                <List.Item>
+                                    <Flex c="dark.5" fw={700} direction="column">
+                                        <Text component="span" size="lg" c="red.6" fw={700}>
+                                            от 500 тыс.{" "}
+                                        </Text>
+                                        <Text component="span" fw={700}>
+                                            {" "}
+                                            скидка на освещение 20%!
+                                        </Text>
+                                    </Flex>
+                                </List.Item>
+                                <List.Item>
+                                    <Flex c="dark.5" fw={700} direction="column">
+                                        <Text component="span" size="lg" c="red.6" fw={700}>
+                                            от 800 тыс.{" "}
+                                        </Text>
+                                        <Text component="span" fw={700}>
+                                            {" "}
+                                            скидка на освещение 25%!
+                                        </Text>
+                                    </Flex>
+                                </List.Item>
+                            </List>
+                        </Flex>
 
-                    <div className={classes.video_left}>
-                        <VimeoPlayerLeft />
-                        {/* <VimeoPlayer  mode="video_left"  /> */}
-                    </div>
-                </Flex>
+                        <div className={classes.video_left}>
+                            <VimeoPlayerLeft />
+                            {/* <VimeoPlayer  mode="video_left"  /> */}
+                        </div>
+                    </Flex>
+                </AnimateEnhanced>
 
                 {/* <Group justify="right" className={classes.control_wrapper}> */}
                 <Flex gap={20} w="100%">

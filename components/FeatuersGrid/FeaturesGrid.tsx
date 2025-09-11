@@ -3,6 +3,7 @@ import React from "react";
 import { Badge, Container, Group, SimpleGrid, Text, ThemeIcon, Title, rem } from "@mantine/core";
 import { IconCookie, IconGauge, IconLock, IconMessage2, IconUser } from "@tabler/icons-react";
 import classes from "./FeaturesGrid.module.css";
+import AnimateEnhanced from "../Animate/Animate";
 
 export const mockData = [
     {
@@ -68,16 +69,18 @@ export function FeaturesGrid() {
     return (
         <div className={classes.container}>
             <Container>
-                <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
-                    Качество в{" "}
-                    <Text component="span" inherit c="red.6">
-                        каждый
-                    </Text>{" "}
-                    дом
-                </Title>
+                <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                    <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
+                        Качество в{" "}
+                        <Text component="span" inherit c="red.6">
+                            каждый
+                        </Text>{" "}
+                        дом
+                    </Title>
+                </AnimateEnhanced>
+
                 <SimpleGrid
                     mt={60}
-                    
                     cols={{
                         base: 1,
                         sm: 2,

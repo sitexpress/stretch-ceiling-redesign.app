@@ -17,6 +17,7 @@ import { Grid, Skeleton } from "@mantine/core";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import ModalComponent from "../ModalComponent/ModalComponent";
+import AnimateEnhanced from "../Animate/Animate";
 
 const curtains = [
     {
@@ -125,18 +126,20 @@ export default function ElectricCurtains() {
             <Container size="md" pt={40}>
                 <Grid gutter={50} align="center">
                     <Grid.Col mt={6}>
-                        <Title order={2} mt="xl" mb="xl" ta="center" c="dark.5">
-                            Современные{" "}
-                            <Text component="span" inherit c="red.6">
-                                электронные карнизы
-                            </Text>{" "}
-                            для вашего дома
-                        </Title>
-                        <Title order={1} mb="xl" ta="center"></Title>
-                        <Text size="lg" mb="xl" ta="center">
-                            Автоматизированные решения для штор и гардин, которые сделают ваш дом умнее и комфортнее.
-                            Управляйте освещением одним касанием или по расписанию.
-                        </Text>
+                        <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                            <Title order={2} mt="xl" mb="xl" ta="center" c="dark.5">
+                                Современные{" "}
+                                <Text component="span" inherit c="red.6">
+                                    электронные карнизы
+                                </Text>{" "}
+                                для вашего дома
+                            </Title>
+                            <Title order={1} mb="xl" ta="center"></Title>
+                            <Text size="lg" mb="xl" ta="center">
+                                Автоматизированные решения для штор и гардин, которые сделают ваш дом умнее и
+                                комфортнее. Управляйте освещением одним касанием или по расписанию.
+                            </Text>
+                        </AnimateEnhanced>
                     </Grid.Col>
                 </Grid>
 
@@ -145,24 +148,29 @@ export default function ElectricCurtains() {
                 </Grid>
 
                 <Group mt={100} justify="center">
-                    <Title order={2} mt="sm" mb="xl" ta="center" c="dark.5">
-                        Примеры{" "}
-                        <Text component="span" inherit c="red.6">
-                            Onviz
-                        </Text>{" "}
-                    </Title>
+                    <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                        <Title order={2} mt="sm" mb="xl" ta="center" c="dark.5">
+                            Примеры{" "}
+                            <Text component="span" inherit c="red.6">
+                                Onviz
+                            </Text>{" "}
+                        </Title>
+                    </AnimateEnhanced>
 
                     <GridAsymmetrical />
                 </Group>
 
                 <Flex mt={100} justify="center" direction="column" gap="md">
-                    <Title order={2} ta="center" mb={30}>
-                        Почему выбирают{" "}
-                        <Text component="span" inherit c="red.6">
-                            электронные карнизы
-                        </Text>{" "}
-                        Onviz
-                    </Title>
+                    <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                        <Title order={2} ta="center" mb={30}>
+                            Почему выбирают{" "}
+                            <Text component="span" inherit c="red.6">
+                                электронные карнизы
+                            </Text>{" "}
+                            Onviz
+                        </Title>
+                    </AnimateEnhanced>
+
                     {features.map((feature, index) => (
                         <Grid key={index}>
                             <Grid.Col>
@@ -183,18 +191,20 @@ export default function ElectricCurtains() {
                     ))}
                 </Flex>
                 <Flex mt={150} justify="center" direction="column">
-                    <Title order={2} ta="center" mb={30}>
-                        Частые{" "}
-                        <Text component="span" inherit c="red.6">
-                            вопросы
-                        </Text>{" "}
-                    </Title>
+                    <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                        <Title order={2} ta="center" mb={30}>
+                            Частые{" "}
+                            <Text component="span" inherit c="red.6">
+                                вопросы
+                            </Text>{" "}
+                        </Title>
+                    </AnimateEnhanced>
 
                     <Accordion variant="contained" mb={50} radius="xl">
                         {faqs.map((item, index) => (
                             <Accordion.Item value={`item-${index}`} key={index}>
                                 <Accordion.Control>{item.question}</Accordion.Control>
-                                <Accordion.Panel>{item.answer}</Accordion.Panel>
+                                <Accordion.Panel c="dimmed" ta="center">{item.answer}</Accordion.Panel>
                             </Accordion.Item>
                         ))}
                     </Accordion>

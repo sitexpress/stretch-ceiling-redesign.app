@@ -269,7 +269,7 @@ export function HeaderMegaMenu() {
                               <Link href={`${item.link}`} className={s.link}>
                                   {item.title}
                               </Link>
-                          </Text>    
+                          </Text>
                       </Box>
                   </UnstyledButton>
               ))
@@ -824,11 +824,16 @@ export function HeaderMegaMenu() {
                         onClick={toggleDrawer}
                         hiddenFrom="lg"
                         // color={"dark.6"}
-                        color={scrollY === 0 && computedColorScheme === "light" ? "dark" 
-                            : scrollY !== 0 && computedColorScheme === "light" ? "dark"
-                               : scrollY === 0 && computedColorScheme === "dark" ? "dark"
-                               : scrollY === 0 && computedColorScheme === "dark" ? "light"
-                               : ""
+                        color={
+                            scrollY === 0 && computedColorScheme === "light"
+                                ? "dark"
+                                : scrollY !== 0 && computedColorScheme === "light"
+                                  ? "dark"
+                                  : scrollY === 0 && computedColorScheme === "dark"
+                                    ? "dark"
+                                    : scrollY === 0 && computedColorScheme === "dark"
+                                      ? "light"
+                                      : ""
                         }
                     />
                 </Group>

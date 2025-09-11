@@ -6,6 +6,7 @@ import classes from "./FeaturesCardsOurTeam.module.css";
 import { Image } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
 import "../../styles/local.fonts/NautilusPompilius.css";
+import AnimateEnhanced from "../Animate/Animate";
 // import Autoplay from "embla-carousel-autoplay";
 
 const mockdata = [
@@ -93,13 +94,15 @@ export function FeaturesCardsOurTeam({ mode }: FeaturesCardsOurTeamType) {
     return (
         <div className={classes.container}>
             <Container size="xl">
-                <Title order={2} mb="xl" ta="center" className={classes.description} c="dark.5">
-                    Мы рады работать{" "}
-                    <Text component="span" inherit c="red.6">
-                        вместе
-                    </Text>{" "}
-                    с Вами
-                </Title>
+                <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                    <Title order={2} mb="xl" ta="center" className={classes.description} c="dark.5">
+                        Мы рады работать{" "}
+                        <Text component="span" inherit c="red.6">
+                            вместе
+                        </Text>{" "}
+                        с Вами
+                    </Title>
+                </AnimateEnhanced>
 
                 <Image radius="xl" mt={50} src="images/team/group.webp" alt="komanda_img" className={classes.img} />
 

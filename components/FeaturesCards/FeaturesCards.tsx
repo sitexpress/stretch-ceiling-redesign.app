@@ -4,6 +4,7 @@ import React from "react";
 import { Card, Container, Image, SimpleGrid, Text, Title } from "@mantine/core";
 import classes from "./FeaturesCards.module.css";
 import { allCatalogData } from "@/lib/data/localDataList";
+import AnimateEnhanced from "../Animate/Animate";
 
 export function FeaturesCards() {
     const features = allCatalogData.map((catalogItems: any, i: number) => (
@@ -26,17 +27,19 @@ export function FeaturesCards() {
 
     return (
         <div className={classes.container}>
-            <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
-                Комплектующие для{" "}
-                <Text component="span" inherit c="red.6">
-                    дизайнеров
-                </Text>{" "}
-                и партнеров.
-            </Title>
+            <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
+                    Комплектующие для{" "}
+                    <Text component="span" inherit c="red.6">
+                        дизайнеров
+                    </Text>{" "}
+                    и партнеров.
+                </Title>
+            </AnimateEnhanced>
 
-            <SimpleGrid cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5, xl: 5 }} spacing="xl">
-                {features}
-            </SimpleGrid>
+                <SimpleGrid cols={{ base: 2, xs: 3, sm: 3, md: 4, lg: 5, xl: 5 }} spacing="xl">
+                    {features}
+                </SimpleGrid>
         </div>
     );
 }

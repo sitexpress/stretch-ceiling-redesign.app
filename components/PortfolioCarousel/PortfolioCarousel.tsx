@@ -24,6 +24,7 @@ import { Card } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { EmblaCarouselType } from "embla-carousel-react";
 import ReviewsWidget from "@/app/portfolio/ReviewWidget";
+import AnimateEnhanced from "../Animate/Animate";
 
 export type ImageType = {
     src?: string;
@@ -528,35 +529,38 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
     const autoplay = useRef(Autoplay({ delay: 2000 }));
     return mode === "photo" ? (
         <div className={classes.container}>
-            <Title
-                order={2}
-                // mt="sm"
-                mb="xl"
-                ta="center"
-                className={classes.description}
-                c="dark.5"
-            >
-                Портфолио
-            </Title>
+            <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                <Title
+                    order={2}
+                    // mt="sm"
+                    mb="xl"
+                    ta="center"
+                    className={classes.description}
+                    c="dark.5"
+                >
+                    Портфолио
+                </Title>
+            </AnimateEnhanced>
 
-            <Carousel
-                height={"auto"}
-                slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
-                // slideGap={{ base: 0, sm: "md" }}
-                loop
-                align="start"
-                plugins={[autoplay.current]}
-                draggable
-                controlSize={30}
-                withControls
-                controlsOffset={10}
-                slideGap="lg"
-                // emblaptions={{ dragFree: true }}
-                getEmblaApi={setEmbla}
-                initialSlide={0}
-            >
-                {Item}
-            </Carousel>
+                <Carousel
+                    height={"auto"}
+                    slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
+                    // slideGap={{ base: 0, sm: "md" }}
+                    loop
+                    align="start"
+                    plugins={[autoplay.current]}
+                    draggable
+                    controlSize={30}
+                    withControls
+                    controlsOffset={10}
+                    slideGap="lg"
+                    // emblaptions={{ dragFree: true }}
+                    getEmblaApi={setEmbla}
+                    initialSlide={0}
+                >
+                    {Item}
+                </Carousel>
+
             <Progress.Root maw={300} size="lg" mt="xl" mx="auto" bg="dark.1" radius="40px">
                 <Progress.Section value={scrollProgressFolio} bg="dark.6" color="dark.6">
                     <Progress.Label style={{ fontFamily: "Nautilus", fontSize: "10px" }} color="dark.6">
@@ -574,9 +578,12 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
         </div>
     ) : mode === "review" ? (
         <div className={classes.container}>
-            <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
-                Отзывы
-            </Title>
+            <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
+                    Отзывы
+                </Title>
+            </AnimateEnhanced>
+
             {/* <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
                 Отзывы на{" "}
                 <Text component="span" inherit c="red.6">
@@ -585,42 +592,46 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
                 
             </Title> */}
             {/* <ReviewsWidget/> */}
-            <Carousel
-                // height={"auto"}
-                slideSize={{ base: "100%", xs: "100%", sm: "50%", md: "33.33%" }}
-                slideGap="xs"
-                loop
-                align="start"
-                draggable
-                controlSize={30}
-            >
-                {reviewMapped}
-            </Carousel>
+                <Carousel
+                    // height={"auto"}
+                    slideSize={{ base: "100%", xs: "100%", sm: "50%", md: "33.33%" }}
+                    slideGap="xs"
+                    loop
+                    align="start"
+                    draggable
+                    controlSize={30}
+                >
+                    {reviewMapped}
+                </Carousel>
         </div>
     ) : mode === "ceiling" ? (
         <div className={classes.container}>
-            <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
-                Примерная{" "}
-                <Text component="span" inherit c="red.6">
-                    стоймость
-                </Text>{" "}
-                выполненых работ
-            </Title>
-            <Carousel
-                height={"auto"}
-                slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
-                // slideGap={{ base: 0, sm: "md" }}
-                loop
-                align="start"
-                // plugins={[autoplay.current]}
-                draggable
-                controlSize={30}
-                controlsOffset={10}
-                slideGap="lg"
-                getEmblaApi={setEmblaCeiling}
-            >
-                <CardComponent />
-            </Carousel>
+            <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
+                    Примерная{" "}
+                    <Text component="span" inherit c="red.6">
+                        стоймость
+                    </Text>{" "}
+                    выполненых работ
+                </Title>
+            </AnimateEnhanced>
+
+                <Carousel
+                    height={"auto"}
+                    slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
+                    // slideGap={{ base: 0, sm: "md" }}
+                    loop
+                    align="start"
+                    // plugins={[autoplay.current]}
+                    draggable
+                    controlSize={30}
+                    controlsOffset={10}
+                    slideGap="lg"
+                    getEmblaApi={setEmblaCeiling}
+                >
+                    <CardComponent />
+                </Carousel>
+
             <Progress.Root maw={300} size="lg" mt="xl" mx="auto" bg="dark.1" radius="40px">
                 <Progress.Section value={scrollProgressCeiling} bg="dark.6" color="dark.6">
                     <Progress.Label style={{ fontFamily: "Nautilus", fontSize: "10px" }} color="dark.6">

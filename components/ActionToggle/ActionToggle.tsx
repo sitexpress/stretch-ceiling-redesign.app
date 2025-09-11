@@ -152,7 +152,7 @@ export function ActionToggle({ scrollY, mode }: ActionToggle) {
             justify="start"
             style={{
                        position: "absolute",
-                          top: "40px",
+                          top: "25px",
                           left: "220px",
                           transition: "top, 0.5s linear",
             }

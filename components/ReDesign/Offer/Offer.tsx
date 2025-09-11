@@ -16,16 +16,16 @@ import { Image, Text, Input } from "@mantine/core";
 import classes from "./Offer.module.css";
 import { IconCircleCheck, IconX } from "@tabler/icons-react";
 import CallBackForm from "@/components/Forms/CallBackForm/CallBackForm";
+import AnimateEnhanced from "@/components/Animate/Animate";
 
 export type DataType = {
-  "Куда нужен натяжной потолок?": string;
-  "Какой тип потолков вы хотите?": string;
-  "Какая площадь потолков?": string | number; 
-  "Какое количество углов?": string | number;
-  "Какое вы бы хотели освещение?": string;
-  "Куда отправить расчет?": string;
+    "Куда нужен натяжной потолок?": string;
+    "Какой тип потолков вы хотите?": string;
+    "Какая площадь потолков?": string | number;
+    "Какое количество углов?": string | number;
+    "Какое вы бы хотели освещение?": string;
+    "Куда отправить расчет?": string;
 };
-
 
 export function Offer() {
     const [stage, setStage] = useState(0);
@@ -38,7 +38,7 @@ export function Offer() {
     const [scrollProgressCeiling, setScrollProgressFolioCeiling] = useState(15);
     const [error, setError] = useState<string | null>(null);
 
-    const data:DataType = {
+    const data: DataType = {
         "Куда нужен натяжной потолок?": value0,
         "Какой тип потолков вы хотите?": value1,
         "Какая площадь потолков?": value2,
@@ -1007,16 +1007,17 @@ export function Offer() {
         );
     };
 
-
-
     return (
         <Flex direction="column" bg="gray.1" w="100%" justify="center" align="center">
-            <Title order={2} ta="center" className={classes.description} c="dark.5" bg="gray.1" pb="sm">
-                <Text component="span" inherit c="red.6">
-                    Узнайте стоимость
-                </Text>{" "}
-                натяжных потолков в вашей квартире
-            </Title>
+            <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                <Title order={2} ta="center" className={classes.description} c="dark.5" bg="gray.1" pb="sm">
+                    <Text component="span" inherit c="red.6">
+                        Узнайте стоимость
+                    </Text>{" "}
+                    натяжных потолков в вашей квартире
+                </Title>
+            </AnimateEnhanced>
+
             <Badge size="xl" mb="sm" bg="red.6">
                 {stage + 1} из 7
             </Badge>
@@ -1047,10 +1048,9 @@ export function Offer() {
                                   : "Отлично, остался последний шаг!"}
                 </Title>
             </Flex>
-
-            <Flex direction="column" pt="lg" pb="lg" className={classes.container}>
-                {OfferStage(stage)}
-            </Flex>
+                <Flex direction="column" pt="lg" pb="lg" className={classes.container}>
+                    {OfferStage(stage)}
+                </Flex>
         </Flex>
     );
 }
