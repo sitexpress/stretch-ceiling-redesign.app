@@ -57,21 +57,31 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
                                 style={{ fontFamily: "TildaSansSemibold" }}
                                 className={classes.title}
                             >
-                                Натяжные потолки в Сочи
-                            </Text>
-                            <Text
-                                component="span"
-                                c="dark.6"
-                                fw={700}
-                                style={{ fontFamily: "TildaSansSemibold" }}
-                                className={classes.title}
-                            >
-                                {" "}
-                                премиум-класса!{" "}
+                                {/* Натяжные потолки в Сочи */}
+                                Ремонтно-отделочные работы {""}<br />
+                                <Text
+                                    component="span"
+                                    c="dark.6"
+                                    fw={700}
+                                    style={{ fontFamily: "TildaSansSemibold" }}
+                                    className={classes.title}
+                                >
+                                    точный монтаж и <br />
+                                </Text>{" "}
+                                натяжные потолки премиум-класса {""}
+                                             <Text
+                                    component="span"
+                                    c="dark.6"
+                                    fw={700}
+                                    style={{ fontFamily: "TildaSansSemibold" }}
+                                    className={classes.title}
+                                >
+                                    в Сочи! <br />
+                                </Text>{" "}
                             </Text>
                         </Title>
 
-                        <Text mt="xs" c="red.6" className={classes.subtitle}>
+                        <Text mt="xs" c="dark.6" className={classes.subtitle}>
                             Монтаж за 1-2 дня со скидкой 50% на полотно!
                         </Text>
                     </AnimateEnhanced>
@@ -105,7 +115,7 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
                                     </Text>
                                     <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
                                         {" "}
-                                        полный рассчет по вашему проекту, с подбором освещения.
+                                        полный рассчет по вашему проекту.
                                     </Text>
                                 </List.Item>
                                 <List.Item>
@@ -115,6 +125,24 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
                                     <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
                                         {" "}
                                         для точных расчетов и удобства клиента.
+                                    </Text>
+                                </List.Item>
+                                <List.Item>
+                                    <Text component="span" fw={700} className={classes.list}>
+                                        Производство и утсановка мебели на заказ
+                                    </Text>
+                                    <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
+                                        {" "}
+                                        полностью индивидуальный дизайн.
+                                    </Text>
+                                </List.Item>
+                                <List.Item>
+                                    <Text component="span" fw={700} className={classes.list}>
+                                        Подбор и закупка строительных материалов
+                                    </Text>
+                                    <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
+                                        {" "}
+                                        используем качественные материалы.
                                     </Text>
                                 </List.Item>
                                 <List.Item>

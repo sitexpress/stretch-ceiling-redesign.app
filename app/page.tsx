@@ -41,8 +41,8 @@ export default function HomePage() {
             <PortfolioCarousel mode="photo" />
             <DividerComponent />
             <PortfolioCarousel mode="ceiling" />
-            <DividerComponent />
-            <FeaturesCards />
+            {/* <DividerComponent /> */}
+            {/* <FeaturesCards /> */}
             <DividerComponent />
             <PortfolioCarousel mode="review" />
 

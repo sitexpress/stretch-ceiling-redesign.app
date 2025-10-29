@@ -16,6 +16,7 @@ import {
     ScrollArea,
     SegmentedControl,
     UnstyledButton,
+    Image,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./DoubleHeader.module.css";
@@ -111,6 +112,24 @@ export function DoubleHeader() {
                     <Flex>
                         <Box className={classes.links} visibleFrom="sm">
                             <Flex wrap="nowrap" gap={10} justify="end">
+                                                                <Anchor
+                                    href="https://max.ru/u/f9LHodD0cOJKFrItttByPcrZPQhDRCemed9leLfCR7gsOHGR95KEgT_742A"
+                                    id="sidebar-max"
+                                    target="_blank"
+                                >
+                                    <ActionIcon
+                                        size={32}
+                                        color=""
+                                        variant={"filled"}
+                                        radius="xl"
+                                    >
+                                        <Image
+                                            src={
+                                                "https://upload.wikimedia.org/wikipedia/commons/7/75/Max_logo_2025.png"
+                                            }
+                                        />
+                                    </ActionIcon>
+                                </Anchor>
                                 <Anchor href="https://t.me/+79881896530" target="_blank">
                                     <ActionIcon size={30} color="blue.4" variant={"filled"} radius="xl">
                                         <IconBrandTelegram
@@ -170,7 +189,7 @@ export function DoubleHeader() {
                         size="sm"
                         hiddenFrom="sm"
                     />
-                    <ActionToggle mode={"calculations"} />
+                    {/* <ActionToggle mode={"calculations"} /> */}
 
                     <DrawerCalculations />
                     <Drawer
@@ -315,6 +334,24 @@ export function DoubleHeader() {
                                     gap: "15px",
                                 }}
                             >
+                                <Anchor
+                                    href="https://max.ru/u/f9LHodD0cOJKFrItttByPcrZPQhDRCemed9leLfCR7gsOHGR95KEgT_742A"
+                                    id="sidebar-max"
+                                    target="_blank"
+                                >
+                                    <ActionIcon
+                                        size={40}
+                                        color=""
+                                        variant={"filled"}
+                                        radius="xl"
+                                    >
+                                        <Image
+                                            src={
+                                                "https://upload.wikimedia.org/wikipedia/commons/7/75/Max_logo_2025.png"
+                                            }
+                                        />
+                                    </ActionIcon>
+                                </Anchor>
                                 <Anchor href="https://t.me/+nKdXzCW6qmE3NjUy" target="_blank">
                                     <ActionIcon size={40} color="#24A1DE" variant="filled" radius={40}>
                                         <IconBrandTelegram

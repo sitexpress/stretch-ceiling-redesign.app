@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
-import { ActionIcon, Anchor, Container, Flex,  rem, Text } from "@mantine/core";
+import { ActionIcon, Anchor, Container, Flex, rem, Text, Image } from "@mantine/core";
 import { IconBrandTelegram, IconBrandWhatsapp } from "@tabler/icons-react";
-import Image from "next/image";
 import classes from "./Footer.module.css";
 
 const data = [
@@ -27,23 +26,6 @@ const data = [
             },
         ],
     },
-    // {
-    //     title: "Портфолио",
-    //     links: [
-    //         {
-    //             label: "Проект №1",
-    //             link: "/portfolio",
-    //         },
-    //         {
-    //             label: "Проект №2",
-    //             link: "/portfolio",
-    //         },
-    //         {
-    //             label: "Проект №3",
-    //             link: "/portfolio",
-    //         },
-    //     ],
-    // },
     {
         title: "Соцсети",
         links: [
@@ -90,7 +72,8 @@ export function Footer() {
                             ? "_blank"
                             : "_self"
                     }
-                     style={{textDecoration: "none"}} c="white"
+                    style={{ textDecoration: "none" }}
+                    c="white"
                 >
                     <Text className={classes.link} c="dimmed">
                         {link.label}
@@ -110,7 +93,7 @@ export function Footer() {
     });
 
     return (
-        <div style={{background: "#f1f3f5"}}>
+        <div style={{ background: "#f1f3f5" }}>
             <div className={classes.footer_container}>
                 <Flex
                     className={classes.footer}
@@ -155,6 +138,17 @@ export function Footer() {
                         </Text>
 
                         <Flex className={classes.social} wrap="nowrap" gap={10} mt="md">
+                            <Anchor
+                                href="https://max.ru/u/f9LHodD0cOJKFrItttByPcrZPQhDRCemed9leLfCR7gsOHGR95KEgT_742A"
+                                id="sidebar-max"
+                                target="_blank"
+                            >
+                                <ActionIcon size={40} color="" variant={"filled"} radius="xl">
+                                    <Image
+                                        src={"https://upload.wikimedia.org/wikipedia/commons/7/75/Max_logo_2025.png"}
+                                    />
+                                </ActionIcon>
+                            </Anchor>
                             <Anchor href="https://t.me/+79881896530" target="_blank">
                                 <ActionIcon size={40} color="blue.4" variant={"filled"} radius="xl">
                                     <IconBrandTelegram

@@ -123,7 +123,7 @@ export default function ElectricCurtains() {
     return (
         <div style={{ background: "#f1f3f5", paddingBottom: "50px" }}>
             {isOpen && <ModalComponent isOpen={isOpen} modalMode={modalMode} setIsOpen={setIsOpen} />}
-            <Container size="md" pt={40}>
+            <Container size="xl" pt={40}>
                 <Grid gutter={50} align="center">
                     <Grid.Col mt={6}>
                         <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
@@ -247,6 +247,7 @@ export function GridAsymmetrical() {
         setLoading(false);
     }, []);
     return (
+        
         <Grid>
             <Grid.Col span={{ base: 12, xs: 3 }}>
                 <Skeleton visible={loading} radius="xl">

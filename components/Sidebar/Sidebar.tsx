@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
-import { ActionIcon, Anchor, Group, rem } from "@mantine/core";
+import { ActionIcon, Anchor, Group, Image, rem } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { IconBrandTelegram, IconBrandWhatsapp, IconPhonePlus } from "@tabler/icons-react";
+import { IconBrandWhatsapp } from "@tabler/icons-react";
+import React, { useState } from "react";
+
 import classes from "./Sidebar.module.css";
 
 export default function Sidebar() {
@@ -80,6 +81,11 @@ export default function Sidebar() {
                     />
                 </ActionIcon>
             </Anchor> */}
+            <Anchor href="https://max.ru/u/f9LHodD0cOJKFrItttByPcrZPQhDRCemed9leLfCR7gsOHGR95KEgT_742A" id="sidebar-max" target="_blank">
+                <ActionIcon size={58} color="" variant={"filled"} radius="xl" className={classes.pulse}>
+                    <Image src={"https://upload.wikimedia.org/wikipedia/commons/7/75/Max_logo_2025.png"} className={classes.wiggle}/>
+                </ActionIcon>
+            </Anchor>
             <Anchor href="https://wa.me/79881896530" id="sidebar-whatsapp" target="_blank">
                 <ActionIcon size={58} color="green.4" variant={"filled"} radius="xl" className={classes.pulse}>
                     <IconBrandWhatsapp

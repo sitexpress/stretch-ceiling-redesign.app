@@ -4,8 +4,6 @@ import { HeroImageBackground } from "@/components/HeroImageBackground/HeroImageB
 import DividerComponent from "@/components/ReDesign/DividerComponent/DividerComponent";
 import UsersTable from "@/components/Table/Table";
 import VideoComponent from "@/components/VideoComponent/VideoComponent";
-import { Box, Divider } from "@mantine/core";
-import React from "react";
 export default function About() {
     return (
         <>
