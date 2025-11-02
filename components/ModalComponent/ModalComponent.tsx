@@ -16,13 +16,13 @@ type ModalType = {
 
 const heading = (modalMode: string) => {
     return modalMode === "callBack" ? (
-        <Badge mt="md" ml="md" p="sm" bg="dark.6">
-            <Text fw={500}>Обратный звонок</Text>
-        </Badge>
+        <Text fw={700} size="lg" ml="md">
+            Обратный звонок
+        </Text>
     ) : modalMode === "measurer" ? (
-        <Badge mt="md" ml="md" p="sm" bg="dark.6">
-            <Text fw={500}>Запись на замер</Text>
-        </Badge>
+        <Text fw={700} size="lg" ml="md">
+            Запись на замер
+        </Text>
     ) : modalMode === "want" ? (
         <span
             style={{
@@ -34,7 +34,7 @@ const heading = (modalMode: string) => {
             Хочу также
         </span>
     ) : (
-        <Text fw={700} ta="center" c="dark.4" >
+        <Text fw={700} ta="center" c="dark.4">
             Менеджер проверит калькуляцию и Вам перезвонит в ближайшее время.
         </Text>
     );
@@ -50,21 +50,18 @@ export default function ModalComponent({ isOpen, setIsOpen, modalMode, project }
             </div>
         </Group>
     ) : (
-        <div style={{ borderRadius: "40px" }}>
-            <Modal
-                centered
-                opened={isOpen}
-                onClose={() => setIsOpen(false)}
-                overlayProps={{
-                    backgroundOpacity: 0.55,
-                    blur: 3,
-                }}
-                title={heading(modalMode)}
-                size="xl"
-                radius={40}
-            >
-                <CallBackForm modalMode={modalMode} setIsOpen={setIsOpen} project={project} />
-            </Modal>
-        </div>
+        <Modal
+            centered
+            opened={isOpen}
+            onClose={() => setIsOpen(false)}
+            overlayProps={{
+                backgroundOpacity: 0.55,
+                blur: 3,
+            }}
+            title={heading(modalMode)}
+            size="xl"
+        >
+            <CallBackForm modalMode={modalMode} setIsOpen={setIsOpen} project={project} />
+        </Modal>
     );
 }

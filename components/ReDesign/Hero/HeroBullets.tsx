@@ -1,5 +1,5 @@
 "use client";
-import { Button, Flex, Group, List, Overlay, Text, Title, useMantineTheme } from "@mantine/core";
+import { Button, Flex, Group, List, Overlay, Text, ThemeIcon, Title, useMantineTheme } from "@mantine/core";
 import classes from "./HeroBullets.module.css";
 import { VimeoPlayer } from "../ReelVideo/VimeoPlayer";
 import { VimeoPlayerLeftBottom } from "../ReelVideo/VimeoPlayerLeftBottom";
@@ -8,6 +8,7 @@ import { useState } from "react";
 import ModalComponent from "@/components/ModalComponent/ModalComponent";
 import { useMediaQuery } from "@mantine/hooks";
 import AnimateEnhanced from "@/components/Animate/Animate";
+import { IconCircleCheck } from "@tabler/icons-react";
 
 type ScrollToSectionType = {
     scrollToSection: () => void;
@@ -46,7 +47,7 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
         <Flex className={classes.inner} bg="gray.1" gap={16} pt={116} pb={16}>
             {isOpen && <ModalComponent isOpen={isOpen} modalMode={modalMode} setIsOpen={setIsOpen} />}
 
-            <Group className={classes.content} bg="white" ml={16}>
+            <Group className={classes.content} bg="white" ml={16} p={10}>
                 <div>
                     <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
                         <Title className={classes.title}>
@@ -58,7 +59,8 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
                                 className={classes.title}
                             >
                                 {/* Натяжные потолки в Сочи */}
-                                Ремонтно-отделочные работы {""}<br />
+                                Ремонтно-отделочные работы {""}
+                                <br />
                                 <Text
                                     component="span"
                                     c="dark.6"
@@ -69,7 +71,7 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
                                     точный монтаж и <br />
                                 </Text>{" "}
                                 натяжные потолки премиум-класса {""}
-                                             <Text
+                                <Text
                                     component="span"
                                     c="dark.6"
                                     fw={700}
@@ -89,8 +91,8 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
 
                 <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
                     <Flex direction="row" justify="space-between" gap={10}>
-                        <Flex direction="column" gap={50}>
-                            <List spacing="sm">
+                        <Flex direction="column">
+                            <List spacing="xs" >
                                 <List.Item>
                                     <Text component="span" fw={700} className={classes.list}>
                                         Работа под ключ
@@ -212,36 +214,61 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
                 </AnimateEnhanced>
 
                 {/* <Group justify="right" className={classes.control_wrapper}> */}
-                <Flex gap={20} w="100%">
-                    {matchXs && (
-                        <Button
-                            // id="review"
-                            // visibleFrom="sm"
-                            onClick={scrollToSection}
-                            // onClick={callBackHandler}
-                            variant="default"
-                            radius="xl"
-                            size="lg"
-                            bg="red.6"
-                            c="gray.0"
-                            w="100%"
-                            // className={classes.control}
-                        >
-                            Рассчитать стоймость
-                        </Button>
-                    )}
+                <Flex gap={20} w="100%" justify="center" align="end">
+                 
+                        <Flex direction="column" gap={10} justify="space-between" w="100%">
+                            <Button
+                                // id="review"
+                                // visibleFrom="sm"
+                                onClick={scrollToSection}
+                                // onClick={callBackHandler}
+                                variant="transparent"
+                                radius="lg"
+                                size="md"
+                                bg="red.6"
+                                c="gray.0"
+                                w="100%"
+                                // className={classes.control}
+                            >
+                                Рассчитать стоймость
+                            </Button>
 
-                    <Button
-                        onClick={measurerHandler}
-                        variant="filled"
-                        radius="xl"
-                        size="lg"
-                        bg="dark.6"
-                        w="100%"
-                        // className={classes.control}
-                    >
-                        Запись на замер
-                    </Button>
+                            <Button
+                                onClick={measurerHandler}
+                                variant="filled"
+                                radius="lg"
+                                size="md"
+                                bg="dark.6"
+                                w="100%"
+                                // className={classes.control}
+                            >
+                                Запись на замер
+                            </Button>
+                            {!matchMd && (
+                                <Flex className={classes.addr_panel_m} justify="space-between" p={5} w="100%">
+                                    <Flex direction="column" justify="start" align="flex-start">
+                                        <Text size="xs" c="dimmed">
+                                            Мы находимся:
+                                        </Text>
+                                        <Text size="xs" fw={700}>
+                                            Краснодарский край, Сочи, <br />
+                                            Виноградный переулок 9, корпус 5
+                                        </Text>
+                                    </Flex>
+                                    <Flex direction="column" justify="start" align="flex-start">
+                                        <Text size="xs" c="dimmed">
+                                            Звоните по номеру:
+                                        </Text>
+                                        <Text size="xs" fw={700}>
+                                            +7(988)189-65-30
+                                        </Text>
+                                        <Text size="xs" fw={700}>
+                                            +7(918)605-60-58
+                                        </Text>
+                                    </Flex>
+                                </Flex>
+                            )}
+                        </Flex>
                 </Flex>
 
                 <div className={classes.video_left_bottom}>
@@ -296,59 +323,113 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
                     opacity={0.85}
                     className={classes.video_overlay}
                 />
-                {/* <Overlay className={classes.video_overlay_border} opacity={0.2} /> */}
 
                 <div className={classes.video}>
                     <VimeoPlayer />
-                    {/* <VimeoPlayer mode="video" /> */}
                 </div>
-                <List mt={30} spacing="sm" className={classes.list_right}>
-                    <Text size="28px" mb="md" ta="left" c="white">
+                <List
+                    icon={
+                        <ThemeIcon color="teal" size={24} radius="xl">
+                            <IconCircleCheck size={16} />
+                        </ThemeIcon>
+                    }
+                    withPadding
+                    spacing="none"
+                    className={classes.list_right}
+                    m={10}
+                    mt={0}
+                    pt={0}
+                    pl={20}
+                >
+                    <Text size="lg" ta="center" c="" fw={700}>
                         При{" "}
                         <Text component="span" c="red.6" fw={700}>
                             заказе:
                         </Text>
                     </Text>{" "}
                     <List.Item>
-                        <Text size="lg" c="white" fw={700}>
-                            <Text component="span">от </Text>
-                            <Text component="span" c="red.6" fw={700} size="21px">
+                        <Text size="lg" c="" fw={600}>
+                            <Text component="span" fw={600}>
+                                от{" "}
+                            </Text>
+                            <Text component="span" c="red.6" fw={700} size="xl">
                                 100
                             </Text>{" "}
-                            <Text component="span">тыс.</Text>
-                            <Text component="span" fw="600" c="white">
+                            <Text component="span" fw={600}>
+                                тыс.
+                            </Text>
+                            <Text component="span" fw={600} c="">
                                 {" "}
                                 люстра в подарок!
                             </Text>
                         </Text>
                     </List.Item>
                     <List.Item>
-                        <Text size="lg" c="white" fw={700}>
-                            <Text component="span">от </Text>
-                            <Text component="span" c="red.6" fw={700} size="21px">
+                        <Text size="lg" c="" fw={600}>
+                            <Text component="span" fw={600}>
+                                от{" "}
+                            </Text>
+                            <Text component="span" c="red.6" fw={700} size="xl">
                                 500
                             </Text>{" "}
-                            <Text component="span">тыс.</Text>
-                            <Text component="span" fw="600" c="white">
+                            <Text component="span" fw={600}>
+                                тыс.
+                            </Text>
+                            <Text component="span" fw={600} c="">
                                 {" "}
                                 магнитный трек в подарок!
                             </Text>
                         </Text>
                     </List.Item>
                     <List.Item>
-                        <Text size="lg" c="white" fw={700}>
-                            <Text component="span">от </Text>
-                            <Text component="span" c="red.6" fw={700} size="21px">
+                        <Text size="lg" c="" fw={700}>
+                            <Text component="span" fw={600}>
+                                от{" "}
+                            </Text>
+                            <Text component="span" c="red.6" fw={700} size="xl">
                                 800
                             </Text>{" "}
-                            <Text component="span">тыс.</Text>
-                            <Text component="span" fw="600" c="white">
+                            <Text component="span" fw={600}>
+                                тыс.
+                            </Text>
+                            <Text component="span" fw="600" c="">
                                 {" "}
                                 магнитные светильники в подарок!
                             </Text>
                         </Text>
                     </List.Item>
                 </List>
+                <Flex
+                    className={classes.addr_panel}
+                    justify="space-between"
+                    pb="sm"
+                    pl="lg"
+                    pr="lg"
+                    ml="xs"
+                    mb="xs"
+                    mr="xs"
+                >
+                    <Flex direction="column" justify="start" align="flex-start">
+                        <Text size="xs" c="dimmed">
+                            Мы находимся:
+                        </Text>
+                        <Text size="md" fw={700}>
+                            Краснодарский край, Сочи, <br />
+                            Виноградный переулок 9, корпус 5
+                        </Text>
+                    </Flex>
+                    <Flex direction="column" justify="start" align="flex-start">
+                        <Text size="xs" c="dimmed">
+                            Звоните по номеру:
+                        </Text>
+                        <Text size="md" fw={700}>
+                            +7(988)189-65-30
+                        </Text>
+                        <Text size="md" fw={700}>
+                            +7(918)605-60-58
+                        </Text>
+                    </Flex>
+                </Flex>
             </Group>
         </Flex>
     );

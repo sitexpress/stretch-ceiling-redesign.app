@@ -1,11 +1,9 @@
 "use client";
-import { Title, Text, Container, Card, Image, List, ThemeIcon, Button, Accordion, Flex, Group } from "@mantine/core";
+import { Accordion, Badge, Button, Card, Container, Flex, Group, Image, Text, ThemeIcon, Title } from "@mantine/core";
 import {
     IconCe,
-    IconCheck,
     IconCurrencyRipple,
     IconGalaxy,
-    IconHeadsetOff,
     IconLeaf,
     IconRipple,
     IconSettings,
@@ -15,9 +13,9 @@ import {
 // import { px, SimpleGrid, Skeleton, Stack, useMantineTheme } from "@mantine/core";
 import { Grid, Skeleton } from "@mantine/core";
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import ModalComponent from "../ModalComponent/ModalComponent";
 import AnimateEnhanced from "../Animate/Animate";
+import ModalComponent from "../ModalComponent/ModalComponent";
+import classes from "./ElectricCurtains.module.css";
 
 const curtains = [
     {
@@ -111,6 +109,51 @@ const faqs = [
     },
 ];
 
+const electricData = [
+    { src: "/images/onviz/gallery-001.jpg" },
+    { src: "/images/onviz/gallery-002.jpg" },
+    { src: "/images/onviz/gallery-003.jpg" },
+    { src: "/images/onviz/gallery-004.jpg" },
+    { src: "/images/onviz/gallery-005.jpg" },
+    { src: "/images/onviz/gallery-006.jpg" },
+    { src: "/images/onviz/gallery-007.jpg" },
+    { src: "/images/onviz/gallery-008.jpg" },
+    { src: "/images/onviz/gallery-009.jpg" },
+    { src: "/images/onviz/gallery-010.jpg" },
+];
+const constractionsData = [
+    { src: "/images/constractions/34.jpg" },
+    { src: "/images/constractions/33.jpg" },
+    { src: "/images/constractions/9.jpg" },
+    // { src: "/images/constractions/10.jpg" },
+    { src: "/images/constractions/11.jpg" },
+    { src: "/images/constractions/12.jpg" },
+    { src: "/images/constractions/13.jpg" },
+    { src: "/images/constractions/14.jpg" },
+    { src: "/images/constractions/15.jpg" },
+    { src: "/images/constractions/16.jpg" },
+    { src: "/images/constractions/17.jpg" },
+    { src: "/images/constractions/18.jpg" },
+    { src: "/images/constractions/19.jpg" },
+    { src: "/images/constractions/20.jpg" },
+    { src: "/images/constractions/21.jpg" },
+    { src: "/images/constractions/22.jpg" },
+    { src: "/images/constractions/23.jpg" },
+    { src: "/images/constractions/24.jpg" },
+    { src: "/images/constractions/26.jpg" },
+    { src: "/images/constractions/27.jpg" },
+    { src: "/images/constractions/28.jpg" },
+    { src: "/images/constractions/29.jpg" },
+    { src: "/images/constractions/30.jpg" },
+    { src: "/images/constractions/31.jpg" },
+    { src: "/images/constractions/32.jpg" },
+];
+
+type GridAsymmetricalType = {
+    mode: "electric" | "constructions";
+    height?: number;
+};
+
 export default function ElectricCurtains() {
     const [modalMode, setModalMode] = useState<"callBack" | "measurer" | "">("");
     const [isOpen, setIsOpen] = useState(false);
@@ -157,7 +200,7 @@ export default function ElectricCurtains() {
                         </Title>
                     </AnimateEnhanced>
 
-                    <GridAsymmetrical />
+                    <GridAsymmetrical mode="electric" />
                 </Group>
 
                 <Flex mt={100} justify="center" direction="column" gap="md">
@@ -204,7 +247,9 @@ export default function ElectricCurtains() {
                         {faqs.map((item, index) => (
                             <Accordion.Item value={`item-${index}`} key={index}>
                                 <Accordion.Control>{item.question}</Accordion.Control>
-                                <Accordion.Panel c="dimmed" ta="center">{item.answer}</Accordion.Panel>
+                                <Accordion.Panel c="dimmed" ta="center">
+                                    {item.answer}
+                                </Accordion.Panel>
                             </Accordion.Item>
                         ))}
                     </Accordion>
@@ -240,149 +285,71 @@ export default function ElectricCurtains() {
     );
 }
 
-export function GridAsymmetrical() {
+export const GridAsymmetrical: React.FC<GridAsymmetricalType> = ({ mode, height }) => {
     const [loading, setLoading] = useState(true);
+
+    const electric = electricData.map((item, i) => (
+        <Grid.Col key={item.src} span={{ base: 12, xs: i % 2 === 0 ? 3 : 9 }} >
+            <Skeleton visible={loading} radius="xl">
+                <Image h={500} src={item.src} radius="xl" fallbackSrc="https://placehold.co/600x400?text=Placeholder" />
+            </Skeleton>
+        </Grid.Col>
+    ));
+
+    const constructions = constractionsData.map((item, i) => {
+        return (i < Number(height && height.toString().charAt(0)) + (13) && (
+                <Grid.Col key={item.src} span={{ base: 12, xs: i % 2 === 0 ? 3 : 9 }} style={{ zIndex: "-1" }}>
+                    <Skeleton visible={loading} radius="xl">
+                        <Image
+                            h={500}
+                            src={item.src}
+                            radius="xl"
+                            fallbackSrc="https://placehold.co/600x400?text=Placeholder"
+                        />
+                    </Skeleton>
+                </Grid.Col>
+            )
+        );
+    });
 
     useEffect(() => {
         setLoading(false);
     }, []);
+
     return (
-        
-        <Grid>
-            <Grid.Col span={{ base: 12, xs: 3 }}>
-                <Skeleton visible={loading} radius="xl">
-                    <Image
-                        h={500}
-                        src="/images/onviz/gallery-001.jpg"
-                        radius="xl"
-                        fallbackSrc="https://placehold.co/600x400?text=Placeholder"
-                    />
-                </Skeleton>
-            </Grid.Col>
-            <Grid.Col span={{ base: 12, xs: 6 }}>
-                <Skeleton visible={loading} radius="xl">
-                    <Image
-                        h={500}
-                        src="/images/onviz/gallery-002.jpg"
-                        radius="xl"
-                        fallbackSrc="https://placehold.co/600x400?text=Placeholder"
-                    />
-                </Skeleton>
-            </Grid.Col>
-            <Grid.Col span={{ base: 12, xs: 3 }}>
-                <Skeleton visible={loading} radius="xl">
-                    <Image
-                        h={500}
-                        src="/images/onviz/gallery-003.jpg"
-                        radius="xl"
-                        fallbackSrc="https://placehold.co/600x400?text=Placeholder"
-                    />
-                </Skeleton>
-            </Grid.Col>
-            <Grid.Col span={{ base: 12, xs: 6 }}>
-                <Skeleton visible={loading} radius="xl">
-                    <Image
-                        h={500}
-                        src="/images/onviz/gallery-004.jpg"
-                        radius="xl"
-                        fallbackSrc="https://placehold.co/600x400?text=Placeholder"
-                    />
-                </Skeleton>
-            </Grid.Col>
-            <Grid.Col span={{ base: 12, xs: 3 }}>
-                <Skeleton visible={loading} radius="xl">
-                    <Image
-                        h={500}
-                        src="/images/onviz/gallery-005.jpg"
-                        radius="xl"
-                        fallbackSrc="https://placehold.co/600x400?text=Placeholder"
-                    />
-                </Skeleton>
-            </Grid.Col>
-            <Grid.Col span={{ base: 12, xs: 3 }}>
-                <Skeleton visible={loading} radius="xl">
-                    <Image
-                        h={500}
-                        src="/images/onviz/gallery-006.jpg"
-                        radius="xl"
-                        fallbackSrc="https://placehold.co/600x400?text=Placeholder"
-                    />
-                </Skeleton>
-            </Grid.Col>
-            <Grid.Col span={{ base: 12, xs: 4 }}>
-                <Skeleton visible={loading} radius="xl">
-                    <Image
-                        h={500}
-                        src="/images/onviz/gallery-007.jpg"
-                        radius="xl"
-                        fallbackSrc="https://placehold.co/600x400?text=Placeholder"
-                    />
-                </Skeleton>
-            </Grid.Col>
-            <Grid.Col span={{ base: 12, xs: 4 }}>
-                <Skeleton visible={loading} radius="xl">
-                    <Image
-                        h={500}
-                        src="/images/onviz/gallery-009.jpg"
-                        radius="xl"
-                        fallbackSrc="https://placehold.co/600x400?text=Placeholder"
-                    />
-                </Skeleton>
-            </Grid.Col>
-            <Grid.Col span={{ base: 12, xs: 4 }}>
-                <Skeleton visible={loading} radius="xl">
-                    <Image
-                        h={500}
-                        src="/images/onviz/gallery-010.jpg"
-                        radius="xl"
-                        fallbackSrc="https://placehold.co/600x400?text=Placeholder"
-                    />
-                </Skeleton>
-            </Grid.Col>
-        </Grid>
+        <Container size="xl">
+            <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                <Flex justify="center" align="center" direction="column" gap={0} mt={50}>
+                    <Badge bg="red.6" size="xs" p="md">
+                        <Text component="span" fw={700}>
+                            отделка и ремонт
+                        </Text>
+                    </Badge>
+                    <Title order={2} mb="xl" ta="center" className={classes.description} c="dark.5" fw={700}>
+                        наши работы:
+                    </Title>
+                </Flex>
+            </AnimateEnhanced>
+            <Grid h={height && height / 2} style={{ transition: "height 0.6s ease"}}>{mode == "electric" ? electric : constructions}</Grid>
+        </Container>
     );
-}
+};
 
 export function OnvizCatalog() {
     return curtains.map((item, index: number) => (
-        // <Link key={index} href={`/catalog/${item.link}`} className={classes.my_link}>
-        // <Flex key={index} justify="center" align="center" direction="column" flex={{ base: 12, sm: 8 }}>
-
         <Grid.Col key={index} span={{ base: 6, sm: 3, lg: 3 }}>
-            <Card
-                radius="xl"
-                // h="300px"
-                // w="300px"
-                // className={classes.card}
-                p={5}
-                shadow="xl"
-            >
+            <Card radius="xl" p={5} shadow="xl">
                 <Image
-                    // height="300px"
-                    // width="300px"
                     src={item.src ? item.src : "/images/catalog/placeholder-image.jpeg"}
                     fallbackSrc={"/images/catalog/placeholder-image.jpg"}
                     alt={``}
-                    // className={classes.img}
                     radius="xl"
                 />
             </Card>
 
-            <Text
-                c="dimmed"
-                // className={classes.title}
-                size="xs"
-                tt="uppercase"
-                fw={700}
-                mt="xs"
-                ta="center"
-            >
+            <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="xs" ta="center">
                 {item.title}
             </Text>
         </Grid.Col>
-
-        // </Flex>
-
-        // </Link>
     ));
 }

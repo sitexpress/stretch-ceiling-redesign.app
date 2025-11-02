@@ -2,6 +2,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Carousel } from "@mantine/carousel";
 import {
+    Avatar,
     Badge,
     Button,
     Container,
@@ -10,6 +11,7 @@ import {
     Image,
     Paper,
     Progress,
+    Rating,
     Text,
     Title,
     useMantineTheme,
@@ -383,23 +385,18 @@ function CardComponent() {
                         fallbackSrc="https://placehold.co/600x400?text=Фото"
                         src={item.img}
                         alt="Running challenge"
-                        height={300}
+                        height={400}
                     />
                 </Card.Section>
                 <Flex justify="space-between" mt="lg" direction="column" gap={5}>
-                    <Text className={classes.title}>{item.title}</Text>
-
-                    <Text c="dimmed" size="xs" mb="xs" style={{ height: "50px" }}>
+                    <Text fw={700} size="lg">
+                        {item.title}
+                    </Text>
+                    <Text c="dimmed" size="md" mb="xs" style={{ height: "50px" }}>
                         {item.subtitle}
                     </Text>
-                    {/* <Group gap={5} justify="end">
-                        <Text fz="xs" c="dimmed">
-                            Ценовая доступность
-                        </Text>
-                        <RingProgress size={18} thickness={2} sections={[{ value: item.value, color: item.color }]} />
-                    </Group> */}
                 </Flex>
-                <Flex gap="10" direction={!matchMd ? "column" : "row"}>
+                <Flex gap={2} direction={!matchMd ? "column" : "row"} justify="space-between">
                     <Flex
                         mt="sm"
                         p="md"
@@ -407,13 +404,18 @@ function CardComponent() {
                         direction="column"
                         align="center"
                         justify="space-between"
-                        style={{ borderRadius: 30 }}
+                        style={{ borderRadius: 20 }}
+                        gap={5}
+                        h={!matchMd ? "60" : "80"}
                     >
-                        <Text c="dark.3" fz="xs" fw={700} ta="center" style={{ lineHeight: 1.1 }}>
+                        <Text c="dark.6" size="sm" fw={700} ta="center" style={{ lineHeight: 1.1 }}>
                             Площадь помещения
                         </Text>{" "}
-                        <Text c="dimmed" fz="xs">
-                            {item.area} м2
+                        <Text c="dimmed" fw={500}>
+                            {item.area}
+                            <Text component="span" c="dimmed" size="xs">
+                                m2
+                            </Text>
                         </Text>{" "}
                     </Flex>
                     <Flex
@@ -423,13 +425,18 @@ function CardComponent() {
                         direction="column"
                         align="center"
                         justify="space-between"
-                        style={{ borderRadius: 30 }}
+                        style={{ borderRadius: 20 }}
+                        gap={5}
+                        h={!matchMd ? "60" : "80"}
                     >
-                        <Text c="dark.3" fz="xs" fw={700} ta="center" style={{ lineHeight: 1.1 }}>
+                        <Text c="dark.6" size="sm" fw={700} ta="center" style={{ lineHeight: 1.1 }}>
                             Время монтажа
                         </Text>{" "}
-                        <Text c="dimmed" fz="xs">
-                            {item.time} ч
+                        <Text c="dimmed" fw={500}>
+                            {item.time}
+                            <Text component="span" c="dimmed" size="xs">
+                                ч
+                            </Text>
                         </Text>{" "}
                     </Flex>
 
@@ -440,14 +447,19 @@ function CardComponent() {
                         direction="column"
                         align="center"
                         justify="space-between"
-                        style={{ borderRadius: 30 }}
+                        style={{ borderRadius: 20 }}
+                        gap={5}
+                        h={!matchMd ? "60" : "80"}
                     >
-                        <Text c="dark.3" fz="xs" fw={700} ta="center" style={{ lineHeight: 1.1 }}>
+                        <Text c="dark.6" size="sm" fw={700} ta="center" style={{ lineHeight: 1.1 }}>
                             Общая стоймость
                         </Text>
-                        <Text c="dimmed" fz="xs">
-                            {item.price} р
-                        </Text>{" "}
+                        <Text c="dimmed" fw={500}>
+                            {item.price}
+                            <Text component="span" c="dimmed" size="xs">
+                                р
+                            </Text>
+                        </Text>
                     </Flex>
                     <Flex
                         mt="sm"
@@ -456,13 +468,18 @@ function CardComponent() {
                         direction="column"
                         align="center"
                         justify="space-between"
-                        style={{ borderRadius: 30, border: "1px solid #4dabf7" }}
+                        style={{ borderRadius: 20, border: "1px solid #4dabf7" }}
+                        gap={5}
+                        h={!matchMd ? "60" : "80"}
                     >
-                        <Text c="dark.3" fz="xs" fw={700} ta="center" style={{ lineHeight: 1.1 }}>
+                        <Text c="dark.6" size="sm" fw={700} ta="center" style={{ lineHeight: 1.1 }}>
                             Цена с установкой
                         </Text>{" "}
-                        <Text c="dimmed" fz="xs">
-                            {item.priceWithInstallation} р/м2
+                        <Text c="dimmed" fw={500}>
+                            {item.priceWithInstallation}
+                            <Text component="span" c="dimmed" size="xs">
+                                р/m2
+                            </Text>
                         </Text>
                     </Flex>
                 </Flex>
@@ -476,15 +493,19 @@ function CardComponent() {
 const cardMapped = cardData.map((item, i) => <BadgeCard key={i} {...item} />);
 const reviewMapped = reviewData.map((item, i) => (
     <Paper key={i} radius="xl" shadow="sm" p="lg" m="lg" className={classes.paper}>
-        {/* <Avatar src={item.src} size={80} radius={120} mx="auto" /> */}
+        <Avatar src={item.src} size={80} radius={120} mx="auto" />
         <Text ta="center" fz="lg" fw={500} mt="md" c="dark.4">
             {item.name}
         </Text>
-        <Text ta="center" fz="sm" c="dimmed">
-            {item.date}
-        </Text>
+
+        <Flex justify="center" ta="center" fz="sm" c="dimmed">
+            <Rating value={i % 2 === 0 ? 5 : 4.5} fractions={2} readOnly /> {i % 2 === 0 ? 5 : 4.8}
+        </Flex>
         <Text ta="center" c="dark.3" fz="sm" mt="md">
             {item.review}
+        </Text>
+        <Text ta="center" fz="sm" c="dimmed" mt="md">
+            {item.date}
         </Text>
     </Paper>
 ));
@@ -530,36 +551,43 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
     return mode === "photo" ? (
         <div className={classes.container}>
             <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
-                <Title
-                    order={2}
-                    // mt="sm"
-                    mb="xl"
-                    ta="center"
-                    className={classes.description}
-                    c="dark.5"
-                >
-                    Портфолио
-                </Title>
+                <Flex justify="center" align="center" direction="column" gap={0}>
+                    <Badge bg="red.6" size="xs" p="md">
+                        <Text  component="span" fw={700}>
+                            натяжные потолки
+                        </Text>
+                    </Badge>
+                    <Title
+                        order={2}
+                        mb="xl"
+                        ta="center"
+                        className={classes.description}
+                        c="dark.5"
+                        fw={700}
+                    >
+                        наши работы:
+                    </Title>
+                </Flex>
             </AnimateEnhanced>
 
-                <Carousel
-                    height={"auto"}
-                    slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
-                    // slideGap={{ base: 0, sm: "md" }}
-                    loop
-                    align="start"
-                    plugins={[autoplay.current]}
-                    draggable
-                    controlSize={30}
-                    withControls
-                    controlsOffset={10}
-                    slideGap="lg"
-                    // emblaptions={{ dragFree: true }}
-                    getEmblaApi={setEmbla}
-                    initialSlide={0}
-                >
-                    {Item}
-                </Carousel>
+            <Carousel
+                height={"auto"}
+                slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
+                // slideGap={{ base: 0, sm: "md" }}
+                loop
+                align="start"
+                plugins={[autoplay.current]}
+                draggable
+                controlSize={30}
+                withControls
+                controlsOffset={10}
+                slideGap="lg"
+                // emblaptions={{ dragFree: true }}
+                getEmblaApi={setEmbla}
+                initialSlide={0}
+            >
+                {Item}
+            </Carousel>
 
             <Progress.Root maw={300} size="lg" mt="xl" mx="auto" bg="dark.1" radius="40px">
                 <Progress.Section value={scrollProgressFolio} bg="dark.6" color="dark.6">
@@ -592,22 +620,22 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
                 
             </Title> */}
             {/* <ReviewsWidget/> */}
-                <Carousel
-                    // height={"auto"}
-                    slideSize={{ base: "100%", xs: "100%", sm: "50%", md: "33.33%" }}
-                    slideGap="xs"
-                    loop
-                    align="start"
-                    draggable
-                    controlSize={30}
-                >
-                    {reviewMapped}
-                </Carousel>
+            <Carousel
+                // height={"auto"}
+                slideSize={{ base: "100%", xs: "100%", sm: "50%", md: "33.33%" }}
+                slideGap="xs"
+                loop
+                align="start"
+                draggable
+                controlSize={30}
+            >
+                {reviewMapped}
+            </Carousel>
         </div>
     ) : mode === "ceiling" ? (
         <div className={classes.container}>
             <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
-                <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
+                <Title order={2} pt="xl" mb="xl" ta="center" className={classes.description} c="dark.5">
                     Примерная{" "}
                     <Text component="span" inherit c="red.6">
                         стоймость
@@ -616,21 +644,21 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
                 </Title>
             </AnimateEnhanced>
 
-                <Carousel
-                    height={"auto"}
-                    slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
-                    // slideGap={{ base: 0, sm: "md" }}
-                    loop
-                    align="start"
-                    // plugins={[autoplay.current]}
-                    draggable
-                    controlSize={30}
-                    controlsOffset={10}
-                    slideGap="lg"
-                    getEmblaApi={setEmblaCeiling}
-                >
-                    <CardComponent />
-                </Carousel>
+            <Carousel
+                height={"auto"}
+                slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
+                // slideGap={{ base: 0, sm: "md" }}
+                loop
+                align="start"
+                // plugins={[autoplay.current]}
+                draggable
+                controlSize={30}
+                controlsOffset={10}
+                slideGap="lg"
+                getEmblaApi={setEmblaCeiling}
+            >
+                <CardComponent />
+            </Carousel>
 
             <Progress.Root maw={300} size="lg" mt="xl" mx="auto" bg="dark.1" radius="40px">
                 <Progress.Section value={scrollProgressCeiling} bg="dark.6" color="dark.6">

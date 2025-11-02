@@ -1,7 +1,7 @@
 import { FeaturesCardsOurTeam } from "@/components/FeaturesCardsOurTeam/FeaturesCardsOurTeam";
 import { GetInTouch } from "@/components/GetInTouch/GetInTouch";
 import { HeroImageBackground } from "@/components/HeroImageBackground/HeroImageBackground";
-import DividerComponent from "@/components/ReDesign/DividerComponent/DividerComponent";
+import {DividerComponent} from "@/components/ReDesign/DividerComponent/DividerComponent";
 import UsersTable from "@/components/Table/Table";
 import VideoComponent from "@/components/VideoComponent/VideoComponent";
 export default function About() {

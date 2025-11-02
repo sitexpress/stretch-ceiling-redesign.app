@@ -94,6 +94,8 @@
 }
 
 .social {
+    border: 1px solid lightgray;
+    border-radius: 30px;
     @media (max-width: $mantine-breakpoint-sm) {
         margin-top: var(--mantine-spacing-xs);
     }

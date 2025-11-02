@@ -2,8 +2,6 @@
     background: #f1f3f5;
     padding-left: 16px;
     padding-right: 16px;
-
-
 }
 
 .carousel {
@@ -19,11 +17,11 @@
 
 
 .title {
-    font-size: rem(34px);
+    /* font-size: rem(34px);
     font-weight: 900;
     @media (max-width: $mantine-breakpoint-md) {
         font-size: rem(24px);
-    }
+    } */
 }
 
 .description {

@@ -901,43 +901,67 @@ export function Offer() {
                     mb={15}
                 >
                     <Flex mt="xs" justify="center" align="center" gap={20} direction="column">
-                        <Badge
-                            variant="default"
-                            color="blue"
-                            p="lg"
-                            ta="center"
-                            radius="xl"
-                            size="md"
-                            w="300px"
-                            style={{ cursor: "pointer" }}
-                        >
-                            <Radio value="Whats App" label="Whats App" size="md" />
-                        </Badge>
-                        <Badge
-                            variant="default"
-                            color="blue"
-                            p="lg"
-                            ta="center"
-                            radius="xl"
-                            size="md"
-                            w="300px"
-                            style={{ cursor: "pointer" }}
-                        >
-                            <Radio value="Telegram" label="Telegram" size="md"></Radio>
-                        </Badge>
+                        <Radio
+                            value="Whats App"
+                            size="xl"
+                            color="red.6"
+                            ta="start"
+                            label={
+                                <Badge
+                                    variant="default"
+                                    p="md"
+                                    ta="center"
+                                    radius="xl"
+                                    size="md"
+                                    w={300}
+                                    h={40}
+                                    style={{ cursor: "pointer" }}
+                                >
+                                    Whats App
+                                </Badge>
+                            }
+                        />
 
-                        <Badge
-                            variant="default"
-                            color="blue"
-                            p="lg"
+                        <Radio
+                            value="Telegram"
+                             size="xl"
+                            color="red.6"
                             ta="center"
-                            radius="xl"
-                            size="md"
-                            w="300px"
-                            style={{ cursor: "pointer" }}
-                        >
-                            <Radio value="Лучше позвонить" label="Лучше позвонить" size="md" />
-                        </Badge>
+                            label={
+                                <Badge
+                                    variant="default"
+                                    p="lg"
+                                    ta="center"
+                                    radius="xl"
+                                    size="md"
+                                          w={300}
+                                    h={40}
+                                    style={{ cursor: "pointer" }}
+                                >
+                                    Telegram
+                                </Badge>
+                            }
+                        />
+                        <Radio
+                            value="Лучше позвонить"
+                            size="xl"
+                            color="red.6"
+                            ta="center"
+                            label={
+                                <Badge
+                                    variant="default"
+                                    p="lg"
+                                    ta="center"
+                                    radius="xl"
+                                    size="md"
+                                          w={300}
+                                    h={40}
+                                    style={{ cursor: "pointer" }}
+                                >
+                                    Лучше позвонить
+                                </Badge>
+                            }
+                        />
                     </Flex>
                 </Radio.Group>
                 <Group bg="gray.1" justify="center">
@@ -1048,9 +1072,9 @@ export function Offer() {
                                   : "Отлично, остался последний шаг!"}
                 </Title>
             </Flex>
-                <Flex direction="column" pt="lg" pb="lg" className={classes.container}>
-                    {OfferStage(stage)}
-                </Flex>
+            <Flex direction="column" pt="lg" pb="lg" className={classes.container}>
+                {OfferStage(stage)}
+            </Flex>
         </Flex>
     );
 }

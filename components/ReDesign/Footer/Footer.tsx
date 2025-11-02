@@ -137,11 +137,12 @@ export function Footer() {
                             © 2020 <span style={{ fontFamily: "Nautilus" }}>Строй Family.</span> Все права защищены.
                         </Text>
 
-                        <Flex className={classes.social} wrap="nowrap" gap={10} mt="md">
+                        <Flex className={classes.social} justify="center" align="center" wrap="nowrap" gap={10} mt="md" pl={10} pr={10}>
                             <Anchor
                                 href="https://max.ru/u/f9LHodD0cOJKFrItttByPcrZPQhDRCemed9leLfCR7gsOHGR95KEgT_742A"
                                 id="sidebar-max"
                                 target="_blank"
+                                mt={5}
                             >
                                 <ActionIcon size={40} color="" variant={"filled"} radius="xl">
                                     <Image

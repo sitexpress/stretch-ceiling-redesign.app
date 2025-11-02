@@ -1,20 +1,20 @@
 "use client";
+import { GridAsymmetrical } from "@/components/ElectricCurtains/ElectricCurtains";
 import { FeaturesGrid } from "@/components/FeatuersGrid/FeaturesGrid";
-import { FeaturesCards } from "@/components/FeaturesCards/FeaturesCards";
 import { FeaturesCardsOurTeam } from "@/components/FeaturesCardsOurTeam/FeaturesCardsOurTeam";
 import { GetInTouch } from "@/components/GetInTouch/GetInTouch";
 import MapComponent from "@/components/MapComponent/MapComponent";
-import React, { useRef, useState } from "react";
 import ModalComponent from "@/components/ModalComponent/ModalComponent";
 import { PortfolioCarousel } from "@/components/PortfolioCarousel/PortfolioCarousel";
+import {DividerComponent, DividerComponentConstrDown, DividerComponentConstrUp } from "@/components/ReDesign/DividerComponent/DividerComponent";
 import { HeroBullets } from "@/components/ReDesign/Hero/HeroBullets";
-import DividerComponent from "@/components/ReDesign/DividerComponent/DividerComponent";
-import "../styles/scroll.css";
 import { Offer } from "@/components/ReDesign/Offer/Offer";
-import ReviewsWidget from "./portfolio/ReviewWidget";
+import React, { useRef, useState } from "react";
+import "../styles/scroll.css";
 
 export default function HomePage() {
     const [isOpen, setIsOpen] = useState(false);
+    const [height, setHeight] = useState(1000);
 
     React.useEffect(() => {
         const firstTimeHere = localStorage.getItem("key-family");
@@ -36,10 +36,13 @@ export default function HomePage() {
     return (
         <>
             {isOpen && <ModalComponent modalMode={"telegramBanner"} setIsOpen={setIsOpen} isOpen={isOpen} />}
-            <HeroBullets scrollToSection={scrollToSection}/>
+            <HeroBullets scrollToSection={scrollToSection} />
             <DividerComponent />
+
             <PortfolioCarousel mode="photo" />
-            <DividerComponent />
+            <DividerComponentConstrUp />
+            <GridAsymmetrical mode="constructions" height={height} />
+            <DividerComponentConstrDown height={height} setHeight={setHeight}/>    
             <PortfolioCarousel mode="ceiling" />
             {/* <DividerComponent /> */}
             {/* <FeaturesCards /> */}

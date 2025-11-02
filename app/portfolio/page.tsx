@@ -2,7 +2,7 @@ import { HeroImageBackground } from "@/components/HeroImageBackground/HeroImageB
 import { ImagePortfolioCardsGrid } from "@/components/Portfolio/ImagePortfolioCardsGrid/ImagePortfolioCardsGrid";
 import React from "react";
 import { GetInTouch } from "@/components/GetInTouch/GetInTouch";
-import DividerComponent from "@/components/ReDesign/DividerComponent/DividerComponent";
+import {DividerComponent} from "@/components/ReDesign/DividerComponent/DividerComponent";
 
 export default function Portfolio() {
      

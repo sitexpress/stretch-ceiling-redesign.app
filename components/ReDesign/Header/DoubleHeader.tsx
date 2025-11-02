@@ -1,5 +1,9 @@
 "use client";
-import { useEffect, useState } from "react";
+import AnimateEnhanced from "@/components/Animate/Animate";
+import { catalogAndMobileMenuNavLinks } from "@/components/CatalogDashboard/Links/Links";
+import DrawerCalculations from "@/components/DrawerCalculations/DrawerCalculations";
+import { tabs } from "@/lib/data/headerMenuData";
+import { useAppDispatch, useAppSelector } from "@/lib/utilities/hooks/hooks";
 import {
     ActionIcon,
     Anchor,
@@ -12,31 +16,20 @@ import {
     Drawer,
     Flex,
     Group,
+    Image,
     rem,
     ScrollArea,
     SegmentedControl,
+    Text,
     UnstyledButton,
-    Image,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import classes from "./DoubleHeader.module.css";
+import { IconBrandTelegram, IconBrandWhatsapp } from "@tabler/icons-react";
 import Link from "next/link";
-import { Text } from "@mantine/core";
-import {
-    IconBrandTelegram,
-    IconBrandWhatsapp,
-    IconCalculator,
-    IconPhone,
-    IconPhonePlus,
-    IconRulerMeasure,
-} from "@tabler/icons-react";
-import { useAppDispatch, useAppSelector } from "@/lib/utilities/hooks/hooks";
-import { changeTab } from "@/store/header-menu-tab-data-slice";
-import { tabs } from "@/lib/data/headerMenuData";
-import { catalogAndMobileMenuNavLinks } from "@/components/CatalogDashboard/Links/Links";
-import DrawerCalculations from "@/components/DrawerCalculations/DrawerCalculations";
-import { ActionToggle } from "@/components/ActionToggle/ActionToggle";
-import AnimateEnhanced from "@/components/Animate/Animate";
+import { useEffect, useState } from "react";
+import classes from "./DoubleHeader.module.css";
+import ModalComponent from "@/components/ModalComponent/ModalComponent";
+import React from "react";
 
 const mainLinks = [
     { link: "/", label: "Главная" },
@@ -47,6 +40,9 @@ const mainLinks = [
 ];
 
 export function DoubleHeader() {
+    const [isHeaderShown, setIsHeaderShown] = useState(false);
+    const [modalMode, setModalMode] = useState<"callBack" | "measurer" | "">("");
+    const [isOpen, setIsOpen] = useState(false);
     const [opened, { toggle }] = useDisclosure(false);
     const [active, setActive] = useState("");
     const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
@@ -69,8 +65,6 @@ export function DoubleHeader() {
             {item.label}
         </Link>
     ));
-
-    console.log(active);
 
     useEffect(() => {
         const newIndex = localStorage.getItem("_ym101251572_il");
@@ -98,8 +92,36 @@ export function DoubleHeader() {
               ))
             : catalogAndMobileMenuNavLinks(closeDrawer);
 
+    const measurerHandler = () => {
+        setModalMode("measurer");
+        // open();
+        setIsOpen(true);
+    };
+
+    const callBackHandler = () => {
+        setModalMode("callBack");
+        // open();
+        setIsOpen(true);
+    };
+
+    React.useEffect(() => {
+        closeDrawer();
+        const handleScroll = () => {
+            setIsHeaderShown(true);
+        };
+
+        handleScroll();
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            setIsHeaderShown(false);
+        };
+    }, []);
+
+    if (!isHeaderShown) return;
     return (
         <header className={classes.header}>
+            {isOpen && <ModalComponent isOpen={isOpen} modalMode={modalMode} setIsOpen={setIsOpen} />}
             <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
                 <Container className={classes.inner} size="xxl" mt={16}>
                     <Link href="/" style={{ textDecoration: "none" }}>
@@ -112,17 +134,12 @@ export function DoubleHeader() {
                     <Flex>
                         <Box className={classes.links} visibleFrom="sm">
                             <Flex wrap="nowrap" gap={10} justify="end">
-                                                                <Anchor
+                                <Anchor
                                     href="https://max.ru/u/f9LHodD0cOJKFrItttByPcrZPQhDRCemed9leLfCR7gsOHGR95KEgT_742A"
                                     id="sidebar-max"
                                     target="_blank"
                                 >
-                                    <ActionIcon
-                                        size={32}
-                                        color=""
-                                        variant={"filled"}
-                                        radius="xl"
-                                    >
+                                    <ActionIcon size={32} color="" variant={"filled"} radius="xl">
                                         <Image
                                             src={
                                                 "https://upload.wikimedia.org/wikipedia/commons/7/75/Max_logo_2025.png"
@@ -158,20 +175,12 @@ export function DoubleHeader() {
                                     <Badge
                                         size="xl"
                                         fw="700"
-                                        variant="filled"
+                                        variant="dot"
                                         style={{ cursor: "pointer" }}
-                                        bg="dark.6"
+                                        // bg="dark.6"
+                                        c="dark.6"
                                     >
-                                        <Flex justify="center" align="center" visibleFrom="sm" gap="sm">
-                                            <IconPhone
-                                                style={{
-                                                    width: rem(20),
-                                                    height: rem(20),
-                                                }}
-                                                stroke={1.5}
-                                            />
-                                            +7 ( 988 ) 189-65-30
-                                        </Flex>
+                                        +7 ( 988 ) 189-65-30
                                     </Badge>
                                 </Anchor>
                             </Flex>
@@ -223,6 +232,22 @@ export function DoubleHeader() {
                             }}
                         >
                             <SegmentedControl
+                                value={"меню"}
+                                // onChange={() => {
+                                //     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+                                //     tabName === "меню" ? dispatch(changeTab("каталог")) : dispatch(changeTab("меню"));
+                                // }}
+                                transitionTimingFunction="ease"
+                                fullWidth
+                                data={[
+                                    {
+                                        label: "меню",
+                                        value: "меню",
+                                    },
+                                ]}
+                                radius={40}
+                            />
+                            {/* <SegmentedControl
                                 value={tabName}
                                 onChange={() => {
                                     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
@@ -241,73 +266,51 @@ export function DoubleHeader() {
                                     },
                                 ]}
                                 radius={40}
-                            />
+                            /> */}
                         </div>
-                        <Text fw={500} size="xs" c="dimmed" pl="20" pr="20">
+                        {/* <Text fw={500} size="xs" c="dimmed" pl="20" pr="20">
                             *чтобы раскрыть меню нажмите на {">"} шэврон, чтобы открыть страницу раздела, на сам раздел
-                        </Text>
+                        </Text> */}
                         <div className={classes.navbarMain}>{mobileLinks}</div>
                         {/*<div className={s.navbarMain}>{CatalogNavlinks}</div>*/}
                         <Divider my="xs" />
-                        <Group
-                            style={{
-                                display: "flex",
-                                justifyContent: "center",
-                                flexDirection: "column",
-                                paddingTop: "40px",
-                            }}
-                        >
-                            <Link
-                                style={{ textDecoration: "none" }}
-                                href="/calculations"
-                                // onClick={closeDrawer}
-                            >
-                                <Button style={{ width: "200px" }} size="sm" variant="default" radius={40}>
-                                    <IconCalculator size={25} style={{ paddingRight: "5px" }} />
-                                    Кальк.Компл
-                                </Button>
-                            </Link>
-
+                        <Flex justify="center" direction="column" pt={40} gap={10}>
                             <Button
-                                // onClick={() => {
-                                //     callBackHandler();
-                                //     closeDrawer();
-                                // }}
-                                style={{ width: "200px" }}
+                                onClick={() => {
+                                    callBackHandler();
+                                    closeDrawer();
+                                }}
                                 size="sm"
                                 variant="default"
-                                radius={40}
+                                w="100%"
+                                c="gray.0"
+                                bg="dark.6"
+                                radius={20}
                             >
                                 {/* <IconHeadset size={25} style={{ paddingRight: "5px" }} /> */}
                                 Обратный звонок
                             </Button>
                             <Button
-                                // onClick={() => {
-                                //     measurerHandler();
-                                //     closeDrawer();
-                                // }}
-                                style={{ width: "200px" }}
+                                onClick={() => {
+                                    measurerHandler();
+                                    closeDrawer();
+                                }}
                                 size="sm"
-                                variant="default"
-                                radius={40}
+                                w="100%"
+                                c="gray.0"
+                                bg="red.6"
+                                radius={20}
                             >
-                                <IconRulerMeasure size={25} style={{ paddingRight: "5px" }} />
+                                {/* <IconRulerMeasure size={25} style={{ paddingRight: "5px" }} /> */}
                                 Записаться на замер
                             </Button>
                             <Anchor href="tel:+79881896530">
-                                <Button
-                                    // className={s.pulse}
-                                    style={{ width: "200px" }}
-                                    size="sm"
-                                    variant="filled"
-                                    color="dark.6"
-                                    radius={40}
-                                >
-                                    <IconPhonePlus size={25} style={{ paddingRight: "5px" }} />
+                                <Button size="sm" w="100%" c="gray.0" bg="red.6" radius={20}>
+                                    {/* <IconPhonePlus size={25} style={{ paddingRight: "5px" }} /> */}
                                     +7 988 189 65 30
                                 </Button>
                             </Anchor>
-                        </Group>
+                        </Flex>
 
                         <Group
                             gap={0}
@@ -321,7 +324,9 @@ export function DoubleHeader() {
                                 alignItems: "center",
                                 gap: "15px",
                                 paddingTop: "40px",
+                                // border: "1px solid gray"
                             }}
+                            mt={10}
                         >
                             <Group
                                 gap={0}
@@ -331,20 +336,19 @@ export function DoubleHeader() {
                                     display: "flex",
                                     flexDirection: "row",
                                     justifyContent: "center",
-                                    gap: "15px",
+                                    gap: "10px",
+                                    border: "1px solid lightgray",
+                                    borderRadius: "30px",
                                 }}
+                                pl={20}
+                                pr={20}
                             >
                                 <Anchor
                                     href="https://max.ru/u/f9LHodD0cOJKFrItttByPcrZPQhDRCemed9leLfCR7gsOHGR95KEgT_742A"
                                     id="sidebar-max"
                                     target="_blank"
                                 >
-                                    <ActionIcon
-                                        size={40}
-                                        color=""
-                                        variant={"filled"}
-                                        radius="xl"
-                                    >
+                                    <ActionIcon size={40} color="" variant={"filled"} radius="xl" mt={5}>
                                         <Image
                                             src={
                                                 "https://upload.wikimedia.org/wikipedia/commons/7/75/Max_logo_2025.png"

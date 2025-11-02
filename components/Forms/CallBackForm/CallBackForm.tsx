@@ -616,7 +616,7 @@ export default function CallBackForm({ modalMode, setIsOpen, project, data }: Ca
                         mt="xl"
                         style={{ width: "100%" }}
                         variant="filled"
-                        radius={40}
+                        radius="md"
                         bg="dark.6"
                     >
                         {modalMode === "callBack"
