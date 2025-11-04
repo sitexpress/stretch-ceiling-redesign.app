@@ -26,7 +26,6 @@ export default function MapComponent({ mode }: MapComponentType) {
         </Container>
     ) : (
         <div className={classes.container}>
-            <Container size="xl">
                 <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
                     <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
                         Как нас{" "}
@@ -41,17 +40,9 @@ export default function MapComponent({ mode }: MapComponentType) {
                         <iframe
                             src="https://yandex.ru/map-widget/v1/?um=constructor%3Abb2d24f17613f855089c98d6f62d05f8dc80528a84c93f87634db02d7e61282a&amp;source=constructor"
                             title="Яндекс карты"
-                            style={{ border: 0, maxWidth: "100%", height: "auto", borderRadius: "40px" }}
+                            style={{ border: 0, maxWidth: "100%", height: "auto", borderRadius: "20px" }}
                         />
                     </AspectRatio>
-                    {/* <div className={classes.controls}>
-                <Link href="/contacts" style={{ margin: "0 auto" }}>
-                    <Button className={classes.control} variant="default" size="lg" radius="xl">
-                        Подробнее
-                    </Button>
-                </Link>
-            </div> */}
-            </Container>
         </div>
     );
 }

@@ -1,8 +1,10 @@
 html, body {
   overflow-x: hidden;
   max-width: 100%;
+  margin-top:0;
+  padding-top:0;
 }
 
-* {
+/* * {
   box-sizing: border-box;
-}
+} */

@@ -12,16 +12,6 @@ export default function Sidebar() {
     const [isLoaded, setIsLoaded] = useState(false);
 
     React.useEffect(() => {
-        // const handleScroll = () => {
-        //     setScrollY(window.scrollY);
-        // };
-        // handleScroll();
-        // // setCount(count + 1)
-        // window.addEventListener("scroll", handleScroll);
-        // return () => {
-        //     window.removeEventListener("scroll", handleScroll);
-        // };
-
         setTimeout(() => {
             setIsLoaded(true);
         }, 2800);
@@ -38,52 +28,31 @@ export default function Sidebar() {
                 display: "flex",
                 flexDirection: "column",
                 position: "fixed",
-                right: "22px",
-                bottom: "22px",
+                right: "14px",
+                bottom: "11px",
                 transition: "right 0.5s linear",
                 zIndex: 1000,
+                border: "1px solid rgba(250, 82, 82, 0.3)",
+                borderRadius: "40px",
+                backdropFilter: "blur(3px)", // увеличил значение для лучшего эффекта
+                WebkitBackdropFilter: "blur(3px)",
+                backgroundColor: "rgba(255, 255, 255, 0.1)", // добавьте это
             }}
-            // style={{
-            //     display: "flex",
-            //     flexDirection: "column",
-            //     position: "fixed",
-            //     right: "22px",
-            //     bottom: "88px",
-            //     transition: "right 0.5s linear",
-            //     zIndex: 1000,
-            // }}
+            pt={8}
+            pb={8}
+            pl={4}
+            pr={4}
         >
-            {/* <Anchor href="https://t.me/+nKdXzCW6qmE3NjUy" id="sidebar-telegram">
-                <ActionIcon size="xl" color="#24A1DE" variant={"filled"} radius="xl">
-                    <IconBrandTelegram
-                        style={{
-                            width: rem(18),
-                            height: rem(18),
-                        }}
-                        stroke={1.5}
-                    />
-                </ActionIcon>
-            </Anchor>
-
-            <Anchor href="tel:+79881896530" id="sidebar-phone">
-                <ActionIcon
-                    size="xl"
-                    variant={"filled"}
-                    radius="xl"
-                    // color="green.4" className={classes.pulse}
-                >
-                    <IconPhonePlus
-                        style={{
-                            width: rem(18),
-                            height: rem(18),
-                        }}
-                        stroke={1.5}
-                    />
-                </ActionIcon>
-            </Anchor> */}
-            <Anchor href="https://max.ru/u/f9LHodD0cOJKFrItttByPcrZPQhDRCemed9leLfCR7gsOHGR95KEgT_742A" id="sidebar-max" target="_blank">
+            <Anchor
+                href="https://max.ru/u/f9LHodD0cOJKFrItttByPcrZPQhDRCemed9leLfCR7gsOHGR95KEgT_742A"
+                id="sidebar-max"
+                target="_blank"
+            >
                 <ActionIcon size={58} color="" variant={"filled"} radius="xl" className={classes.pulse}>
-                    <Image src={"https://upload.wikimedia.org/wikipedia/commons/7/75/Max_logo_2025.png"} className={classes.wiggle}/>
+                    <Image
+                        src={"https://upload.wikimedia.org/wikipedia/commons/7/75/Max_logo_2025.png"}
+                        className={classes.wiggle}
+                    />
                 </ActionIcon>
             </Anchor>
             <Anchor href="https://wa.me/79881896530" id="sidebar-whatsapp" target="_blank">

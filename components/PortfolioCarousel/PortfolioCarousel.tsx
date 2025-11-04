@@ -551,22 +551,15 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
     return mode === "photo" ? (
         <div className={classes.container}>
             <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
-                <Flex justify="center" align="center" direction="column" gap={0}>
-                    <Badge bg="red.6" size="xs" p="md">
-                        <Text  component="span" fw={700}>
-                            натяжные потолки
-                        </Text>
-                    </Badge>
-                    <Title
-                        order={2}
-                        mb="xl"
-                        ta="center"
-                        className={classes.description}
-                        c="dark.5"
-                        fw={700}
-                    >
-                        наши работы:
-                    </Title>
+                <Flex justify="center" align="center" direction="column" gap={0} mb={50}>
+                    <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
+                        <Title order={2} ta="center" className={classes.description} c="dark.5">
+                            Натяжные потолки{" "}
+                            <Text component="span" inherit c="red.6">
+                                наши работы
+                            </Text>{" "}
+                        </Title>
+                    </AnimateEnhanced>
                 </Flex>
             </AnimateEnhanced>
 

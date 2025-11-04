@@ -1,14 +1,14 @@
 "use client";
-import { Button, Flex, Group, List, Overlay, Text, ThemeIcon, Title, useMantineTheme } from "@mantine/core";
-import classes from "./HeroBullets.module.css";
-import { VimeoPlayer } from "../ReelVideo/VimeoPlayer";
-import { VimeoPlayerLeftBottom } from "../ReelVideo/VimeoPlayerLeftBottom";
-import { VimeoPlayerLeft } from "../ReelVideo/VimeoPlayerLeft";
-import { useState } from "react";
-import ModalComponent from "@/components/ModalComponent/ModalComponent";
-import { useMediaQuery } from "@mantine/hooks";
 import AnimateEnhanced from "@/components/Animate/Animate";
+import ModalComponent from "@/components/ModalComponent/ModalComponent";
+import { Button, Flex, Group, List, Overlay, Text, ThemeIcon, Title, useMantineTheme } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { IconCircleCheck } from "@tabler/icons-react";
+import { useState } from "react";
+import { VimeoPlayer } from "../ReelVideo/VimeoPlayer";
+import { VimeoPlayerLeft } from "../ReelVideo/VimeoPlayerLeft";
+import { VimeoPlayerLeftBottom } from "../ReelVideo/VimeoPlayerLeftBottom";
+import classes from "./HeroBullets.module.css";
 
 type ScrollToSectionType = {
     scrollToSection: () => void;
@@ -92,7 +92,7 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
                 <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
                     <Flex direction="row" justify="space-between" gap={10}>
                         <Flex direction="column">
-                            <List spacing="xs" >
+                            <List spacing="xs">
                                 <List.Item>
                                     <Text component="span" fw={700} className={classes.list}>
                                         Работа под ключ
@@ -215,60 +215,59 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
 
                 {/* <Group justify="right" className={classes.control_wrapper}> */}
                 <Flex gap={20} w="100%" justify="center" align="end">
-                 
-                        <Flex direction="column" gap={10} justify="space-between" w="100%">
-                            <Button
-                                // id="review"
-                                // visibleFrom="sm"
-                                onClick={scrollToSection}
-                                // onClick={callBackHandler}
-                                variant="transparent"
-                                radius="lg"
-                                size="md"
-                                bg="red.6"
-                                c="gray.0"
-                                w="100%"
-                                // className={classes.control}
-                            >
-                                Рассчитать стоймость
-                            </Button>
+                    <Flex direction="column" gap={10} justify="space-between" w="100%">
+                        <Button
+                            // id="review"
+                            // visibleFrom="sm"
+                            onClick={scrollToSection}
+                            // onClick={callBackHandler}
+                            variant="transparent"
+                            radius="lg"
+                            size="md"
+                            bg="red.6"
+                            c="gray.0"
+                            w="100%"
+                            // className={classes.control}
+                        >
+                            Рассчитать стоймость
+                        </Button>
 
-                            <Button
-                                onClick={measurerHandler}
-                                variant="filled"
-                                radius="lg"
-                                size="md"
-                                bg="dark.6"
-                                w="100%"
-                                // className={classes.control}
-                            >
-                                Запись на замер
-                            </Button>
-                            {!matchMd && (
-                                <Flex className={classes.addr_panel_m} justify="space-between" p={5} w="100%">
-                                    <Flex direction="column" justify="start" align="flex-start">
-                                        <Text size="xs" c="dimmed">
-                                            Мы находимся:
-                                        </Text>
-                                        <Text size="xs" fw={700}>
-                                            Краснодарский край, Сочи, <br />
-                                            Виноградный переулок 9, корпус 5
-                                        </Text>
-                                    </Flex>
-                                    <Flex direction="column" justify="start" align="flex-start">
-                                        <Text size="xs" c="dimmed">
-                                            Звоните по номеру:
-                                        </Text>
-                                        <Text size="xs" fw={700}>
-                                            +7(988)189-65-30
-                                        </Text>
-                                        <Text size="xs" fw={700}>
-                                            +7(918)605-60-58
-                                        </Text>
-                                    </Flex>
+                        <Button
+                            onClick={measurerHandler}
+                            variant="filled"
+                            radius="lg"
+                            size="md"
+                            bg="dark.6"
+                            w="100%"
+                            // className={classes.control}
+                        >
+                            Запись на замер
+                        </Button>
+                        {!matchMd && (
+                            <Flex className={classes.addr_panel_m} justify="space-between" p={5} w="100%">
+                                <Flex direction="column" justify="start" align="flex-start">
+                                    <Text size="xs" c="dimmed">
+                                        Мы находимся:
+                                    </Text>
+                                    <Text size="xs" fw={700}>
+                                        Краснодарский край, Сочи, <br />
+                                        Виноградный переулок 9, корпус 5
+                                    </Text>
                                 </Flex>
-                            )}
-                        </Flex>
+                                <Flex direction="column" justify="start" align="flex-start">
+                                    <Text size="xs" c="dimmed">
+                                        Звоните по номеру:
+                                    </Text>
+                                    <Text size="xs" fw={700}>
+                                        +7(988)189-65-30
+                                    </Text>
+                                    <Text size="xs" fw={700}>
+                                        +7(918)605-60-58
+                                    </Text>
+                                </Flex>
+                            </Flex>
+                        )}
+                    </Flex>
                 </Flex>
 
                 <div className={classes.video_left_bottom}>
@@ -336,7 +335,7 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
                     withPadding
                     spacing="none"
                     className={classes.list_right}
-                    m={10}
+                    // m={10}
                     mt={0}
                     pt={0}
                     pl={20}
@@ -348,7 +347,7 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
                         </Text>
                     </Text>{" "}
                     <List.Item>
-                        <Text size="lg" c="" fw={600}>
+                        <Text size="lg"  fw={600}>
                             <Text component="span" fw={600}>
                                 от{" "}
                             </Text>
@@ -402,12 +401,13 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
                 <Flex
                     className={classes.addr_panel}
                     justify="space-between"
+                    align="center"
                     pb="sm"
                     pl="lg"
                     pr="lg"
-                    ml="xs"
-                    mb="xs"
-                    mr="xs"
+                    // ml="xs"
+                    // mb="xs"
+                    // mr="xs"
                 >
                     <Flex direction="column" justify="start" align="flex-start">
                         <Text size="xs" c="dimmed">

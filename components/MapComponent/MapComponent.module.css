@@ -1,9 +1,9 @@
 .container {
     background: #f1f3f5;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 50px;
-
+    padding: 0px 16vw 0px 16vw;
+    @media (max-width: $mantine-breakpoint-md) {
+        padding: 0;
+    }
 }
 
 .my_title {

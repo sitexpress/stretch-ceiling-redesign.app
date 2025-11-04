@@ -9,7 +9,7 @@ import { YandexMetrika } from "@/lib/yandex/YandexMetrika";
 import { DoubleHeader } from "@/components/ReDesign/Header/DoubleHeader";
 import { Footer } from "@/components/ReDesign/Footer/Footer";
 import Script from "next/script";
-import localFont from 'next/font/local';
+import localFont from "next/font/local";
 
 import "@mantine/notifications/styles.css";
 import "@mantine/core/styles.css";
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
 };
 
 const myFont = localFont({
-  src: '../styles/local.fonts/TildaSansSemibold.woff2',
-})
+    src: "../styles/local.fonts/TildaSansSemibold.woff2",
+});
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
@@ -52,27 +52,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <body>
                 <StoreProvider>
                     <MantineProvider theme={theme}>
-                            <YandexMetrika />
-                            <ColorSchemeScript nonce="8IBTHwOdqNKAWeKl7plt8g==" defaultColorScheme="light" />
-                            {/* <ModalsProvider> */}
+                        <YandexMetrika />
+                        <ColorSchemeScript nonce="8IBTHwOdqNKAWeKl7plt8g==" defaultColorScheme="light" />
+                        {/* <ModalsProvider> */}
 
-                            {/* <Script
+                        {/* <Script
                             id="chatway"
                             src="https://cdn.chatway.app/widget.js?id=w5xbJehAiX4o"
                             strategy="lazyOnload"
                         /> */}
-                            <Notifications />
-                            <Sidebar />
-                            <DoubleHeader />
-                            {/* <HeaderMegaMenu /> */}
-                            {children}
-                            <Footer/>
-                            {/* </ModalsProvider> */}
-                            
+                        <Notifications />
+                        <Sidebar />
+                        <DoubleHeader />
+                        {/* <HeaderMegaMenu /> */}
+                        {children}
+                        <Footer />
+                        {/* </ModalsProvider> */}
                     </MantineProvider>
                 </StoreProvider>
             </body>
         </html>
     );
 }
-

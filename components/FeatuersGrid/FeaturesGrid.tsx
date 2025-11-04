@@ -5,7 +5,61 @@ import { IconCookie, IconGauge, IconLock, IconMessage2, IconUser } from "@tabler
 import classes from "./FeaturesGrid.module.css";
 import AnimateEnhanced from "../Animate/Animate";
 
+// export const mockData = [
+//     {
+//         icon: IconGauge,
+//         title: "Бесплатный замер",
+//         description:
+//             "Узнайте, какие бывают стандартные размеры потолков в конкретных типовых домах. Это облегчит Вам подбор нужного потолка",
+//     },
+
+//     {
+//         icon: IconCookie,
+//         title: "Актуальные цены на сайте",
+//         description: "На нашем сайте всегда актуальные цены которые практически не отличаются от финального чека",
+//     },
+//     {
+//         icon: IconLock,
+//         title: "Лучшии комплектующие в категории цена-качество",
+//         description: "Мы следим за новыми технологиями и стараемся применять их в строительстве",
+//     },
+//     {
+//         icon: IconMessage2,
+//         title: "Безопасный монтаж",
+//         description: "Используем только сертифицированое оборудование",
+//     },
+//     {
+//         icon: IconUser,
+//         title: "Покупка без переплат",
+//         description: "Заказывайте потолок без переплат",
+//     },
+// ];
+
 export const mockData = [
+    {
+        icon: IconGauge,
+        title: "Бесплатный замер",
+        description:
+            "Узнайте, какие бывают стандартные размеры потолков в конкретных типовых домах. Это облегчит Вам подбор нужного потолка",
+    },
+    {
+        icon: IconGauge,
+        title: "Бесплатный замер",
+        description:
+            "Узнайте, какие бывают стандартные размеры потолков в конкретных типовых домах. Это облегчит Вам подбор нужного потолка",
+    },
+    {
+        icon: IconGauge,
+        title: "Бесплатный замер",
+        description:
+            "Узнайте, какие бывают стандартные размеры потолков в конкретных типовых домах. Это облегчит Вам подбор нужного потолка",
+    },
+    {
+        icon: IconGauge,
+        title: "Бесплатный замер",
+        description:
+            "Узнайте, какие бывают стандартные размеры потолков в конкретных типовых домах. Это облегчит Вам подбор нужного потолка",
+    },
     {
         icon: IconGauge,
         title: "Бесплатный замер",
@@ -43,7 +97,7 @@ interface FeatureProps {
 
 export function Feature({ icon: Icon, title, description }: FeatureProps) {
     return (
-        <div>
+        <Group style={{ border: "1px solid #868e96", borderRadius: "20px" }} p="xl">
             <ThemeIcon variant="default" size={40} radius={40}>
                 <Icon
                     style={{
@@ -59,7 +113,7 @@ export function Feature({ icon: Icon, title, description }: FeatureProps) {
             <Text size="sm" c="dimmed" lh={1.6}>
                 {description}
             </Text>
-        </div>
+        </Group>
     );
 }
 
@@ -70,7 +124,7 @@ export function FeaturesGrid() {
         <div className={classes.container}>
             <Container>
                 <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
-                    <Title order={2} mt="sm" mb="xl" ta="center" className={classes.description} c="dark.5">
+                    <Title order={2} ta="center" className={classes.description} c="dark.5">
                         Качество в{" "}
                         <Text component="span" inherit c="red.6">
                             каждый
@@ -78,7 +132,6 @@ export function FeaturesGrid() {
                         дом
                     </Title>
                 </AnimateEnhanced>
-
                 <SimpleGrid
                     mt={60}
                     cols={{

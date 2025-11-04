@@ -6,11 +6,16 @@ import { GetInTouch } from "@/components/GetInTouch/GetInTouch";
 import MapComponent from "@/components/MapComponent/MapComponent";
 import ModalComponent from "@/components/ModalComponent/ModalComponent";
 import { PortfolioCarousel } from "@/components/PortfolioCarousel/PortfolioCarousel";
-import {DividerComponent, DividerComponentConstrDown, DividerComponentConstrUp } from "@/components/ReDesign/DividerComponent/DividerComponent";
+import {
+    DividerComponent,
+    DividerComponentConstrDown,
+    DividerComponentConstrUp,
+} from "@/components/ReDesign/DividerComponent/DividerComponent";
 import { HeroBullets } from "@/components/ReDesign/Hero/HeroBullets";
 import { Offer } from "@/components/ReDesign/Offer/Offer";
 import React, { useRef, useState } from "react";
 import "../styles/scroll.css";
+import { Tarif } from "@/components/ReDesign/Tarif/Tarif";
 
 export default function HomePage() {
     const [isOpen, setIsOpen] = useState(false);
@@ -38,29 +43,29 @@ export default function HomePage() {
             {isOpen && <ModalComponent modalMode={"telegramBanner"} setIsOpen={setIsOpen} isOpen={isOpen} />}
             <HeroBullets scrollToSection={scrollToSection} />
             <DividerComponent />
+            <Tarif />
 
-            <PortfolioCarousel mode="photo" />
             <DividerComponentConstrUp />
             <GridAsymmetrical mode="constructions" height={height} />
-            <DividerComponentConstrDown height={height} setHeight={setHeight}/>    
+            <DividerComponentConstrDown height={height} setHeight={setHeight} />
+           
+            <PortfolioCarousel mode="photo" />
+             <DividerComponent />
             <PortfolioCarousel mode="ceiling" />
             {/* <DividerComponent /> */}
             {/* <FeaturesCards /> */}
             <DividerComponent />
-            <PortfolioCarousel mode="review" />
-
-            <DividerComponent />
             <div ref={offerRef}>
                 <Offer />
             </div>
-            <DividerComponent />
-
-            <FeaturesGrid />
+            {/* <DividerComponent />
+            <FeaturesGrid /> */}
             <DividerComponent />
             <FeaturesCardsOurTeam mode={"main-page"} />
             <DividerComponent />
+            <PortfolioCarousel mode="review" />
+            <DividerComponent />
             <MapComponent mode={"main-page"} />
-
             <GetInTouch />
         </>
     );

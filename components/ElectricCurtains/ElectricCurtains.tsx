@@ -289,7 +289,7 @@ export const GridAsymmetrical: React.FC<GridAsymmetricalType> = ({ mode, height 
     const [loading, setLoading] = useState(true);
 
     const electric = electricData.map((item, i) => (
-        <Grid.Col key={item.src} span={{ base: 12, xs: i % 2 === 0 ? 3 : 9 }} >
+        <Grid.Col key={item.src} span={{ base: 12, xs: i % 2 === 0 ? 3 : 9 }}>
             <Skeleton visible={loading} radius="xl">
                 <Image h={500} src={item.src} radius="xl" fallbackSrc="https://placehold.co/600x400?text=Placeholder" />
             </Skeleton>
@@ -297,7 +297,8 @@ export const GridAsymmetrical: React.FC<GridAsymmetricalType> = ({ mode, height 
     ));
 
     const constructions = constractionsData.map((item, i) => {
-        return (i < Number(height && height.toString().charAt(0)) + (13) && (
+        return (
+            i < Number(height && height.toString().charAt(0)) + 13 && (
                 <Grid.Col key={item.src} span={{ base: 12, xs: i % 2 === 0 ? 3 : 9 }} style={{ zIndex: "-1" }}>
                     <Skeleton visible={loading} radius="xl">
                         <Image
@@ -319,18 +320,31 @@ export const GridAsymmetrical: React.FC<GridAsymmetricalType> = ({ mode, height 
     return (
         <Container size="xl">
             <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
-                <Flex justify="center" align="center" direction="column" gap={0} mt={50}>
-                    <Badge bg="red.6" size="xs" p="md">
-                        <Text component="span" fw={700}>
-                            отделка и ремонт
-                        </Text>
-                    </Badge>
-                    <Title order={2} mb="xl" ta="center" className={classes.description} c="dark.5" fw={700}>
-                        наши работы:
-                    </Title>
+                <Flex justify="center" align="center" direction="column" gap={0} mt={mode == "electric" ? 0 : 50}>
+                    {mode == "electric" ? (
+                        <>
+                            {/* <Badge bg="red.6" size="xs" p="md">
+                                <Text component="span" fw={700}>
+                                    Onviz
+                                </Text>
+                            </Badge>
+                            <Title order={2} mb="xl" ta="center" className={classes.description} c="dark.5" fw={700}>
+                                наши работы:
+                            </Title> */}
+                        </>
+                    ) : (
+                        <Title order={2} ta="center" className={classes.description} c="dark.5" mb={50}>
+                            Отделка и ремонт{" "}
+                            <Text component="span" inherit c="red.6">
+                                наши работы
+                            </Text>
+                        </Title>
+                    )}
                 </Flex>
             </AnimateEnhanced>
-            <Grid h={height && height / 2} style={{ transition: "height 0.6s ease"}}>{mode == "electric" ? electric : constructions}</Grid>
+            <Grid h={height && height / 2} style={{ transition: "height 0.6s ease" }}>
+                {mode == "electric" ? electric : constructions}
+            </Grid>
         </Container>
     );
 };

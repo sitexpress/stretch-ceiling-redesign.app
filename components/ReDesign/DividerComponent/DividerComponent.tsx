@@ -7,8 +7,6 @@ export function DividerComponent() {
         <div
             style={{
                 position: "relative",
-                height: "60px",
-                marginTop: 0,
                 marginBottom: "60px",
                 zIndex: 150,
                 background: "white",
@@ -19,17 +17,15 @@ export function DividerComponent() {
                     position: "absolute",
                     top: 0,
                     borderRadius: "0px 0px 30px 30px",
-                    height: "30px",
-                    marginBottom: "50px",
                     background: "#f1f3f5",
-                    zIndex: 15,
+                    zIndex: 150,
                     width: "100%",
+                    height: "40px",
                 }}
             ></div>
             <div
                 style={{
                     position: "absolute",
-                    height: "30px",
                     width: "100%",
                     top: 10,
                     left: 0,
@@ -42,7 +38,7 @@ export function DividerComponent() {
                     position: "relative",
                     top: 60,
                     borderRadius: "30px 30px 0px 0px",
-                    height: "60px",
+                    height: "70px",
                     marginBottom: "50px",
                     background: "#f1f3f5",
                     zIndex: 15,
@@ -74,7 +70,7 @@ export function DividerComponentConstrUp() {
                     width: "100%",
                     height: "100%",
 
-                    zIndex: 5,
+                    zIndex: 15,
                 }}
             ></div>
 
