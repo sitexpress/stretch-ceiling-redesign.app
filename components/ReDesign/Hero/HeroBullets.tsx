@@ -47,7 +47,7 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
         <Flex className={classes.inner} bg="gray.1" gap={16} pt={116} pb={16}>
             {isOpen && <ModalComponent isOpen={isOpen} modalMode={modalMode} setIsOpen={setIsOpen} />}
 
-            <Group className={classes.content} bg="white" ml={16} p={10}>
+            <Group className={classes.content} bg="white" ml={16} p={10} pt={20}>
                 <div>
                     <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
                         <Title className={classes.title}>
@@ -58,8 +58,7 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
                                 style={{ fontFamily: "TildaSansSemibold" }}
                                 className={classes.title}
                             >
-                                {/* Натяжные потолки в Сочи */}
-                                Ремонтно-отделочные работы {""}
+                                Строительно-отделочные работы.
                                 <br />
                                 <Text
                                     component="span"
@@ -68,24 +67,16 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
                                     style={{ fontFamily: "TildaSansSemibold" }}
                                     className={classes.title}
                                 >
-                                    точный монтаж и <br />
+                                    Ремонт под ключ. Натяжные потолки.
+                                    <br />
                                 </Text>{" "}
-                                натяжные потолки премиум-класса {""}
-                                <Text
-                                    component="span"
-                                    c="dark.6"
-                                    fw={700}
-                                    style={{ fontFamily: "TildaSansSemibold" }}
-                                    className={classes.title}
-                                >
-                                    в Сочи! <br />
-                                </Text>{" "}
+                                В городе Сочи. {""}
                             </Text>
                         </Title>
-
+{/* 
                         <Text mt="xs" c="dark.6" className={classes.subtitle}>
                             Монтаж за 1-2 дня со скидкой 50% на полотно!
-                        </Text>
+                        </Text> */}
                     </AnimateEnhanced>
                 </div>
 
@@ -104,7 +95,7 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
                                 </List.Item>
                                 <List.Item>
                                     <Text component="span" fw={700} className={classes.list}>
-                                        Сдаём в срок!
+                                        Сдаём в срок
                                     </Text>
                                     <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
                                         {" "}
@@ -113,11 +104,11 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
                                 </List.Item>
                                 <List.Item>
                                     <Text component="span" fw={700} className={classes.list}>
-                                        При заказе у нас{" "}
+                                        Ремонт квартир{" "}
                                     </Text>
                                     <Text component="span" fw="500" c="dark.5" className={classes.list_item_descr}>
                                         {" "}
-                                        полный рассчет по вашему проекту.
+                                         без задержек и переплат
                                     </Text>
                                 </List.Item>
                                 <List.Item>
@@ -347,7 +338,7 @@ export function HeroBullets({ scrollToSection }: ScrollToSectionType) {
                         </Text>
                     </Text>{" "}
                     <List.Item>
-                        <Text size="lg"  fw={600}>
+                        <Text size="lg" fw={600}>
                             <Text component="span" fw={600}>
                                 от{" "}
                             </Text>

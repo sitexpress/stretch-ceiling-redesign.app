@@ -63,6 +63,7 @@
 .title {
     font-size: 38px;
     line-height: 1;
+    
 
     @media (max-width: $mantine-breakpoint-xl) {
         font-size: 36px;

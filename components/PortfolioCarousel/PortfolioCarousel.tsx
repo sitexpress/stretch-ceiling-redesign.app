@@ -551,7 +551,7 @@ export const PortfolioCarousel: React.FC<PortfolioCarouselType> = ({ mode }) => 
     return mode === "photo" ? (
         <div className={classes.container}>
             <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
-                <Flex justify="center" align="center" direction="column" gap={0} mb={50}>
+                <Flex justify="center" align="center" direction="column" gap={0} mb={50} pt={100}>
                     <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
                         <Title order={2} ta="center" className={classes.description} c="dark.5">
                             Натяжные потолки{" "}
