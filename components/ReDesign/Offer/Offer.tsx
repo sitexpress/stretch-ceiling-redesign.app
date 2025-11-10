@@ -924,7 +924,7 @@ export function Offer() {
 
                         <Radio
                             value="Telegram"
-                             size="xl"
+                            size="xl"
                             color="red.6"
                             ta="center"
                             label={
@@ -934,7 +934,7 @@ export function Offer() {
                                     ta="center"
                                     radius="xl"
                                     size="md"
-                                          w={300}
+                                    w={300}
                                     h={40}
                                     style={{ cursor: "pointer" }}
                                 >
@@ -954,7 +954,7 @@ export function Offer() {
                                     ta="center"
                                     radius="xl"
                                     size="md"
-                                          w={300}
+                                    w={300}
                                     h={40}
                                     style={{ cursor: "pointer" }}
                                 >
@@ -1032,7 +1032,8 @@ export function Offer() {
     };
 
     return (
-        <Flex direction="column" bg="gray.1" w="100%" justify="center" align="center">
+
+        <Flex direction="column" bg="gray.1" w="100%" justify="center" align="center" >
             <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
                 <Title order={2} ta="center" className={classes.description} c="dark.5" bg="gray.1" pb="sm">
                     <Text component="span" inherit c="red.6">
@@ -1041,40 +1042,41 @@ export function Offer() {
                     натяжных потолков в вашей квартире
                 </Title>
             </AnimateEnhanced>
+            {/* <Container style={{ border: "1px solid #ced4da", borderRadius: "30px", margin: "20px" }} size="xl" pt="lg"> */}
+                <Badge size="xl" mb="sm" bg="red.6">
+                    {stage + 1} из 7
+                </Badge>
 
-            <Badge size="xl" mb="sm" bg="red.6">
-                {stage + 1} из 7
-            </Badge>
+                <Flex direction="column" justify="center" align="center" w="100%" bg="#dee2e6" ta="center">
+                    <Progress.Root maw={400} size="lg" mt="xl" mx="auto" bg="dark.1" radius="40px" w="90%">
+                        <Progress.Section value={scrollProgressCeiling} bg="red.6 " color="dark.6">
+                            <Progress.Label
+                                style={{ fontFamily: "Nautilus", fontSize: "12px" }}
+                                color="dark.6"
+                            ></Progress.Label>
+                        </Progress.Section>
+                    </Progress.Root>
 
-            <Flex direction="column" justify="center" align="center" w="100%" bg="dark.2" ta="center">
-                <Progress.Root maw={400} size="lg" mt="xl" mx="auto" bg="dark.1" radius="40px" w="90%">
-                    <Progress.Section value={scrollProgressCeiling} bg="red.6 " color="dark.6">
-                        <Progress.Label
-                            style={{ fontFamily: "Nautilus", fontSize: "12px" }}
-                            color="dark.6"
-                        ></Progress.Label>
-                    </Progress.Section>
-                </Progress.Root>
-
-                <Title order={3} ta="center" mb="sm" c="white">
-                    {stage === 0
-                        ? "1. Куда нужен натяжной потолок?"
-                        : stage === 1
-                          ? "2. Какой тип потолков вы хотите?"
-                          : stage === 2
-                            ? "3. Какая площадь потолков?"
-                            : stage === 3
-                              ? "4. Какое количество углов?"
-                              : stage === 4
-                                ? "5. Какое освещение вы бы хотели?"
-                                : stage === 5
-                                  ? "6. Куда отправить расчет?"
-                                  : "Отлично, остался последний шаг!"}
-                </Title>
-            </Flex>
-            <Flex direction="column" pt="lg" pb="lg" className={classes.container}>
-                {OfferStage(stage)}
-            </Flex>
+                    <Title order={3} ta="center" mb="sm" c="dark.4">
+                        {stage === 0
+                            ? "1. Куда нужен натяжной потолок?"
+                            : stage === 1
+                              ? "2. Какой тип потолков вы хотите?"
+                              : stage === 2
+                                ? "3. Какая площадь потолков?"
+                                : stage === 3
+                                  ? "4. Какое количество углов?"
+                                  : stage === 4
+                                    ? "5. Какое освещение вы бы хотели?"
+                                    : stage === 5
+                                      ? "6. Куда отправить расчет?"
+                                      : "Отлично, остался последний шаг!"}
+                    </Title>
+                </Flex>
+                <Flex direction="column" pt="lg" pb="lg" className={classes.container}>
+                    {OfferStage(stage)}
+                </Flex>
+            {/* </Container> */}
         </Flex>
     );
 }

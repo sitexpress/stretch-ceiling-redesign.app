@@ -272,7 +272,6 @@ export const VimeoPlayer = () => {
                     boxShadow: "0 3px 10px rgb(0 0 0 / 0.8)",
                     cursor: "pointer",
                     zIndex: 1001,
-                    margin: "20px",
                 }}
                 onDoubleClick={handleDoubleClick}
             >

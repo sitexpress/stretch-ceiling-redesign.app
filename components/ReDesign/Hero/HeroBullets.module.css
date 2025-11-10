@@ -155,7 +155,6 @@
 
 .video {
     border-radius: 30px;
-    /* border: 1px solid white; */
     @media (max-width: $mantine-breakpoint-md) {
         display: none;
     }

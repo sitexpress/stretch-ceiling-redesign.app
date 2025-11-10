@@ -16,6 +16,7 @@ import { Offer } from "@/components/ReDesign/Offer/Offer";
 import React, { useRef, useState } from "react";
 import "../styles/scroll.css";
 import { Tarif } from "@/components/ReDesign/Tarif/Tarif";
+import { FeaturesCards } from "@/components/FeaturesCards/FeaturesCards";
 
 export default function HomePage() {
     const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +45,6 @@ export default function HomePage() {
             <HeroBullets scrollToSection={scrollToSection} />
             <DividerComponent />
             <Tarif />
-
             <DividerComponentConstrUp />
             <GridAsymmetrical mode="constructions" height={height} />
             <DividerComponentConstrDown height={height} setHeight={setHeight} />
@@ -52,18 +52,18 @@ export default function HomePage() {
             <PortfolioCarousel mode="photo" />
              <DividerComponent />
             <PortfolioCarousel mode="ceiling" />
-            {/* <DividerComponent /> */}
-            {/* <FeaturesCards /> */}
             <DividerComponent />
+            {/* <FeaturesCards />
+            <DividerComponent /> */}
             <div ref={offerRef}>
                 <Offer />
             </div>
-            {/* <DividerComponent />
-            <FeaturesGrid /> */}
+            <DividerComponent />
+            <FeaturesGrid />
             <DividerComponent />
             <FeaturesCardsOurTeam mode={"main-page"} />
-            <DividerComponent />
-            <PortfolioCarousel mode="review" />
+            {/* <DividerComponent />
+            <PortfolioCarousel mode="review" /> */}
             <DividerComponent />
             <MapComponent mode={"main-page"} />
             <GetInTouch />

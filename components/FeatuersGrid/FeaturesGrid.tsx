@@ -1,91 +1,61 @@
 "use client";
 import React from "react";
-import { Badge, Container, Group, SimpleGrid, Text, ThemeIcon, Title, rem } from "@mantine/core";
+import { Badge, Container, Group, Paper, SimpleGrid, Text, ThemeIcon, Title, rem } from "@mantine/core";
 import { IconCookie, IconGauge, IconLock, IconMessage2, IconUser } from "@tabler/icons-react";
 import classes from "./FeaturesGrid.module.css";
 import AnimateEnhanced from "../Animate/Animate";
 
-// export const mockData = [
-//     {
-//         icon: IconGauge,
-//         title: "Бесплатный замер",
-//         description:
-//             "Узнайте, какие бывают стандартные размеры потолков в конкретных типовых домах. Это облегчит Вам подбор нужного потолка",
-//     },
-
-//     {
-//         icon: IconCookie,
-//         title: "Актуальные цены на сайте",
-//         description: "На нашем сайте всегда актуальные цены которые практически не отличаются от финального чека",
-//     },
-//     {
-//         icon: IconLock,
-//         title: "Лучшии комплектующие в категории цена-качество",
-//         description: "Мы следим за новыми технологиями и стараемся применять их в строительстве",
-//     },
-//     {
-//         icon: IconMessage2,
-//         title: "Безопасный монтаж",
-//         description: "Используем только сертифицированое оборудование",
-//     },
-//     {
-//         icon: IconUser,
-//         title: "Покупка без переплат",
-//         description: "Заказывайте потолок без переплат",
-//     },
-// ];
-
 export const mockData = [
     {
         icon: IconGauge,
-        title: "Бесплатный замер",
+        title: "С 2014 ГОДА",
         description:
-            "Узнайте, какие бывают стандартные размеры потолков в конкретных типовых домах. Это облегчит Вам подбор нужного потолка",
+            "Наша компания предоставляет услуги по ремонту квартир и частных домов на территории города Сочи. Мы обслуживаем как частных лиц, так и корпоративных заказчиков.",
     },
     {
         icon: IconGauge,
-        title: "Бесплатный замер",
+        title: "15+",
         description:
-            "Узнайте, какие бывают стандартные размеры потолков в конкретных типовых домах. Это облегчит Вам подбор нужного потолка",
+            "Мы располагаем собственным штатом специалистов, в который входят дизайнеры, инженерно-технический персонал (прорабы) и исполнители по всем видам работ: сантехнике, электрике и другим направлениям.",
     },
     {
         icon: IconGauge,
-        title: "Бесплатный замер",
+        title: "100%",
         description:
-            "Узнайте, какие бывают стандартные размеры потолков в конкретных типовых домах. Это облегчит Вам подбор нужного потолка",
+            "Реализуем самые смелые идеи — от простого обновления до комплексного преображения пространства.",
     },
     {
         icon: IconGauge,
-        title: "Бесплатный замер",
+        title: "ПРОЗРАЧНАЯ СМЕТА",
         description:
-            "Узнайте, какие бывают стандартные размеры потолков в конкретных типовых домах. Это облегчит Вам подбор нужного потолка",
+            "Каждая работа подробно обговаривается и описывается в сметной документацие.",
     },
     {
         icon: IconGauge,
-        title: "Бесплатный замер",
+        title: "",
         description:
-            "Узнайте, какие бывают стандартные размеры потолков в конкретных типовых домах. Это облегчит Вам подбор нужного потолка",
+            "",
     },
 
     {
         icon: IconCookie,
         title: "Актуальные цены на сайте",
-        description: "На нашем сайте всегда актуальные цены которые практически не отличаются от финального чека",
+        description: "Выгодные тарифы, у нас один из лучших показателей по соотношению цена-качество на рынке.",
     },
     {
         icon: IconLock,
-        title: "Лучшии комплектующие в категории цена-качество",
-        description: "Мы следим за новыми технологиями и стараемся применять их в строительстве",
+        title: "ОТЧЕТЫ",
+        description: "Мы предоставляем отчеты на каждом этапе работ.",
     },
     {
         icon: IconMessage2,
-        title: "Безопасный монтаж",
+        title: "БЕЗОПАСНЫЙ МОНТАЖ",
         description: "Используем только сертифицированое оборудование",
     },
     {
         icon: IconUser,
-        title: "Покупка без переплат",
-        description: "Заказывайте потолок без переплат",
+        title: "РАСЧЕТ ПО ФАКТУ",
+        description: "Окончательный расчет происходит после подписания акта выполненных работ.",
     },
 ];
 
@@ -93,43 +63,40 @@ interface FeatureProps {
     icon: React.FC<any>;
     title: React.ReactNode;
     description: React.ReactNode;
+    index: number;
 }
 
-export function Feature({ icon: Icon, title, description }: FeatureProps) {
+export function Feature({ icon: Icon, title, description, index }: FeatureProps) {
     return (
-        <Group style={{ border: "1px solid #868e96", borderRadius: "20px" }} p="xl">
-            <ThemeIcon variant="default" size={40} radius={40}>
-                <Icon
-                    style={{
-                        width: rem(18),
-                        height: rem(18),
-                    }}
-                    stroke={1.5}
-                />
-            </ThemeIcon>
-            <Text mt="sm" mb={7}>
+        <Paper
+            style={{ borderRadius: "10px" }}
+            p="xl"
+            shadow="xl"
+            bg={index === 3 || index === 4 || index === 5 ? "red.6" : "white"}
+        >
+            <Text  mb="xl" c={index === 3 || index === 4 || index === 5 ? "white" : "red.6"} fw={700} size="28px" ta="center">
                 {title}
             </Text>
-            <Text size="sm" c="dimmed" lh={1.6}>
+            <Text   c={index === 3 || index === 4 || index === 5 ? "white" : "dark.4"}  lh={1.6} size="md" pb="xl" ta="center">
                 {description}
             </Text>
-        </Group>
+        </Paper>
     );
 }
 
 export function FeaturesGrid() {
-    const features = mockData.map((feature, index) => <Feature {...feature} key={index} />);
+    const features = mockData.map((feature, index) => <Feature {...feature} index={index} key={index} />);
 
     return (
         <div className={classes.container}>
-            <Container>
+            <Container size="xl" pb="xl" >
                 <AnimateEnhanced animation="slideInLeft" duration="1s" trigger="onScroll" threshold={0.2}>
                     <Title order={2} ta="center" className={classes.description} c="dark.5">
-                        Качество в{" "}
+                        Как мы
                         <Text component="span" inherit c="red.6">
-                            каждый
+                            {" "}
+                            работаем
                         </Text>{" "}
-                        дом
                     </Title>
                 </AnimateEnhanced>
                 <SimpleGrid
@@ -140,12 +107,12 @@ export function FeaturesGrid() {
                         md: 3,
                     }}
                     spacing={{
-                        base: "xl",
-                        md: 50,
+                        base: "xs",
+                        // md: 50,
                     }}
                     verticalSpacing={{
-                        base: "xl",
-                        md: 50,
+                        base: "xs",
+                        // md: 50,
                     }}
                 >
                     {features}
